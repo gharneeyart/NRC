@@ -1,7 +1,8 @@
+import Mission from "@/components/about/mission"
 export default function About() {
     return(
         <div>
-            <h1>About Page</h1>
+            <Mission />
         </div>
         
     )

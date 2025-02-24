@@ -16,11 +16,25 @@
   padding: 3.5rem;
 }
 
-@media (width > 768px) {
+body {
+  background-image: url('/images/138-1.svg'); 
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+@media (width > 970px) {
   .about-hero{
     padding: 10rem;
   }
   .contact-hero{
     padding: 10rem;
   }
+
+  body{
+    background-image: none;
+  }
+  
 }

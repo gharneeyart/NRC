@@ -33,6 +33,14 @@ body {
   background-repeat: no-repeat;
   padding: 3.5rem;
 }
+.backg{
+  background-image: url('/images/138\ 1\ \(2\).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  
+ 
+}
 
 @media (width > 768px) {
   .about-hero{
@@ -40,5 +48,10 @@ body {
   }
   .contact-hero{
     padding: 10rem;
+  }
+}
+@media (width > 1023px){
+  .backg{
+    background-image: none;
   }
 }

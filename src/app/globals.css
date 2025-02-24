@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-=======
->>>>>>> 3e05989398cbc8a1febd94517f7720ec4662cfc2
 
 .about-hero{
   background-image: url("/images/Old\ western\ train\ tracks.png");
@@ -31,17 +24,10 @@
   .about-hero{
     padding: 10rem;
   }
-<<<<<<< HEAD
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-=======
+
   .contact-hero{
     padding: 10rem;
   }
-}
->>>>>>> 3e05989398cbc8a1febd94517f7720ec4662cfc2
+

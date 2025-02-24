@@ -8,7 +8,7 @@ export const Discover =[
     {
         id: 1,
         image: Train,
-        title: 'Mordern Fleet',
+        title: 'Modern Fleet',
         description: 'Experience comfort in our modern air-conditioned trains with spacious seating',
       
     },

@@ -1,5 +1,12 @@
+import ResuableHero from "@/components/reusables/hero"
+
 export default function Contact() {
     return(
-        <h1>Contact Us</h1>
+        <div className="contact-hero ">
+          <div className="container mx-auto">
+          <ResuableHero title='Contact Us' desc='Safe, comfortable, and reliable train services across the nation. Experience the future of Nigerian transportation, today.'/>
+          </div>
+           
+        </div>
     )
 }

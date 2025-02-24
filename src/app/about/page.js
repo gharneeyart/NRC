@@ -1,6 +1,7 @@
 import Count from "@/components/about/count";
+import Testimonial from "@/components/about/testimonials";
 import ResuableHero from "@/components/reusables/hero";
-import Image from "next/image"
+
 
 
 export default function About() {
@@ -12,6 +13,7 @@ export default function About() {
             </div> 
           </div>
             <Count/>
+            <Testimonial/>
         </div>
         
     )

@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 .about-hero{
   background-image: url("/images/Old\ western\ train\ tracks.png");
@@ -33,7 +15,11 @@ body {
   background-repeat: no-repeat;
   padding: 3.5rem;
 }
-
+.backg{
+  background-image: url('/images/train.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 @media (width > 768px) {
   .about-hero{
     padding: 10rem;

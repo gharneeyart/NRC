@@ -28,7 +28,7 @@ export default function SignUp() {
  }
 
     return(
-        <div className="grid grid-cols-1 lg:grid-cols-2 backg px-3 lg:p-0 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 backgd px-3 lg:p-0 ">
            <div className=" p-3 md:px-10 md:py-14 lg:p-14 bg-white rounded-md shadow-md lg:rounded-none lg:shadow-none mt-3 lg:mt-0 mb-10 lg:mb-0">
                 <h1 className="font-bold text-xl">Welcome to NRC</h1>
                 <p className="text-[14px] text-[#3F3F3F]">Fill the information below to create a new account</p>
@@ -64,7 +64,7 @@ export default function SignUp() {
                                         message: "Please enter a valid phone number",
                                         },
                                    })}
-                               type="number" placeholder="Enter phone number" className="border-2 outline-none rounded-sm px-3 py-2"/>
+                               type="tel" placeholder="Enter phone number" className="border-2 outline-none rounded-sm px-3 py-2"/>
                                {errors.phonenumber && <span className="text-red-500 text-[12px]">{errors.phonenumber.message}</span>}
                          </div>
                          <div className="flex flex-col gap-1">

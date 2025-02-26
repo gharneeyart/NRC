@@ -1,8 +1,9 @@
+import Explore from "@/components/about/explore";
 
 export default function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
+      <Explore/>
     
     </div>
   );

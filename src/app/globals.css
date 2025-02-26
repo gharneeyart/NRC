@@ -15,10 +15,20 @@
   background-repeat: no-repeat;
   padding: 3.5rem;
 }
-.backg{
+.backgd{
   background-image: url('/images/train.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
+
+}
+.home-hero{
+  background-image: url('/images/Moving\ Train.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  
 }
 @media (width > 768px) {
   .about-hero{
@@ -26,5 +36,13 @@
   }
   .contact-hero{
     padding: 10rem;
+  }
+  .backgd{
+    background-image: none;
+    
+  }
+  .home-hero{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 }

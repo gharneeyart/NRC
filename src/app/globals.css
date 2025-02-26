@@ -16,10 +16,21 @@
   padding: 3.5rem;
 }
 .backg{
+<<<<<<< HEAD
+  background-image: url('/images/138\ 1\ \(2\).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  
+ 
+}
+
+=======
   background-image: url('/images/train.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+>>>>>>> 0e625ab37dd97ecd398681d113e367b2f3f8980d
 @media (width > 768px) {
   .about-hero{
     padding: 10rem;
@@ -30,4 +41,13 @@
   .contact-hero{
     padding: 10rem;
   }
+<<<<<<< HEAD
+}
+@media (width > 1023px){
+  .backg{
+    background-image: none;
+  }
+}
+=======
 
+>>>>>>> 0e625ab37dd97ecd398681d113e367b2f3f8980d

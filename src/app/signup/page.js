@@ -41,7 +41,7 @@ export default function SignUp() {
                                         value: /^[a-zA-Z]+(?:(?:|['_\. ])([a-zA-Z]*(\.\s)?[a-zA-Z])+)*$/, 
                                       message: "Please enter a valid first name"
                               }})}
-                              type="text" placeholder="Enter first Name" className="border-2 outline-none rounded-sm px-3 py-2"/>
+                              type="text" placeholder="Enter first Name" className="border-2 outline-none rounded-sm px-3 py-2 border-primar"/>
                               {errors.firstName && <span className="text-red-500 text-[12px]">{errors.firstName.message}</span>}
                          </div>
                          <div className="flex flex-col gap-1">
@@ -149,7 +149,7 @@ export default function SignUp() {
                          <input type="checkbox" name="terms" value="terms" className="outline-none bg-[#18A532] active:bg-[#18A532] px-5"/>
                          <span>By proceeding with the registration, I confirm that I haveread and accept the Privacy Policy and Terms of Service. </span> 
                      </div>
-                     <button className="bg-[#18A532] w-full text-white py-2 rounded-md shadow-sm">Sign Up</button>
+                     <button className="bg-green-700 w-full text-white py-2 rounded-md shadow-sm">Sign Up</button>
                      <p className="text-center ">Already have an account? <span className="text-[#18A532]">Sign in</span></p>
                 </form>
            </div>

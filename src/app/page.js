@@ -1,8 +1,9 @@
+import Services from "@/components/reusables/services";
 
 export default function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
+      <Services/>
     
     </div>
   );

@@ -74,7 +74,7 @@ export default function SignUp() {
                                         message: "Please enter a valid phone number",
                                         },
                                    })}
-                               type="number" placeholder="Enter phone number" className="border-2 outline-none rounded-sm px-3 py-2"/>
+                               type="tel" placeholder="Enter phone number" className="border-2 outline-none rounded-sm px-3 py-2"/>
                                {errors.phonenumber && <span className="text-red-500 text-[12px]">{errors.phonenumber.message}</span>}
                          </div>
                          <div className="flex flex-col gap-1">

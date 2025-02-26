@@ -17,15 +17,22 @@
   padding: 3.5rem;
 }
 .backg{
-  background-image: url('/images/train.png');
-  background-size: 100% 100%;
+
+  background-image: url('/images/138\ 1\ \(2\).png');
+  background-size: cover;
   background-repeat: no-repeat;
+
+  
+ 
 }
+
+
 @media (width > 768px) {
   .about-hero{
     padding: 10rem;
   }
 }
+
 
 
   .contact-hero{

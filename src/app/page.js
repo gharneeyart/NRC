@@ -1,5 +1,8 @@
+
 import Hero from "@/components/home/hero";
 import Search from "@/components/home/search";
+import Changes from "@/components/home/changes";
+import Companion from "@/components/reusables/railCompanion";
 import Explore from "@/components/about/explore";
 
 export default function Home() {
@@ -13,6 +16,11 @@ export default function Home() {
           <Search/>
         </div>
      </div>
+
+
+    
+      <Companion/>
+      <Changes/>
 
       <Explore/>
     

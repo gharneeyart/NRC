@@ -17,13 +17,32 @@
   padding: 3.5rem;
 }
 .backg{
-
   background-image: url('/images/138\ 1\ \(2\).png');
   background-size: cover;
   background-repeat: no-repeat;
+ 
+}
+
+.backgd{
+  background-image: url('/images/train.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+}
+.backg{
+    background-image: url('/images/138\ 1\ \(2\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+.home-hero{
+  background-image: url('/images/Moving\ Train.png');
+  /* background-image: url('/images/138\ 1\ \(2\).png'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   
- 
 }
 
 
@@ -31,11 +50,25 @@
   .about-hero{
     padding: 10rem;
   }
+  contact-hero{
+    padding: 10rem;
+  }
+
+
+ .backgd{
+    background-image: none;
+  }
+  .backg{
+    background-image: none;
+  }
+
+  .home-hero{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
 }
 
 
 
-  .contact-hero{
-    padding: 10rem;
-  }
+  
 

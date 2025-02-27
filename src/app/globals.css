@@ -16,6 +16,17 @@
   background-repeat: no-repeat;
   padding: 3.5rem;
 }
+
+.body {
+  background-image: url('/images/138-1.svg'); 
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+@media (width > 970px) {
 .backg{
   background-image: url('/images/138\ 1\ \(2\).png');
   background-size: cover;
@@ -54,6 +65,11 @@
     padding: 10rem;
   }
 
+  .body{
+    background-image: none;
+  }
+  
+}
 
  .backgd{
     background-image: none;

@@ -1,3 +1,5 @@
+import News from "@/components/home/news";
+import Updates from "@/components/home/news";
 
 import Hero from "@/components/home/hero";
 import Search from "@/components/home/search";
@@ -9,6 +11,7 @@ import Services from "@/components/reusables/services";
 export default function Home() {
   return (
     <div>
+   
      <div className="relative">
       <div>
         <Hero />
@@ -21,6 +24,7 @@ export default function Home() {
       <Explore/>
       <Services/>
       <Changes/>
+      <News/>
       <Companion/>
     </div>
   );

@@ -18,14 +18,10 @@ export default function Home() {
         </div>
      </div>
 
-
-    
-      <Companion/>
-      <Changes/>
-
       <Explore/>
       <Services/>
-    
+      <Changes/>
+      <Companion/>
     </div>
   );
 }

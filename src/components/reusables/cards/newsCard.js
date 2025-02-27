@@ -10,7 +10,7 @@ export default function NewsCard({ Updates }) {
                     alt={Updates?.name} 
                     width={500} 
                     height={500} 
-                    className="w-full h-55 object-cover rounded-lg "
+                    className="w-full  h-[250px] md:h-[250px] lg:h-[250px] object-cover rounded-lg md:w-[90%] lg:w-full"
                 />
                 <div className="p-4">
                     <p className="font-bold lg:text-2xl text-xl">{Updates?.name}</p>

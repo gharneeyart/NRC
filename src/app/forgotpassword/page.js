@@ -22,7 +22,7 @@ const ForgotPassword = () => {
         }
         
   return (
-    <div className="flex w-full">
+    <div className="flex w-full body-password">
       <div className="w-[90%] mx-auto md:w-[60%] lg:w-[50%] m-5 lg:mx-0">
         <div className="bg-white rounded-lg shadow-lg mt-10 h-[450px] flex flex-col min-h-screen lg:justify-center lg:shadow-none lg:px-[80px] ">
           <div className="px-3.5 pt-4  lg:pt-0">
@@ -67,7 +67,7 @@ const ForgotPassword = () => {
       </div>
 
       <div className="hidden lg:block object-cover  relative lg:w-[50%]">
-        <Image src={image} alt="Train"  className="w-full h-full object-cover"/>
+        <Image src={image} alt="Train"  className="w-full h-[80%] object-cover"/>
         <div className="absolute top-0 mt-5 ml-3">
         <Image src={logo} alt="Logo"/>
         </div>

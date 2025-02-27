@@ -2,6 +2,7 @@ import Count from "@/components/about/count";
 import Testimonial from "@/components/about/testimonials";
 import Mission from "@/components/about/mission"
 import ResuableHero from "@/components/reusables/hero";
+import Services from "@/components/reusables/services";
 
 export default function About() {
     return(
@@ -12,10 +13,9 @@ export default function About() {
             </div> 
           </div>
             <Count/>
-            {/* <Testimonial/> */}
-        
-           <Mission />
-          
+            <Services/>
+            <Testimonial/>
+            <Mission />
         </div>
          
    

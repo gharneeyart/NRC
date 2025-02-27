@@ -93,4 +93,30 @@ import Image2 from '/public/images/image.png'
 
 
     ]
- 
+
+import img from '/public/images/Frame 40970.svg'
+import img1 from '/public/images/Frame 40971.svg'
+import img2 from '/public/images/Frame 40972.svg'
+  
+export const Explores = [
+    {
+        id: 1,
+        image: img,
+        location: 'Lagos',
+        destination: '20k visitors daily',
+        
+    },
+    {
+        id: 2,
+        image: img1,
+        location: 'Ibadan',
+        destination: '14k visitors daily',
+        
+    },
+    {
+        id: 3,
+        image: img2,
+        location: 'Abeokuta',
+        destination: '15k visitors daily',
+    },
+]

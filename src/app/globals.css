@@ -16,7 +16,7 @@
   padding: 3.5rem;
 }
 
-body {
+.body {
   background-image: url('/images/138-1.svg'); 
   width: 100%;
   background-repeat: no-repeat;
@@ -26,14 +26,23 @@ body {
 
 
 @media (width > 970px) {
+.backg{
+  background-image: url('/images/train.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+@media (width > 768px) {
   .about-hero{
     padding: 10rem;
   }
+}
+
+
   .contact-hero{
     padding: 10rem;
   }
 
-  body{
+  .body{
     background-image: none;
   }
   

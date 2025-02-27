@@ -1,10 +1,11 @@
+import News from "@/components/home/news";
 import Updates from "@/components/home/news";
 
 export default function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
-    <Updates/>
+      <h1></h1>
+    <News/>
     </div>
   );
 }

@@ -37,7 +37,7 @@ export const Discover =[
     import Eclipse3 from '/public/images/Ellipse 2021 (2).svg'
   
 
-    export const Destinations = [
+    export const Testimonials  = [
     {
         id: 1,
         description: 'I love how simple it is to book my train tickets. No long queues, just a few clicks, and I’m set. Traveling from Lagos to Abuja has never been this easy',
@@ -62,7 +62,7 @@ export const Discover =[
 import Image1 from '/public/images/image 16.png'
 import Image2 from '/public/images/image.png'
 
-    export const Testimonials = [
+    export const  NewsUpdates = [
         {
             id: 1,
             image: Image1,
@@ -76,16 +76,16 @@ import Image2 from '/public/images/image.png'
             id: 2,
             image: Image2,
             name: 'New Express Service Launch on Lagos-Ibadan Route',
-            description: 'tarting next month, enjoy faster journey times with our new express service running twic ...',
+            description: 'starting next month, enjoy faster journey times with our new express service running twic ...',
             date: '2 Jan, 2025',
             time: '1 min read'
 
         },
         {
-            id: 2,
+            id: 3,
             image: Image2,
             name: 'New Express Service Launch on Lagos-Ibadan Route',
-            description: 'tarting next month, enjoy faster journey times with our new express service running twic ...',
+            description: 'starting next month, enjoy faster journey times with our new express service running twic ...',
             date: '2 Jan, 2025',
             time: '1 min read'
 

@@ -15,9 +15,11 @@ export default function SignUp() {
      }
      const [showPassword, setShowPassword] = useState(false)
      const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+     const [gender, showGender] = useState(false)
+     const [identification, showIdentification] = useState(false)
+     const [selectedGender, setSelectedGender] = useState("")
+     const [selectedIdentification, setSelectedIdentification] = useState("");
 
-
-   
 
   const togglePasswordVisibilityOne = () => {
      setShowPassword(!showPassword)
@@ -27,8 +29,16 @@ export default function SignUp() {
      setShowConfirmPassword(!showConfirmPassword)
  }
 
+ const genderDropDown = () => {
+     showGender(true)
+ }
+
+ const idDropDown = () =>{
+     showIdentification(true)
+ }
+
     return(
-        <div className="grid grid-cols-1 lg:grid-cols-2 backgd px-3 lg:p-0 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 backgd px-3 lg:p-0 max-w-[1700px] mx-auto">
            <div className=" p-3 md:px-10 md:py-14 lg:p-14 bg-white rounded-md shadow-md lg:rounded-none lg:shadow-none mt-3 lg:mt-0 mb-10 lg:mb-0">
                 <h1 className="font-bold text-xl">Welcome to NRC</h1>
                 <p className="text-[14px] text-[#3F3F3F]">Fill the information below to create a new account</p>
@@ -77,9 +87,9 @@ export default function SignUp() {
                     <div className="grid gid-cols-1 md:grid-cols-2 gap-4">
                          <div className="flex flex-col gap-1">
                               <label>Gender</label>
-                              <select {...register('gender', {required: 'This field is required'})}
-                              className="border-2 rounded-sm px-3 py-2 text-[#2632388F] outline-none">
-                                   <option id="gender" >Select gender</option>
+                              <select {...register('gender', {required: 'This field is required'})} onClick={genderDropDown} value={selectedGender} onChange={(e) => setSelectedGender(e.target.value)}
+                              className= {`${gender ? "text-black":"text-[#2632388F]"}  border-2 rounded-sm px-3 py-2 outline-none`}>
+                                   <option value='' disabled hidden>Select gender</option>
                                    <option value="Male">Male</option>
                                    <option value="Female">Female</option>
                               </select>
@@ -88,8 +98,8 @@ export default function SignUp() {
                          <div className="flex flex-col gap-1">
                               <label>Identification Type</label>
                               <select {...register('identification', {required: 'This field is required'})}
-                               className="border-2 rounded-sm px-3 py-2 text-[#2632388F] outline-none">
-                                   <option id="identification">Select Identification Type</option>
+                              onClick={idDropDown} value={selectedIdentification} onChange={(e) => setSelectedIdentification(e.target.value)} className={`${identification? 'text-black':'text-[#2632388F]'} border-2 rounded-sm px-3 py-2 outline-none`}>
+                                   <option value='' disabled hidden>Select Identification Type</option>
                                    <option value="nin">NIN</option>
                                    <option value="license">Driver's License</option>
                                    <option value="voters">Voter's Card</option>
@@ -146,15 +156,17 @@ export default function SignUp() {
                           </div>     
                      </div>
                      <div className="flex items-baseline gap-2">
-                         <input type="checkbox" name="terms" value="terms" className="outline-none bg-[#18A532] active:bg-[#18A532] px-5"/>
+                         <input {...register("terms", {required: "This field is required"})}
+                         type="checkbox" name="terms" value="terms" className="outline-none bg-[#18A532] active:bg-[#18A532] px-5"/>
                          <span>By proceeding with the registration, I confirm that I haveread and accept the Privacy Policy and Terms of Service. </span> 
                      </div>
-                     <button className="bg-green-700 w-full text-white py-2 rounded-md shadow-sm">Sign Up</button>
+                     {errors.terms && <span className="text-red-500 text-[12px]">{errors.terms.message}</span>}
+                     <button className="bg-[#18A532] w-full text-white py-2 rounded-md shadow-sm">Sign Up</button>
                      <p className="text-center ">Already have an account? <span className="text-[#18A532]">Sign in</span></p>
                 </form>
            </div>
            <div>
-               <Image src={Train} alt="signup" width={600} className="h-[100%] hidden lg:block"/>
+               <Image src={Train} alt="signup"  className="h-[90%] w-full hidden lg:block"/>
            </div>
         </div>
     )

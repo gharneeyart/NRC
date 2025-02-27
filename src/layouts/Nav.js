@@ -14,7 +14,7 @@ export default function Nav() {
     }
 
     return (
-        <div className="flex gap-2 justify-between items-center px-[1.263rem] xl:px-[6.5rem] bg-white py-[2.49rem]">
+        <div className="flex gap-2 justify-between items-center px-[1.263rem] xl:px-[6.5rem] 3 bg-white py-[2.49rem]">
             <div>
                 <Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.png" alt="NRC-logo" width={100} height={100} priority={true} />
             </div>

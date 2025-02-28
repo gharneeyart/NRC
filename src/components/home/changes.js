@@ -1,7 +1,7 @@
 import Image from "next/image"
 export default function Changes() {
     return(
-        <div className="container w-[20.738rem]  lg:w-11/12 flex flex-col lg:flex-row xl:gap-[3.016rem] mx-auto gap-[1.691rem]  mt-[14rem] lg:mt-[4.506rem]  ">
+        <div className="container w-11/12 flex flex-col lg:flex-row xl:gap-[3.016rem] mx-auto gap-[1.691rem]  mt-[14rem] lg:mt-[4.506rem]  ">
           <section className="relative">
             <Image className="w-[20.938rem] h-[10.505rem] lg:w-auto lg:h-full rounded-[0.432rem] lg:rounded-[0.77rem]" src="/images/Frame 40989 (1).svg" width={100} height={100} alt="train-times"/>
             <div className="xl:w-[27.605rem] flex flex-col gap-[1.547rem] lg:gap-[2.759rem] text-[#263238] absolute top-0 px-[1.043rem] lg:px-[1.861rem] pt-[2.087rem] lg:pt-[3.722rem]">

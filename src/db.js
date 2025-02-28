@@ -8,7 +8,7 @@ export const Discover =[
     {
         id: 1,
         image: Train,
-        title: 'Mordern Fleet',
+        title: 'Modern Fleet',
         description: 'Experience comfort in our modern air-conditioned trains with spacious seating',
       
     },
@@ -62,7 +62,7 @@ export const Discover =[
 import Image1 from '/public/images/image 16.png'
 import Image2 from '/public/images/image.png'
 
-    export const  Destinations = [
+    export const  NewsUpdates = [
         {
             id: 1,
             image: Image1,
@@ -76,16 +76,16 @@ import Image2 from '/public/images/image.png'
             id: 2,
             image: Image2,
             name: 'New Express Service Launch on Lagos-Ibadan Route',
-            description: 'tarting next month, enjoy faster journey times with our new express service running twic ...',
+            description: 'starting next month, enjoy faster journey times with our new express service running...',
             date: '2 Jan, 2025',
             time: '1 min read'
 
         },
         {
-            id: 2,
+            id: 3,
             image: Image2,
             name: 'New Express Service Launch on Lagos-Ibadan Route',
-            description: 'tarting next month, enjoy faster journey times with our new express service running twic ...',
+            description: 'starting next month, enjoy faster journey times with our new express service running...',
             date: '2 Jan, 2025',
             time: '1 min read'
 

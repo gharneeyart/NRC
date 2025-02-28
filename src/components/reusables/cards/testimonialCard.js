@@ -5,10 +5,10 @@ export default function TestimonialCard({myTesti}) {
             <div className="text-left text-[#5F5F60]">
             <p>{myTesti?.description}</p>
             </div>
-           <div className="flex items-center font-sans gap-[15.21px]">
-           <Image src={myTesti?.image} alt={myTesti?.name}/>
-           <p className="text-[16.3px] font-semibold">{myTesti?.name}</p>
-           </div>
+        <div className="flex items-center font-sans gap-[15.21px]">
+        <Image src={myTesti?.image} alt={myTesti?.name}/>
+        <p className="text-[16.3px] font-semibold">{myTesti?.name}</p>
+        </div>
         </div>
     )
 }

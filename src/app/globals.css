@@ -16,6 +16,26 @@
   background-repeat: no-repeat;
   padding: 3.5rem;
 }
+
+.body {
+  background-image: url('/images/138-1.svg'); 
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home-hero{
+  background-image: url('/images/Moving\ Train.png');
+  /* background-image: url('/images/138\ 1\ \(2\).png'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  
+}
+
+
+@media (width > 970px) {
 .backg{
   background-image: url('/images/138\ 1\ \(2\).png');
   background-size: cover;
@@ -34,16 +54,7 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
-.home-hero{
-  background-image: url('/images/Moving\ Train.png');
-  /* background-image: url('/images/138\ 1\ \(2\).png'); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 
-  
-}
 
 
 @media (width > 768px) {
@@ -54,6 +65,11 @@
     padding: 10rem;
   }
 
+  .body{
+    background-image: none;
+  }
+  
+}
 
  .backgd{
     background-image: none;

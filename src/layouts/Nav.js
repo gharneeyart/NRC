@@ -14,19 +14,19 @@ export default function Nav() {
     }
 
     return (
-        <div className="w-full flex  px-[1.263rem]  xl:px-[6.5rem]  bg-white py-[2.49rem]">
-            <div className="w-full xl:w-[77.333rem] mx-auto flex items-center justify-between">
+        <div className="w-full   bg-white py-[2.49rem]">
+            <div className="w-11/12 container mx-auto flex items-center justify-between">
             <div>
                 <Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.svg" alt="NRC-logo" width={100} height={100} priority={true} />
             </div>
 
             <div className="lg:hidden text-2xl  px-4 cursor-pointer" onClick={toggleMenu}>
-                {menuOpen ? <IoCloseOutline /> : <RxHamburgerMenu />}
+                {menuOpen ? <IoCloseOutline /> : <RxHamburgerMenu className="text-[#0C4C51]"/>}
             </div>
 
-            <div className={`lg:static  text-white text-[18.6px] flex flex-col lg:flex   w-11/12  gap-[3.375rem] top-36 rounded-sm  ${
-  menuOpen ? 'block opacity-100 bg-white ' : 'hidden opacity-0 top-[100%] py-1'
-} lg:block absolute lg:opacity-100 lg:flex-row lg:w-auto  justify-between  font-semibold  z-50   xl:gap-[10rem] `}>
+            <div className={`lg:static  text-white text-[18.6px] flex flex-col   gap-[3.375rem] top-24 rounded-sm lg:flex  ${
+  menuOpen ? 'w-full block opacity-100 bg-white right-0 p-8 ' : 'hidden opacity-0 top-[100%] py-1'
+}  lg:block absolute lg:opacity-100 lg:flex-row lg:w-auto  justify-between  font-semibold  z-50   xl:gap-[10rem] `}>
                 <div className="flex flex-col lg:flex-row items-center gap-[1.625rem] xl:gap-[2.2rem] text-[18.6px] text-[#263238] lg:text-[#01320A] font-sans">
                     <h1>Home</h1>
                     <h1>About</h1>

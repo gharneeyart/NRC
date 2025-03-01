@@ -11,12 +11,11 @@ export default function Testimonial() {
             <div className='flex flex-col lg:flex-row gap-[42.98px] lg:h-[297.3px] w-[333.06px] lg:w-[1236.39px] mx-auto '>
                 {Testimonials.map((testi)=>(
                     <div key={testi?.id}>
-                         <TestimonialCard myTesti={testi}/>
+                        <TestimonialCard myTesti={testi}/>
                     </div>
                 ))}
-           
+            
             </div>
-           
         </div>
     )
 }

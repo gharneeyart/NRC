@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import Image from "next/image";
 import logo from '/public/images/image-3.svg'
 import image from '/public/images/138-1(2).svg'
-
+import Link from "next/link";
 const ForgotPassword = () => {
     const [loading, setLoading] = useState(false)
         const [apiError, setApiError] = useState("")
@@ -69,7 +69,9 @@ const ForgotPassword = () => {
       <div className="hidden lg:block object-cover  relative lg:w-[50%]">
         <Image src={image} alt="Train"  className="w-full h-[80%] object-cover"/>
         <div className="absolute top-0 mt-5 ml-3">
+        <Link href="/">
         <Image src={logo} alt="Logo"/>
+        </Link>
         </div>
       </div>
     // </div>

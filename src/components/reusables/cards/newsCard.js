@@ -7,7 +7,12 @@ export default function NewsCard({ Updates }) {
             <div className="bg-white rounded-lg w-[277px] md:w-[295px] xl:w-[408px] 2xl:w-[458px]">
                 <Image 
                     src={Updates?.image} 
+<<<<<<< HEAD
+                    alt={Updates?.name} 
+                    
+=======
                     alt={Updates?.name}   
+>>>>>>> b65d217936617ff3454dd25d7e5f3fe1876f3979
                     className="w-full h-[179px] md:h-[248px] object-cover rounded-lg "
                 />
                 <div className="pt-4 space-y-4">

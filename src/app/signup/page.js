@@ -5,6 +5,8 @@ import Train from "/public/images/train.png";
 import { useForm } from "react-hook-form";
 import { BiHide } from "react-icons/bi";
 import { BiShow } from "react-icons/bi";
+import Logo from '/public/images/Logo.png'
+import Link from "next/link";
 
 export default function SignUp() {
   const {
@@ -170,8 +172,9 @@ export default function SignUp() {
                      <p className="text-center ">Already have an account? <span className="text-[#18A532]">Sign in</span></p>
                 </form>
            </div>
-           <div>
+           <div className="relative">
                <Image src={Train} alt="signup"  className="h-[90%] w-full hidden lg:block"/>
+               <Link href='/' ><Image src={Logo} alt='Logo' className="absolute top-5 left-6" /></Link>
            </div>
         </div>
     )

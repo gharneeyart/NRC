@@ -76,7 +76,7 @@ import Image2 from '/public/images/image.png'
             id: 2,
             image: Image2,
             name: 'New Express Service Launch on Lagos-Ibadan Route',
-            description: 'starting next month, enjoy faster journey times with our new express service running twic ...',
+            description: 'starting next month, enjoy faster journey times with our new express service running...',
             date: '2 Jan, 2025',
             time: '1 min read'
 
@@ -85,7 +85,7 @@ import Image2 from '/public/images/image.png'
             id: 3,
             image: Image2,
             name: 'New Express Service Launch on Lagos-Ibadan Route',
-            description: 'starting next month, enjoy faster journey times with our new express service running twic ...',
+            description: 'starting next month, enjoy faster journey times with our new express service running...',
             date: '2 Jan, 2025',
             time: '1 min read'
 

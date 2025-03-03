@@ -1,8 +1,8 @@
 import Image from "next/image"
 export default function Companion() {
   return (
-    <div className="w-[21rem] lg:w-[77.563rem] mx-auto lg:px-[6.25rem] relative ">
-      <div className="">
+    <div className="w-full relative ">
+      <div className="w-[21rem] lg:w-11/12 xl:w-[77.563rem] mx-auto">
         <Image className="hidden lg:block w-[77.563rem] h-[24.688rem]" src="/images/Frame 41010 (1).svg"  width={100} height={100} priority={true} alt="companion-frame"/>
 
         <div className="rounded-[0.627rem] bg-[#006B14] lg:bg-inherit px-[1.125rem] lg:px-[3.223rem] absolute top-0 ">

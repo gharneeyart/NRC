@@ -1,12 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function Footer() {
   return (
-    <div className="bg-[#F0F7F6] py-[2.463rem]">
-      <div className='flex flex-col lg:flex-row justify-items-center gap-[3.375rem] lg:gap-[4.313re] justify-between items-center text-center lg:text-start lg:items-start lg:px-4 xl:px-[6.5rem]'>
+    <div className="bg-[#F0F7F6]">
+      <div className='w-11/12 container mx-auto flex flex-col lg:flex-row justify-items-center gap-[3.375rem] xl:gap-[4.313rem] justify-between items-center text-center lg:text-start lg:items-start py-[2.463rem]'>
         <div className="space-y-[9px] justify-items-center lg:justify-items-start">
-          <Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.png" width={100} height={100} priority={true} alt="NRC-logo"/>
+          <Link href="/"><Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.svg" width={100} height={100} priority={true} alt="NRC-logo"/></Link>
           <p className="">E-Ticketing App : Lagos - Ibadan</p>
           <div className="flex flex-row pt-[13px] gap-[0.875rem]">
           <Image className='w-[1.875rem] h-[1.875rem]' src="/icons/Facebook (1).svg" width={100} height={100} alt="Facebook-logo"/>
@@ -54,9 +55,9 @@ export default function Footer() {
 
       </div>
 
-      <div className="border-b py-[1.878rem] border-[#959B96]"></div>
+      <div className="border-b  border-[#959B96]"></div>
 
-      <div className="flex flex-col lg:flex-row gap-[1.375rem] items-center justify-between mt-6 lg:px-4 xl:px-[6.14rem] text-[#263238] text-[14px]">
+      <div className="flex flex-col lg:flex-row gap-[1.375rem] items-center justify-between mt-6 text-[#263238] text-[14px] container w-11/12 mx-auto">
         <div className="lg:flex gap-4" >
           <p>Copyright 2024, All Rights Reserved</p>
           <div className='hidden lg:block border-r border-[#848484] '></div>

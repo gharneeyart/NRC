@@ -3,19 +3,18 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { GoClock } from "react-icons/go";
 export default function NewsCard({ Updates }) {
     return (
-        <div className="w-[95%] mx-auto mt-8 flex justify-center">
-            <div className="bg-white rounded-lg">
+        <div className="">
+            <div className="bg-white rounded-lg w-[277px] md:w-[295px] xl:w-[408px] 2xl:w-[458px]">
                 <Image 
                     src={Updates?.image} 
                     alt={Updates?.name} 
-                    width={500} 
-                    height={500} 
-                    className="w-full  h-[250px] md:h-[250px] lg:h-[250px] object-cover rounded-lg md:w-[90%] lg:w-full"
+                    
+                    className="w-full h-[179px] md:h-[248px] object-cover rounded-lg "
                 />
-                <div className="p-4">
-                    <p className="font-bold lg:text-2xl text-xl">{Updates?.name}</p>
-                    <p className="text-sm text-[#4E4E4E] mt-2 lg:text-xl ">{Updates?.description}</p>
-                    <div className="flex gap-4">
+                <div className="pt-4 space-y-4">
+                    <p className="font-bold text-xl xl:text-2xl  ">{Updates?.name}</p>
+                    <p className="text-sm text-[#4E4E4E]  xl:text-xl  font-medium">{Updates?.description}</p>
+                    <div className="flex gap-4 font-medium">
                     <div className="flex gap-1 text-[#4E4E4E]">
                     <FaCalendarAlt className="mt-1 text-[#4E4E4E]"/>
                     <p>02 Jan, 2025</p>

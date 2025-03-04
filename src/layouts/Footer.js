@@ -4,9 +4,9 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <div className="bg-[#F0F7F6] py-[2.463rem]">
-      <div className='flex flex-col lg:flex-row justify-items-center gap-[3.375rem] lg:gap-[4.313re] justify-between items-center text-center lg:text-start lg:items-start lg:px-4 xl:px-[6.5rem]'>
+      <div className='w-11/12 container mx-auto flex flex-col lg:flex-row justify-items-center gap-[3.375rem] lg:gap-[4.313re] justify-between items-center text-center lg:text-start lg:items-start '>
         <div className="space-y-[9px] justify-items-center lg:justify-items-start">
-          <Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.png" width={100} height={100} priority={true} alt="NRC-logo"/>
+          <Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.svg" width={100} height={100} priority={true} alt="NRC-logo"/>
           <p className="">E-Ticketing App : Lagos - Ibadan</p>
           <div className="flex flex-row pt-[13px] gap-[0.875rem]">
           <Image className='w-[1.875rem] h-[1.875rem]' src="/icons/Facebook (1).svg" width={100} height={100} alt="Facebook-logo"/>

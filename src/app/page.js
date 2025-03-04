@@ -12,11 +12,10 @@ export default function Home() {
   return (
     <div>
    
-     <div className="relative">
-      <div>
+     <div className="lg:relative">
         <Hero />
-      </div>
-        <div className="w-full absolute -bottom-[22.5rem] md:-bottom-[22rem] lg:-bottom-20" >
+      
+        <div className="-mt-8 lg:-mt-0 w-full lg:absolute lg:-bottom-20 lg:z-50" >
           <Search/>
         </div>
      </div>
@@ -26,6 +25,7 @@ export default function Home() {
       <Changes/>
       <News/>
       <Companion/>
+      {/* w-full absolute -bottom-[22.5rem] md:-bottom-[22rem] lg:-bottom-20 z-50 */}
     </div>
   );
 }

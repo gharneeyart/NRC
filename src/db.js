@@ -120,3 +120,31 @@ export const Explores = [
         destination: '15k visitors daily',
     },
 ]
+
+import Imag from '/public/icons/Frame 1000003430.svg'
+import Img1 from '/public/icons/Frame 1000003430 (1).svg'
+import Img2 from '/public/icons/Frame 1000003430 (2).svg'
+export const Classes = [
+    {
+        id: 1,
+        image: Imag,
+        class: 'First Class',
+        price:'Adult - ₦6000 | Child - ₦4500',
+        reserves: 'Reserved - 18'
+        
+    },
+    {
+        id: 2,
+        image: Img1,
+        class: 'Business Class',
+        price:'Adult - ₦6000 | Child - ₦4500',
+        reserves: 'Reserved - 18'
+    },
+    {
+        id: 3,
+        image: Img2,
+        class: 'Standard Class',
+        price:'Adult - ₦6000 | Child - ₦4500',
+        reserves: 'Reserved - 18'
+    }
+]

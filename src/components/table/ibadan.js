@@ -13,12 +13,12 @@ export default function Ibadan(){
     </div>
       </div>
             
-        <table className=" px-6 lg:px-0">
+        <table className=" px-6 lg:px-0 w-full">
             <thead className="bg-[#F2FAF4] ">
                 <tr>
                     <th className=" py-3 px-4 font-semibold">NO</th>
                     <th className=" py-3 px-4 font-semibold">Code</th>
-                    <th className=" py-3 px-10 font-semibold text-left">Station Name</th>
+                    <th className=" py-3 text-center font-semibold ">Station Name</th>
                     <th className=" py-3 px-4 font-semibold">Arrival Time</th>
                     <th className=" py-3 px-4 font-semibold">Departure Time</th>
                     <th className=" py-3 px-4 font-semibold">Distance</th>

@@ -13,7 +13,7 @@ export default function HomePage() {
         </div>
           </div>
                 
-            <table className=" px-6 lg:px-0">
+            <table className=" px-6 lg:px-0 w-full">
                 <thead className="bg-[#F2FAF4] ">
                     <tr>
                         <th className=" py-3 px-4 font-semibold">NO</th>
@@ -26,13 +26,13 @@ export default function HomePage() {
                 </thead>
                 <tbody>
                     {Morning.map((morning, index) => (
-                        <tr key={morning.id} className="border border-gray-300 text-center ">
+                        <tr key={morning?.id} className="border border-gray-300 text-center ">
                             <td className="pb-6 pt-2">{index + 1}</td>
                             <td className="pb-6 pt-2">{morning?.code}</td>
                             <td className="pb-6 pt-2 text-[#263238] font-medium lg:px-12 text-[13px] lg:text-[18px] ">{morning?.name}</td>
                             <td className="pb-6 pt-2">{morning?.arrivalTime}</td>
                             <td className="pb-6 pt-2">{morning?.departureTime}</td>
-                            <td className="pb-6 pt-2">{morning?.distance || "N/A"}</td>
+                            <td className="pb-6 pt-2">{morning?.distance}</td>
                         </tr>
                     ))}
                 </tbody>

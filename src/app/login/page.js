@@ -22,7 +22,7 @@ const [showPassword, setShowPassword]= useState(false);
     setShowPassword(!showPassword)
   }
     return(
-        <div className="grid lg:grid-cols-2 container  lg:p-0 px-3 backg mx-auto lg:my-16">
+        <div className="grid lg:grid-cols-2 container  lg:p-0 px-3 backg mx-auto ">
  
              
      <div className="bg-white space-y-6   lg:mt-16 pt-8 lg:px-10   md:mx-12  ">
@@ -75,9 +75,9 @@ const [showPassword, setShowPassword]= useState(false);
             </div>
      
             
-            <div className="lg:w-[460px]  relative hidden lg:block">
+            <div className=" relative hidden lg:block">
                <div className="hidden lg:block">
-               <Image src={Train} alt='Old train in Thailand' className='w-full h-full object-cover'/>
+               <Image src={Train} alt='Old train in Thailand' width={500} className=' h-[60%] object-cover'/>
                </div>
                 <span className="absolute top-4 left-6">
                   <Image src={Logo} alt='' />

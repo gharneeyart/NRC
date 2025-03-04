@@ -148,3 +148,195 @@ export const Classes = [
         reserves: 'Reserved - 18'
     }
 ]
+    export const trainSchedule = [
+        {
+            id: 1,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 2,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 3,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 4,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 5,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 6,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 7,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 8,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 9,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+    ];
+    export const Schedule = [
+        {
+            id: 1,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 2,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 3,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 4,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 5,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 6,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 7,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 8,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 9,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+    ];
+    export const Morning =[
+        {
+            id: 1,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+        {
+            id: 2,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+        {
+            id: 3,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+        {
+            id: 4,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+        {
+            id: 5,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+    ] 
+    
+ 

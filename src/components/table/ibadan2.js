@@ -18,7 +18,7 @@ export default function HomePage() {
                     <tr>
                         <th className=" py-3 px-4 font-semibold">NO</th>
                         <th className=" py-3 px-4 font-semibold">Code</th>
-                        <th className=" py-3 px-10 font-semibold text-left">Station Name</th>
+                        <th className=" py-3 px-4 font-semibold text-left">Station Name</th>
                         <th className=" py-3 px-4 font-semibold">Arrival Time</th>
                         <th className=" py-3 px-4 font-semibold">Departure Time</th>
                         <th className=" py-3 px-4 font-semibold">Distance</th>
@@ -26,13 +26,13 @@ export default function HomePage() {
                 </thead>
                 <tbody>
                     {Morning.map((morning, index) => (
-                        <tr key={morning?.id} className="border border-gray-300 text-center ">
-                            <td className="pb-6 pt-2">{index + 1}</td>
-                            <td className="pb-6 pt-2">{morning?.code}</td>
-                            <td className="pb-6 pt-2 text-[#263238] font-medium lg:px-12 text-[13px] lg:text-[18px] ">{morning?.name}</td>
-                            <td className="pb-6 pt-2">{morning?.arrivalTime}</td>
-                            <td className="pb-6 pt-2">{morning?.departureTime}</td>
-                            <td className="pb-6 pt-2">{morning?.distance}</td>
+                        <tr key={morning?.id} className="border border-gray-300 text-start  font-medium text-[#263238] text-lg text-[22px]">
+                            <td className="pb-6 pt-2 pl-6">{index + 1}</td>
+                            <td className="pb-6 pt-2 pl-10">{morning?.code}</td>
+                            <td className="pb-6 pt-2 px-3  ">{morning?.name}</td>
+                            <td className="pb-6 pt-2 pl-12">{morning?.arrivalTime}</td>
+                            <td className="pb-6 pt-2 pl-12">{morning?.departureTime}</td>
+                            <td className="pb-6 pt-2 pl-8">{morning?.distance}</td>
                         </tr>
                     ))}
                 </tbody>

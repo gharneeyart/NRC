@@ -159,48 +159,48 @@ export const Classes = [
         },
         {
             id: 2,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
-            arrivalTime: '7:42',
-            departureTime: '7:47',
+            code: 'BRF',
+            name: 'Babatunde Raji Fashola Station Agege',
+            arrivalTime: '8:06',
+            departureTime: '8:09',
             distance: '20km'
         },
         {
             id: 3,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
-            arrivalTime: '7:42',
-            departureTime: '7:47',
+            code: 'LKJ',
+            name: 'Lateef Kayode Jakande Station Agbado',
+            arrivalTime: '8:21',
+            departureTime: '8:24',
             distance: '20km'
         },
         {
             id: 4,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
-            arrivalTime: '7:42',
-            departureTime: '7:47',
+            code: 'PYO',
+            name: 'Professor Yemi Oshinbajo Station Kajola',
+            arrivalTime: '8:42',
+            departureTime: '8:45',
             distance: '20km'
         },
         {
             id: 5,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
-            arrivalTime: '7:42',
-            departureTime: '7:47',
+            code: 'OFR',
+            name: 'Olu Funmilayo Ransome Kuti Papalanto',
+            arrivalTime: '17:07',
+            departureTime: '17:10',
             distance: '20km'
         },
         {
             id: 6,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
-            arrivalTime: '7:42',
-            departureTime: '7:47',
+            code: 'PWS',
+            name: 'Professor Wole Soyinka Station Abeokuta',
+            arrivalTime: '17:31',
+            departureTime: '17:36',
             distance: '20km'
         },
         {
             id: 7,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'AOO',
+            name: 'Aremo Olusegun Osoba Olodo',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
@@ -215,108 +215,109 @@ export const Classes = [
         },
         {
             id: 9,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'OA',
+            name: 'Obafemi Awolowo station',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
-        },
-    ];
+        }
+    ]
+
     export const Schedule = [
         {
             id: 1,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'OA',
+            name: 'Obafemi Awolowo station',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
         {
             id: 2,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'LA',
+            name: 'Ladoke Akintola Station Omi-Adio',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
         {
             id: 3,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'AO',
+            name: 'Aremo Olusegun Osoba Olodo',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
         {
             id: 4,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'PWS',
+            name: 'Professor Wole Soyinka Station Abeokuta',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
         {
             id: 5,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'OFR',
+            name: 'Olu Funmilayo Ransome Kuti Papalanto',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
         {
             id: 6,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'PYO',
+            name: 'Professor Yemi Oshinbajo Station Kajola',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
         {
             id: 7,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'AOO',
+            name: 'Aremo Olusegun Osoba Olodo',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
         {
             id: 8,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'LA',
+            name: 'Ladoke Akintola Station Omi-Adio',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
         {
             id: 9,
+            code: 'OA',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        }
+    ]
+    export const Morning = [
+        {
+            id: 1,
             code: 'MJS',
             name: 'Mobolaji Johnson Station Ebute Metta',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
         },
-    ];
-    export const Morning =[
-        {
-            id: 1,
-            code: 'OO',
-            name: 'Obafemi Awolowo Station Moniya',
-            arrivalTime: '10:47',
-            departureTime: '10:50',
-            distance: '20km'
-        },
         {
             id: 2,
-            code: 'OO',
-            name: 'Obafemi Awolowo Station Moniya',
+            code: 'LA',
+            name: 'Ladoke Akintola Station Omi-Adio',
             arrivalTime: '10:47',
             departureTime: '10:50',
             distance: '20km'
         },
         {
             id: 3,
-            code: 'OO',
-            name: 'Obafemi Awolowo Station Moniya',
+            code: 'PWS',
+            name: 'Professor Wole Soyinka Station Abeokuta',
             arrivalTime: '10:47',
             departureTime: '10:50',
             distance: '20km'
@@ -324,19 +325,18 @@ export const Classes = [
         {
             id: 4,
             code: 'OO',
-            name: 'Obafemi Awolowo Station Moniya',
+            name: 'Babatunde Raji Fashola Station Agege',
             arrivalTime: '10:47',
             departureTime: '10:50',
             distance: '20km'
         },
         {
             id: 5,
-            code: 'OO',
-            name: 'Obafemi Awolowo Station Moniya',
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
             arrivalTime: '10:47',
             departureTime: '10:50',
             distance: '20km'
-        },
-    ] 
+        }
+    ];
     
- 

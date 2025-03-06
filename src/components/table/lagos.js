@@ -27,13 +27,13 @@ export default function Lagos(){
             </thead>
             <tbody>
                 {trainSchedule.map((schedule, index) => (
-                    <tr key={schedule.id} className="border border-gray-300 text-center ">
-                        <td className="pb-6 pt-2">{index + 1}</td>
-                        <td className="pb-6 pt-2">{schedule?.code}</td>
-                        <td className="pb-6 pt-2 text-[#263238] font-medium lg:px-12 text-[13px] lg:text-[18px] ">{schedule?.name}</td>
-                        <td className="pb-6 pt-2">{schedule?.arrivalTime}</td>
-                        <td className="pb-6 pt-2">{schedule?.departureTime}</td>
-                        <td className="pb-6 pt-2">{schedule?.distance}</td>
+                    <tr key={schedule.id} className="border border-gray-300 text-start  text-[#263238] font-medium text-lg text-[22px] ">
+                        <td className="pb-6 pt-2 pl-6">{index + 1}</td>
+                        <td className="pb-6 pt-2 pl-10">{schedule?.code}</td>
+                        <td className="pb-6 pt-2 px-3 ">{schedule?.name}</td>
+                        <td className="pb-6 pt-2  pl-12">{schedule?.arrivalTime}</td>
+                        <td className="pb-6 pt-2  pl-12">{schedule?.departureTime}</td>
+                        <td className="pb-6 pt-2  pl-8">{schedule?.distance}</td>
                     </tr>
                 ))}
             </tbody>

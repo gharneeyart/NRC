@@ -1,4 +1,7 @@
 'use client'
+
+import CustomDatePicker from "../home/date"
+
 export default function SearchTrain({w, bg, btnBg, rounded, inputBg, gap, inputBorder, inputPy, inputPadding, inputText, btnText, content1, content2, content3, inputW, btnWidth, py}) {
     return(
         <div>

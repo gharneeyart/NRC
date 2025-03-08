@@ -1,5 +1,6 @@
 import Map from "@/components/contact/map";
 import CustomDatePicker from "@/components/home/date";
+import Modal from "@/components/payment/modal";
 import SearchTrain from "@/components/reusables/search";
 
 export default function Book() {
@@ -21,8 +22,8 @@ export default function Book() {
         inputW='w-full lg:w-[25%]  xl:w-[20%] lg:mr-14'
         py='py-6 lg:py-8 xl:py-8'
       />
-      <Map/>
       <CustomDatePicker/>
+      <Modal/>
     </div>
   );
 }

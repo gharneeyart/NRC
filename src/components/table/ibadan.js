@@ -1,0 +1,43 @@
+import { Schedule } from "@/db"
+
+export default function Ibadan(){
+    return(
+        <div className="">
+            
+      <div className="py-4   pr-10 ">
+      <h1 className="text-2xl font-semibold ">Ibadan - Lagos Mornin Train (IL2)</h1>
+                <div className="space-x-5">
+        <span className=" border-r-2 border-[#263238] pr-2">Train Type - <b>100 KM</b></span>
+        <span className=" border-r-2 border-[#263238] pr-2">Total Time - <b>2 hrs, 33 mins</b></span>
+        <span>Total Distance - <b>180 KM</b></span>
+    </div>
+      </div>
+            
+        <table className=" px-6 lg:px-0 w-full">
+            <thead className="bg-[#F2FAF4] ">
+                <tr>
+                    <th className=" py-3 px-4 font-semibold">NO</th>
+                    <th className=" py-3 px-4 font-semibold">Code</th>
+                    <th className=" py-3 px-4 text-left font-semibold">Station Name</th>
+                    <th className=" py-3 px-4 font-semibold">Arrival Time</th>
+                    <th className=" py-3 px-4 font-semibold">Departure Time</th>
+                    <th className=" py-3 px-4 font-semibold">Distance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {Schedule.map((item, index) => (
+                    <tr key={item.id} className="border border-gray-300 text-start font-medium  text-[#263238] text-lg text-[22px] ">
+                        <td className="pb-6 pt-2 pl-6">{index + 1}</td>
+                        <td className="pb-6 pt-2 pl-10">{item.code}</td>
+                        <td className="pb-6 pt-2 px-3   ">{item.name}</td>
+                        <td className="pb-6 pt-2 pl-12">{item.arrivalTime}</td>
+                        <td className="pb-6 pt-2 pl-12">{item.departureTime}</td>
+                        <td className="pb-6 pt-2 pl-8">{item.distance || "N/A"}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    </div>
+
+    )
+}

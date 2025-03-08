@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image"
-
 import Train from '/public/images/138 1 (1).png'
 import Logo from '/public/icons/image 3.png'
 import { MdOutlineRemoveRedEye } from "react-icons/md"
@@ -14,33 +13,27 @@ export default function Login(){
      handleSubmit,
      reset,
       formState: { errors } } = useForm();
-
-
   const onSubmit = (data) => {
     reset()
-  
     console.log(data);
   }
-
-      
-  
-  const [showPassword, setShowPassword]= useState(false);
+const [showPassword, setShowPassword]= useState(false);
   const handleTogglePassword = () => {
     setShowPassword(!showPassword)
   }
     return(
-        <div className="lg:flex w-full lg:justify-center ">
-          {/* <div className="">
-          <Image  src={Train} alt='Old train in Thailand' className='w-full  block lg:hidden'/>
-          </div> */}
-            <div className="w-full lg:w-[600px] flex flex-col justify-center backg h-screen">
-            <div className="w-[334px] lg:w-[450px] h-[550px] lg:h-[380px]  rounded-md bg-white space-y-6 mx-auto">
-              <div className="w-[250px] pl-4 pt-6 lg:pt-0 lg:pl-0">
-              <h1 className=" text-3xl  font-semibold">Welcome Back</h1>
-              <p className="text-[#3F3F3F] text-[16px] ">sign in to continue</p>
-              </div>
+        <div className="grid lg:grid-cols-2  lg:p-0 px-3 backg ">
+ 
+             
+     <div className="bg-white space-y-6   lg:mt-16 pt-8 lg:px-10   md:mx-12  ">
+            
+            <div className="pl-10 lg:pl-0">
+            <h1 className=" text-3xl  font-semibold">Welcome Back</h1>
+            <p className="text-[#3F3F3F] text-[16px] ">sign in to continue</p>
+            </div>
+              
                 <form onSubmit={handleSubmit(onSubmit)}
-                 className="flex flex-col gap-4 w-[300px] lg:w-full mx-auto ">
+                 className="flex flex-col lg:mx-0 gap-4 mx-8 lg:w-full py-8 lg:py-0   ">
                 <div className="flex flex-col rounded-md">
                 <label htmlFor='' className="font-medium">Email Address</label>
                 <input
@@ -75,15 +68,16 @@ export default function Login(){
                   <a className='text-right text-[#006B14]'href="#">Forgot Password?</a>
 
                     <button className="bg-[#18A532] text-white p-[8px] rounded-md" type="submit">Sign up</button>
-                    <p className="text-center">Don't have an account? <a href="#" className="text-[#006B14]">Sign up</a></p>
+                    <p className="text-center pb-20 lg:pb-0">Don't have an account? <a href="#" className="text-[#006B14]">Sign up</a></p>
   
                   
                 </form>
             </div>
-            </div>
-            <div className="w-full lg:w-[450px]  relative hidden lg:block">
+     
+            
+            <div className=" relative hidden lg:block">
                <div className="hidden lg:block">
-               <Image src={Train} alt='Old train in Thailand' className='w-full h-full object-cover'/>
+               <Image src={Train} alt='Old train in Thailand' width={500} className=' h-full object-cover'/>
                </div>
                 <span className="absolute top-4 left-6">
                   <Image src={Logo} alt='' />

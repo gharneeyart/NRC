@@ -120,3 +120,223 @@ export const Explores = [
         destination: '15k visitors daily',
     },
 ]
+
+import Imag from '/public/icons/Frame 1000003430.svg'
+import Img1 from '/public/icons/Frame 1000003430 (1).svg'
+import Img2 from '/public/icons/Frame 1000003430 (2).svg'
+export const Classes = [
+    {
+        id: 1,
+        image: Imag,
+        class: 'First Class',
+        price:'Adult - ₦6000 | Child - ₦4500',
+        reserves: 'Reserved - 18'
+        
+    },
+    {
+        id: 2,
+        image: Img1,
+        class: 'Business Class',
+        price:'Adult - ₦6000 | Child - ₦4500',
+        reserves: 'Reserved - 18'
+    },
+    {
+        id: 3,
+        image: Img2,
+        class: 'Standard Class',
+        price:'Adult - ₦6000 | Child - ₦4500',
+        reserves: 'Reserved - 18'
+    }
+]
+    export const trainSchedule = [
+        {
+            id: 1,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 2,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 3,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 4,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 5,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 6,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 7,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 8,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 9,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+    ];
+    export const Schedule = [
+        {
+            id: 1,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 2,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 3,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 4,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 5,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 6,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 7,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 8,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+        {
+            id: 9,
+            code: 'MJS',
+            name: 'Mobolaji Johnson Station Ebute Metta',
+            arrivalTime: '7:42',
+            departureTime: '7:47',
+            distance: '20km'
+        },
+    ];
+    export const Morning =[
+        {
+            id: 1,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+        {
+            id: 2,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+        {
+            id: 3,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+        {
+            id: 4,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+        {
+            id: 5,
+            code: 'OO',
+            name: 'Obafemi Awolowo Station Moniya',
+            arrivalTime: '10:47',
+            departureTime: '10:50',
+            distance: '20km'
+        },
+    ] 
+    
+ 

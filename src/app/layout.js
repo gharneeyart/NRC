@@ -3,8 +3,7 @@ import Nav from "@/layouts/Nav";
 import "./globals.css";
 import Footer from "@/layouts/Footer";
 import { usePathname } from "next/navigation";
-
-
+import { ModalProvider } from "@/context/modalContext";
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -17,13 +16,13 @@ export default function RootLayout({ children }) {
   const hideNavandFooter = pathname === '/auth/login' || pathname === '/auth/signup' || pathname === '/auth/forgotpassword' || pathname === '/not-found';
   return (
     <html lang="en">
-      <body
-       
-      >
+  
+      <body>
+        <ModalProvider>
         {!hideNavandFooter && <Nav/>}
         {children}
         {!hideNavandFooter && <Footer/>}
-        
+        </ModalProvider>
       </body>
     </html>
   );

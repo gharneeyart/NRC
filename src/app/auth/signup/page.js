@@ -1,45 +1,52 @@
-'use client'
-import Image from "next/image"
-import { useState } from "react"
-import Train from '/public/images/train.png'
-import { useForm } from "react-hook-form"
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import Train from "/public/images/train.png";
+import { useForm } from "react-hook-form";
 import { BiHide } from "react-icons/bi";
 import { BiShow } from "react-icons/bi";
+import Logo from '/public/images/Logo.png'
+import Link from "next/link";
 
 export default function SignUp() {
-     const { register, handleSubmit, reset, watch,  formState: { errors } } = useForm({mode: 'onChange'});
-     const onSubmit = (data) => {
-          alert("Signup successful!");
-          console.log(data)
-          reset();
-     }
-     const [showPassword, setShowPassword] = useState(false)
-     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-     const [gender, showGender] = useState(false)
-     const [identification, showIdentification] = useState(false)
-     const [selectedGender, setSelectedGender] = useState("")
-     const [selectedIdentification, setSelectedIdentification] = useState("");
-
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
+  const onSubmit = (data) => {
+    alert("Signup successful!");
+    console.log(data);
+    reset();
+  };
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [gender, showGender] = useState(false);
+  const [identification, showIdentification] = useState(false);
+  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedIdentification, setSelectedIdentification] = useState("");
 
   const togglePasswordVisibilityOne = () => {
-     setShowPassword(!showPassword)
- }
+    setShowPassword(!showPassword);
+  };
 
- const togglePasswordVisibilityTwo = () => {
-     setShowConfirmPassword(!showConfirmPassword)
- }
+  const togglePasswordVisibilityTwo = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
 
- const genderDropDown = () => {
-     showGender(true)
- }
+  const genderDropDown = () => {
+    showGender(true);
+  };
 
- const idDropDown = () =>{
-     showIdentification(true)
- }
+  const idDropDown = () => {
+    showIdentification(true);
+  };
 
     return(
-        <div className="grid grid-cols-1 lg:grid-cols-2 backgd px-3 lg:p-0 max-w-[1700px] mx-auto">
-           <div className=" p-3 md:px-10 md:py-14 lg:p-14 bg-white rounded-md shadow-md lg:rounded-none lg:shadow-none mt-3 lg:mt-0 mb-10 lg:mb-0">
+        <div className=" flex w-full backg px-5 lg:px-0 ">
+           <div className="lg:w-1/2 p-3 md:px-10 md:py-14 lg:p-0 bg-white rounded-md shadow-md lg:rounded-none lg:shadow-none mt-3 lg:mt-0 mb-10 lg:mb-0">
                 <h1 className="font-bold text-xl">Welcome to NRC</h1>
                 <p className="text-[14px] text-[#3F3F3F]">Fill the information below to create a new account</p>
                 <form onSubmit={handleSubmit(onSubmit)} className="py-5 text-[14px] flex flex-col gap-6 ">
@@ -162,11 +169,12 @@ export default function SignUp() {
                      </div>
                      {errors.terms && <span className="text-red-500 text-[12px]">{errors.terms.message}</span>}
                      <button className="bg-[#18A532] w-full text-white py-2 rounded-md shadow-sm">Sign Up</button>
-                     <p className="text-center ">Already have an account? <span className="text-[#18A532]">Sign in</span></p>
+                     <p className="text-center ">Already have an account? <Link href='/auth/login'><span className="text-[#18A532]">Sign in</span></Link></p>
                 </form>
            </div>
-           <div>
-               <Image src={Train} alt="signup"  className="h-[90%] w-full hidden lg:block"/>
+           <div className="relative h-screen lg:w-1/2">
+               <Image src={Train} alt="signup"  className="h-full w-full hidden lg:block"/>
+               <Link href='/' ><Image src={Logo} alt='Logo' className="absolute top-5 left-6 hidden lg:block" /></Link>
            </div>
         </div>
     )

@@ -5,7 +5,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { format } from "date-fns";
 import { CiCalendarDate } from "react-icons/ci";
 
-export default function CustomDatePicker({ onChange }){
+export default function CustomDatePicker({ onChange, paddingY, textwrap, backgroundCol, text, focusColor }){
   const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateSelection = (date) => {
@@ -15,9 +15,9 @@ export default function CustomDatePicker({ onChange }){
 
   return (
     <Popover className="relative">
-      <Popover.Button className="flex items-center gap-3 px-4 py-2 border rounded-lg shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <Popover.Button className={`flex items-center ${text} gap-3 px-4 ${paddingY} border rounded-lg shadow-sm ${backgroundCol} focus:outline-none focus:ring-1 ${focusColor}`}>
         {selectedDate ? format(selectedDate, "yyyy-MM-dd") : "Select a date"}
-        <CiCalendarDate className="w-5 h-5 text-gray-500 ml-2"  />
+        <CiCalendarDate className={`w-5 h-5 ${textwrap} ml-2`}  />
       </Popover.Button>
 
       <Transition

@@ -1,5 +1,7 @@
 'use client'
+import Modal from "../payment/modal"
 export default function Search() {
+
     return(
         <div>
            <form className="flex flex-col lg:flex-row gap-8 items-end pt-6 pb-6 lg:pt-8 lg:pb-12 xl:pt-10 xl:pb-14 rounded-xl lg:rounded-md justify-between px-3 md:px-8 lg:px-10 w-[90%] mx-auto bg-white shadow-xl container">

@@ -45,8 +45,8 @@ export default function SignUp() {
   };
 
     return(
-        <div className="grid grid-cols-1 lg:grid-cols-2 backgd px-3 lg:p-0 max-w-[1700px] mx-auto">
-           <div className=" p-3 md:px-10 md:py-14 lg:p-14 bg-white rounded-md shadow-md lg:rounded-none lg:shadow-none mt-3 lg:mt-0 mb-10 lg:mb-0">
+        <div className="w-11/12 grid grid-cols-1 lg:grid-cols-2 lg:gap-14 backg px-5 lg:p-0 container mx-auto">
+           <div className=" p-3 md:px-10 md:py-14 lg:p-0 bg-white rounded-md shadow-md lg:rounded-none lg:shadow-none mt-3 lg:mt-0 mb-10 lg:mb-0">
                 <h1 className="font-bold text-xl">Welcome to NRC</h1>
                 <p className="text-[14px] text-[#3F3F3F]">Fill the information below to create a new account</p>
                 <form onSubmit={handleSubmit(onSubmit)} className="py-5 text-[14px] flex flex-col gap-6 ">
@@ -169,12 +169,12 @@ export default function SignUp() {
                      </div>
                      {errors.terms && <span className="text-red-500 text-[12px]">{errors.terms.message}</span>}
                      <button className="bg-[#18A532] w-full text-white py-2 rounded-md shadow-sm">Sign Up</button>
-                     <p className="text-center ">Already have an account? <span className="text-[#18A532]">Sign in</span></p>
+                     <p className="text-center ">Already have an account? <Link href='/login'><span className="text-[#18A532]">Sign in</span></Link></p>
                 </form>
            </div>
            <div className="relative">
                <Image src={Train} alt="signup"  className="h-[90%] w-full hidden lg:block"/>
-               <Link href='/' ><Image src={Logo} alt='Logo' className="absolute top-5 left-6" /></Link>
+               <Link href='/' ><Image src={Logo} alt='Logo' className="absolute top-5 left-6 hidden lg:block" /></Link>
            </div>
         </div>
     )

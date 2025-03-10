@@ -1,9 +1,7 @@
-
 import Nav from "@/layouts/Nav";
 import "./globals.css";
 import Footer from "@/layouts/Footer";
-
-
+import { ModalProvider } from "@/context/modalContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,12 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-       
-      >
-        <Nav/>
-        {children}
-        <Footer/>
+      <body>
+        <ModalProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   );

@@ -1,5 +1,14 @@
+'use client'
 import Image from "next/image"
+import Link from "next/link"
+import { useSearchStore } from "@/store/useSearchStore"
 export default function ClassCard({myBookings}) {
+    const { setSelectedClass } = useSearchStore()
+
+    const handleSelectClass = () => {
+      // Set the selected class when the user clicks "Book Now"
+      setSelectedClass(myBookings?.class)
+    }
     return(
         <div className="xl:w-[360px] w-[260px] md:w-[260px] mx-auto  ">
             <div className=" text-center flex flex-col gap-[16px]  rounded-xl shadow border px-6 py-8  " >
@@ -11,7 +20,13 @@ export default function ClassCard({myBookings}) {
                 <p className="font-medium text-[15px]  xl:text-[22px]"> {myBookings?.price}</p>
                 <p className="font-medium  text-[15px] xl:text-[22px] text-[#767676]">{myBookings?.reserves}</p>
                 </div>
-                <button className="py-2  xl:w-full rounded-md border  border-[#18A532] text-[#18A532]">Book Now</button>
+                <Link 
+                    href="/bookaseat" 
+                    onClick={handleSelectClass}
+                    className="py-2 xl:w-full rounded-md border border-[#18A532] text-[#18A532]"
+                    >
+                    Book Now
+                </Link>
             </div>
         </div>
     )

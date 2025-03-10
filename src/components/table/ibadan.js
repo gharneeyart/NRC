@@ -18,7 +18,7 @@ export default function Ibadan(){
                 <tr>
                     <th className=" py-3 px-4 font-semibold">NO</th>
                     <th className=" py-3 px-4 font-semibold">Code</th>
-                    <th className=" py-3 text-center font-semibold ">Station Name</th>
+                    <th className=" py-3 px-4 text-left font-semibold">Station Name</th>
                     <th className=" py-3 px-4 font-semibold">Arrival Time</th>
                     <th className=" py-3 px-4 font-semibold">Departure Time</th>
                     <th className=" py-3 px-4 font-semibold">Distance</th>
@@ -26,13 +26,13 @@ export default function Ibadan(){
             </thead>
             <tbody>
                 {Schedule.map((item, index) => (
-                    <tr key={item.id} className="border border-gray-300 text-center ">
-                        <td className="pb-6 pt-2">{index + 1}</td>
-                        <td className="pb-6 pt-2">{item.code}</td>
-                        <td className="pb-6 pt-2 text-[#263238] font-medium lg:px-12 text-[13px] lg:text-[18px] ">{item.name}</td>
-                        <td className="pb-6 pt-2">{item.arrivalTime}</td>
-                        <td className="pb-6 pt-2">{item.departureTime}</td>
-                        <td className="pb-6 pt-2">{item.distance || "N/A"}</td>
+                    <tr key={item.id} className="border border-gray-300 text-start font-medium  text-[#263238] text-lg text-[22px] ">
+                        <td className="pb-6 pt-2 pl-6">{index + 1}</td>
+                        <td className="pb-6 pt-2 pl-10">{item.code}</td>
+                        <td className="pb-6 pt-2 px-3   ">{item.name}</td>
+                        <td className="pb-6 pt-2 pl-12">{item.arrivalTime}</td>
+                        <td className="pb-6 pt-2 pl-12">{item.departureTime}</td>
+                        <td className="pb-6 pt-2 pl-8">{item.distance || "N/A"}</td>
                     </tr>
                 ))}
             </tbody>

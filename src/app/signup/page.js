@@ -1,41 +1,48 @@
-'use client'
-import Image from "next/image"
-import { useState } from "react"
-import Train from '/public/images/train.png'
-import { useForm } from "react-hook-form"
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import Train from "/public/images/train.png";
+import { useForm } from "react-hook-form";
 import { BiHide } from "react-icons/bi";
 import { BiShow } from "react-icons/bi";
+import Logo from '/public/images/Logo.png'
+import Link from "next/link";
 
 export default function SignUp() {
-     const { register, handleSubmit, reset, watch,  formState: { errors } } = useForm({mode: 'onChange'});
-     const onSubmit = (data) => {
-          alert("Signup successful!");
-          console.log(data)
-          reset();
-     }
-     const [showPassword, setShowPassword] = useState(false)
-     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-     const [gender, showGender] = useState(false)
-     const [identification, showIdentification] = useState(false)
-     const [selectedGender, setSelectedGender] = useState("")
-     const [selectedIdentification, setSelectedIdentification] = useState("");
-
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
+  const onSubmit = (data) => {
+    alert("Signup successful!");
+    console.log(data);
+    reset();
+  };
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [gender, showGender] = useState(false);
+  const [identification, showIdentification] = useState(false);
+  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedIdentification, setSelectedIdentification] = useState("");
 
   const togglePasswordVisibilityOne = () => {
-     setShowPassword(!showPassword)
- }
+    setShowPassword(!showPassword);
+  };
 
- const togglePasswordVisibilityTwo = () => {
-     setShowConfirmPassword(!showConfirmPassword)
- }
+  const togglePasswordVisibilityTwo = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
 
- const genderDropDown = () => {
-     showGender(true)
- }
+  const genderDropDown = () => {
+    showGender(true);
+  };
 
- const idDropDown = () =>{
-     showIdentification(true)
- }
+  const idDropDown = () => {
+    showIdentification(true);
+  };
 
     return(
         <div className="grid grid-cols-1 lg:grid-cols-2 backgd px-3 lg:p-0 max-w-[1700px] mx-auto">
@@ -165,8 +172,9 @@ export default function SignUp() {
                      <p className="text-center ">Already have an account? <span className="text-[#18A532]">Sign in</span></p>
                 </form>
            </div>
-           <div>
+           <div className="relative">
                <Image src={Train} alt="signup"  className="h-[90%] w-full hidden lg:block"/>
+               <Link href='/' ><Image src={Logo} alt='Logo' className="absolute top-5 left-6" /></Link>
            </div>
         </div>
     )

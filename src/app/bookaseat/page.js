@@ -30,7 +30,7 @@ export default function Book() {
                                     <Hours/>
                                 </div>
                                 
-                                <h1 className="font-bold text-3xl mb-5 lg:ml-12 ml-5">Book a Seat</h1>
+                                <h1 className="font-bold text-3xl mb-5  ">Book a Seat</h1>
         <div className="   py-9 lg:border rounded-lg shadow lg:shadow-none lg:px-[66px] px-3 mb-12 text-[#263238]">
             <div className="text-[#263238]"> <Search /></div>
             <hr className="mb-7"/>

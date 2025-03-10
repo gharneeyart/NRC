@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 
+.slick-slide > div {
+  margin: 0 12px; /* Half of 24px to apply spacing on both sides */
+}
+
+.slick-list {
+  margin: 0 -12px; /* Negative margin to offset the spacing */
+}
 
 .about-hero{
   background-image: url("/images/Old\ western\ train\ tracks.png");

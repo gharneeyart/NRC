@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ContactDetails() {
     return(
         <div>
@@ -16,7 +18,7 @@ export default function ContactDetails() {
             </div>
             <hr className="mb-8"/>
             <div className="lg:flex gap-12 w-full ">
-                <button className="bg-[#18A532] text-white lg:w-[30%] w-full rounded-lg py-3 mb-5 lg:mb-0 placeholder-[#263238]">Proceed</button>
+                <Link href='/paymentpart' className="bg-[#18A532] text-white lg:w-[30%] w-full rounded-lg py-3 mb-5 lg:mb-0 placeholder-[#263238] text-center">Proceed</Link>
                 <button className="border border-[#18A532] text-[#18A532] lg:w-[30%] w-full rounded-lg py-3 placeholder-[#263238]"> Cancel</button>
             </div>
             

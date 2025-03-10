@@ -32,33 +32,33 @@ export const Discover =[
         description: 'Everything you need for a pleasant and convenient travel experience',
     }]
 
-    import Eclipse from '/public/images/Ellipse 2021.svg'
-    import Eclipse2 from '/public/images/Ellipse 2021 (1).svg'
-    import Eclipse3 from '/public/images/Ellipse 2021 (2).svg'
+    // import Eclipse from '/public/images/Ellipse 2021.svg'
+    // import Eclipse2 from '/public/images/Ellipse 2021 (1).svg'
+    // import Eclipse3 from '/public/images/Ellipse 2021 (2).svg'
   
 
-    export const Testimonials  = [
-    {
-        id: 1,
-        description: 'I love how simple it is to book my train tickets. No long queues, just a few clicks, and I’m set. Traveling from Lagos to Abuja has never been this easy',
-        image: Eclipse,
-        name: 'Benji Ibeawuchi'
+//     export const Testimonials  = [
+//     {
+//         id: 1,
+//         description: 'I love how simple it is to book my train tickets. No long queues, just a few clicks, and I’m set. Traveling from Lagos to Abuja has never been this easy',
+//         image: Eclipse,
+//         name: 'Benji Ibeawuchi'
 
-    },
-    {
-        id: 2,
-        description: 'The First-Class coach was super comfortable, and the train departed on time. I appreciate the real-time updates on the website. Definitely the best.',
-        image: Eclipse2,
-        name: 'Chimaobi Aisha'
+//     },
+//     {
+//         id: 2,
+//         description: 'The First-Class coach was super comfortable, and the train departed on time. I appreciate the real-time updates on the website. Definitely the best.',
+//         image: Eclipse2,
+//         name: 'Chimaobi Aisha'
         
-    },
-    {
-        id: 3,
-        description: 'I had an issue with my payment, but the support team resolved it quickly. I highly recommend NRC Train Booking for a stress-free experience!',
-        image: Eclipse3,
-        name: 'Kemi Olufemi'
-    },
-]
+//     },
+//     {
+//         id: 3,
+//         description: 'I had an issue with my payment, but the support team resolved it quickly. I highly recommend NRC Train Booking for a stress-free experience!',
+//         image: Eclipse3,
+//         name: 'Kemi Olufemi'
+//     },
+// ]
 import Image1 from '/public/images/image 16.png'
 import Image2 from '/public/images/image.png'
 

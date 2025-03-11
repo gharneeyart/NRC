@@ -3,6 +3,7 @@ import Testimonial from "@/components/about/testimonials";
 import Mission from "@/components/about/mission"
 import ResuableHero from "@/components/reusables/hero";
 import Services from "@/components/reusables/services";
+import Companion from "@/components/reusables/railCompanion";
 
 export default function About() {
     return(
@@ -16,6 +17,7 @@ export default function About() {
             <Services/>
             <Testimonial/>
             <Mission />
+            <Companion/>
         </div>
          
    

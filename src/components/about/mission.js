@@ -49,7 +49,7 @@ import train from "/public/images/Old train in thailand.svg";
 export default function Mission() {
   return (
     <div className="text-black w-full flex items-center mt-12 lg:[90%]">
-      <div className="flex flex-col lg:flex-row justify-center mx-auto lg:justify-between 2xl:justify-between w-11/12 ">
+      <div className="flex flex-col lg:flex-row justify-center mx-auto lg:justify-between 2xl:justify-between w-11/12 container">
         {/* Left Section - Image */}
         <div className="2xl:w-full lg:w-[46%] flex justify-center md:justify-start lg:justify-start">
           <div className="w-[330px] h-[330px] lg:w-[508px] lg:h-[508px] 2xl:w-[600px] 2xl:h-[600px] rounded-lg">

@@ -207,8 +207,8 @@ export const Classes = [
         },
         {
             id: 8,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'LA',
+            name: 'Ladoke Akintola Station Omi-Adio',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
@@ -216,7 +216,7 @@ export const Classes = [
         {
             id: 9,
             code: 'OA',
-            name: 'Obafemi Awolowo station',
+            name: 'Obafemi Awolowo station Moniya',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'

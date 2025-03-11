@@ -1,5 +1,7 @@
 "use client";
+import { useSearchStore } from "@/store/useSearchStore";
 const Search = () => {
+  const { selectedClass} = useSearchStore()
   return (
     
     <div className="mb-11">
@@ -10,7 +12,7 @@ const Search = () => {
           <div className="w-full">
             <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Class</label>
             <select defaultValue="" className="border px-5 py-3 rounded-lg mt-3 mb-3 lg:mb-0 w-full h-12 text-[#848484]  ">
-              <option value="" disabled className="text-[#848484]">Select Class</option>
+              <option value="" disabled className="text-[#848484]">{selectedClass}</option>
               <option value="business">Business Class</option>
               <option value="economy">Standard Class</option>
               <option value="first">First Class</option>

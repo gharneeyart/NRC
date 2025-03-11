@@ -68,21 +68,22 @@ export default function Count() {
             <div className="w-9/12 md:w-10/12 container mx-auto text-white flex flex-col md:flex-row lg:flex-row py-10 gap-4 justify-between">
             <div className="flex lg:flex-row flex-col items-center gap-[14px] ">
                 <div className="flex items-center">
-                <span ref={odometerRefs.customers} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.customers}</span><h1 className="font-bold lg:text-[54px] text-[36px] ">k+</h1>
+                <span ref={odometerRefs.customers} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.customers}</span><span className="font-bold lg:text-[54px] text-[36px] mb-2">k+</span>
                 </div>
                <p className="flex flex-row lg:flex-col font-medium gap-[2px] text-left w-28"><span>Happy</span>Customers</p>
              
             </div>
             <div className="flex lg:flex-row flex-col items-center gap-[14px] ">
-            <div className="flex items-center">
-                <span ref={odometerRefs.covered} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.covered}</span><h1 className="font-bold lg:text-[54px] text-[36px] ">+</h1>
+            <div className="flex items-center justify-center">
+                <span ref={odometerRefs.covered} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.covered}</span>
+                <h1 className="font-bold lg:text-[54px] text-[36px] mb-2">+</h1>
                 </div>
             <p className="flex flex-row lg:flex-col  font-medium  gap-[2px]  text-left w-28"><span>Routes </span>Covered</p>
            
             </div>
             <div  className="flex lg:flex-row flex-col items-center gap-[14px]">
             <div className="flex items-center">
-                <span ref={odometerRefs.routes} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.routes}</span><h1 className="font-bold lg:text-[54px] text-[36px] ">k+</h1>
+                <span ref={odometerRefs.routes} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.routes}</span><h1 className="font-bold lg:text-[54px] text-[36px] mb-2">+</h1>
                 </div>
             <p className="flex flex-row  lg:flex-col font-medium  gap-[2px]  text-left w-28"><span>Routes </span>Covered</p>
            

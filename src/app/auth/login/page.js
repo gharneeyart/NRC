@@ -25,7 +25,7 @@ export default function Login() {
   };
   return (
     <div className="w-full flex  lg:p-0 backg px-3 lg:px-0 items-center justify-center h-screen lg:h-full">
-      <div className="bg-white space-y-4 my-6 pt-6 pb-20 md:pt-8 md:pb-8 px-4 md:px-8 rounded-lg lg:my-16 w-full  lg:w-1/2 lg:px-20">
+      <div className="bg-white space-y-4 my-6 lg:my-0 pt-6 pb-20 md:pt-8 md:pb-8 px-4 md:px-8 rounded-lg lg:rounded-none  w-full  lg:w-1/2 lg:px-20">
         <div className="flex flex-col gap-1">
           <h1 className=" text-xl lg:text-[34px] font-bold">Welcome Back</h1>
           <p className="text-[#3F3F3F] text-base lg:text-lg  ">sign in to continue</p>
@@ -83,7 +83,7 @@ export default function Login() {
           </Link>
 
           <button
-            className="bg-[#18A532] text-white py-4 rounded-md text-lg"
+            className="bg-[#18A532] text-white py-3 rounded-md text-lg"
             type="submit"
           >
             Sign In
@@ -98,7 +98,7 @@ export default function Login() {
       </div>
 
       <div className="relative hidden lg:block  h-screen lg:w-1/2">
-               <Image src={Train} alt="login"  className="h-full  w-full hidden lg:block"/>
+               <Image src={Train} alt="login"  className="h-full  w-full hidden lg:block object-cover"/>
                <Link href='/' ><Image src={Logo} alt='Logo' className="absolute top-5 left-6 hidden lg:block" /></Link>
       </div>
     </div>

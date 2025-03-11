@@ -1,8 +1,9 @@
 'use client'
 import CoachButton from "@/components/bookaseat/coachButton";
 import CustomDatePicker from "@/components/home/date";
-import ModalButton from "@/components/payment/modalButton";
+import ModalButton from "@/components/payment/paystackModal";
 import SearchTrain from "@/components/reusables/search";
+import CoachModal from "@/components/payment/coachModal";
 
 export default function Book() {
   return (
@@ -25,7 +26,7 @@ export default function Book() {
       />
       <CustomDatePicker/>
       <ModalButton/>
-      <CoachButton/>
+     
     </div>
   );
 }

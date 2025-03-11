@@ -12,7 +12,7 @@ export default function Modal() {
 
   return (
     <div className="modal">
-      <div className="modal-content relative w-[90%] lg:w-[45%] xl:w-[35%] h-[200px] lg:h-[250px] xl:h-[280px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center gap-4 mx-auto inset-0 backdrop-blur-sm">
+      <div className="modal-content relative w-[90%] lg:w-[45%] xl:w-[35%] h-[200px] lg:h-[250px] xl:h-[280px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center gap-4 mx-auto inset-0 ">
         <IoIosClose onClick={closeModal} className="absolute top-4 right-4 text-3xl text-gray-500 " />
         <Image src={payTimer} className="w-[80px]"/>
         <div className="flex flex-col items-center justify-center gap-2">

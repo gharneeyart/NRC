@@ -51,7 +51,7 @@ const ForgotPassword = () => {
               {errors.email && <p className="text-red-600 mb-7">{errors.email.message}</p>}
               <button
                 type="submit"
-                className="bg-[#18A532] text-white  w-full py-2 rounded-md mb-2 "
+                className="bg-[#18A532] text-white  w-full py-3 rounded-md mb-2 "
               >
                 Reset
               </button>

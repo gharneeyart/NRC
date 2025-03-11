@@ -3,7 +3,9 @@ import Passenger from "@/components/bookaseat/passenger"
 import ContactDetails from "@/components/bookaseat/contactDetails"
 import SearchTrain from "@/components/reusables/search"
 import Hours from "@/components/transport/hours"
+
 export default function Book() {
+   
     return(
         <div>
             <SearchTrain

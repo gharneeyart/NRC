@@ -11,7 +11,7 @@ export const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider value={{ isModalOpen, openModal, closeModal }}>
-        <div className= {isModalOpen? " bg-black w-full bg-opacity-50 opacity-50 h-full transition-opacity duration-300" : "opacity-100"}>
+        <div className= {isModalOpen ? " bg-black w-full bg-opacity-50 -z-30 h-full transition-opacity duration-300" : "bg-opacity-100"}>
             {children}
         </div>
     </ModalContext.Provider>

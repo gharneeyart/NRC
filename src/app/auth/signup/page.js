@@ -45,8 +45,8 @@ export default function SignUp() {
   };
 
     return(
-        <div className=" flex w-full backg px-5 lg:px-0 ">
-           <div className="lg:w-1/2 p-3 md:px-10 md:py-14 lg:p-0 bg-white rounded-md shadow-md lg:rounded-none lg:shadow-none mt-3 lg:mt-0 mb-10 lg:mb-0">
+        <div className=" flex w-full backg px-5 lg:px-0 h-screen lg:h-full items-center">
+           <div className="lg:w-1/2 p-3 md:px-10 md:py-14 lg:px-20 bg-white rounded-md shadow-md lg:rounded-none lg:shadow-none mt-3 lg:mt-0 mb-10 lg:mb-0">
                 <h1 className="font-bold text-xl">Welcome to NRC</h1>
                 <p className="text-[14px] text-[#3F3F3F]">Fill the information below to create a new account</p>
                 <form onSubmit={handleSubmit(onSubmit)} className="py-5 text-[14px] flex flex-col gap-6 ">
@@ -172,7 +172,7 @@ export default function SignUp() {
                      <p className="text-center ">Already have an account? <Link href='/auth/login'><span className="text-[#18A532]">Sign in</span></Link></p>
                 </form>
            </div>
-           <div className="relative h-screen lg:w-1/2">
+           <div className="relative hidden lg:block  h-full lg:w-1/2">
                <Image src={Train} alt="signup"  className="h-full w-full hidden lg:block"/>
                <Link href='/' ><Image src={Logo} alt='Logo' className="absolute top-5 left-6 hidden lg:block" /></Link>
            </div>

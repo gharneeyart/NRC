@@ -32,33 +32,33 @@ export const Discover =[
         description: 'Everything you need for a pleasant and convenient travel experience',
     }]
 
-    import Eclipse from '/public/images/Ellipse 2021.svg'
-    import Eclipse2 from '/public/images/Ellipse 2021 (1).svg'
-    import Eclipse3 from '/public/images/Ellipse 2021 (2).svg'
+    // import Eclipse from '/public/images/Ellipse 2021.svg'
+    // import Eclipse2 from '/public/images/Ellipse 2021 (1).svg'
+    // import Eclipse3 from '/public/images/Ellipse 2021 (2).svg'
   
 
-    export const Testimonials  = [
-    {
-        id: 1,
-        description: 'I love how simple it is to book my train tickets. No long queues, just a few clicks, and I’m set. Traveling from Lagos to Abuja has never been this easy',
-        image: Eclipse,
-        name: 'Benji Ibeawuchi'
+//     export const Testimonials  = [
+//     {
+//         id: 1,
+//         description: 'I love how simple it is to book my train tickets. No long queues, just a few clicks, and I’m set. Traveling from Lagos to Abuja has never been this easy',
+//         image: Eclipse,
+//         name: 'Benji Ibeawuchi'
 
-    },
-    {
-        id: 2,
-        description: 'The First-Class coach was super comfortable, and the train departed on time. I appreciate the real-time updates on the website. Definitely the best.',
-        image: Eclipse2,
-        name: 'Chimaobi Aisha'
+//     },
+//     {
+//         id: 2,
+//         description: 'The First-Class coach was super comfortable, and the train departed on time. I appreciate the real-time updates on the website. Definitely the best.',
+//         image: Eclipse2,
+//         name: 'Chimaobi Aisha'
         
-    },
-    {
-        id: 3,
-        description: 'I had an issue with my payment, but the support team resolved it quickly. I highly recommend NRC Train Booking for a stress-free experience!',
-        image: Eclipse3,
-        name: 'Kemi Olufemi'
-    },
-]
+//     },
+//     {
+//         id: 3,
+//         description: 'I had an issue with my payment, but the support team resolved it quickly. I highly recommend NRC Train Booking for a stress-free experience!',
+//         image: Eclipse3,
+//         name: 'Kemi Olufemi'
+//     },
+// ]
 import Image1 from '/public/images/image 16.png'
 import Image2 from '/public/images/image.png'
 
@@ -129,25 +129,33 @@ export const Classes = [
         id: 1,
         image: Imag,
         class: 'First Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦6000",
+        priceChild: "₦4500",
+        reserves: '8',
+        coach: ['C01']
         
     },
     {
         id: 2,
         image: Img1,
         class: 'Business Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦5000",
+        priceChild: "₦4000",
+        reserves: '12',
+        coach: ['C02', 'C03']
     },
     {
         id: 3,
         image: Img2,
         class: 'Standard Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦3000",
+        priceChild: "₦2500",
+        reserves: '18',
+        coach: ['C04','C05', 'C06']
     }
 ]
+
+
     export const trainSchedule = [
         {
             id: 1,
@@ -207,8 +215,8 @@ export const Classes = [
         },
         {
             id: 8,
-            code: 'MJS',
-            name: 'Mobolaji Johnson Station Ebute Metta',
+            code: 'LA',
+            name: 'Ladoke Akintola Station Omi-Adio',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
@@ -216,7 +224,7 @@ export const Classes = [
         {
             id: 9,
             code: 'OA',
-            name: 'Obafemi Awolowo station',
+            name: 'Obafemi Awolowo station Moniya',
             arrivalTime: '7:42',
             departureTime: '7:47',
             distance: '20km'
@@ -339,7 +347,7 @@ export const Classes = [
             distance: '20km'
         }
     ];
-    export const Data = [
+    export const Faq = [
         {
             id: 1,
             question: 'How can I create an account',

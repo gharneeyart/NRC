@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 
+.slick-slide > div {
+  margin: 0 12px; /* Half of 24px to apply spacing on both sides */
+}
+
+.slick-list {
+  margin: 0 -12px; /* Negative margin to offset the spacing */
+}
 
 .about-hero{
   background-image: url("/images/Old\ western\ train\ tracks.png");
@@ -76,9 +83,6 @@
     padding: 10rem;
   }
 
-  .body-password{
-    background-image: none;
-  }
   
 }
 
@@ -101,7 +105,13 @@
   }
 }
 
+.register {
+  background: url("/images/138\ 1\ \(1\).png") center center / cover
+    no-repeat;
+}
 
-
-  
-
+@media (min-width: 1024px) {
+  .register {
+    background: none;
+  }
+}

@@ -5,14 +5,15 @@ import Changes from "@/components/home/changes";
 import Companion from "@/components/reusables/railCompanion";
 import Explore from "@/components/about/explore";
 import Services from "@/components/reusables/services";
-import Payment from "./paymentpart/page";
 import SearchTrain from "@/components/reusables/search";
+import Nav from "@/layouts/Nav";
+import Footer from "@/layouts/Footer";
 
 
 export default function Home() {
   return (
     <div>
-   
+      <Nav/>
      <div className="lg:relative">
         <Hero />
       
@@ -25,10 +26,10 @@ export default function Home() {
       <Explore/>
       <Services/>
       <Changes/>
-      <Payment/>
       <News/>
       <Companion/>
       {/* w-full absolute -bottom-[22.5rem] md:-bottom-[22rem] lg:-bottom-20 z-50 */}
+      <Footer/>
     </div>
   );
 }

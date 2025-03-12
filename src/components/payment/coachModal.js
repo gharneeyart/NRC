@@ -21,7 +21,7 @@ export default function CoachModal() {
 
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full relative">
+          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm relative">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
               onClick={() => setIsOpen(false)}

@@ -129,25 +129,33 @@ export const Classes = [
         id: 1,
         image: Imag,
         class: 'First Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦6000",
+        priceChild: "₦4500",
+        reserves: '8',
+        coach: ['C01']
         
     },
     {
         id: 2,
         image: Img1,
         class: 'Business Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦5000",
+        priceChild: "₦4000",
+        reserves: '12',
+        coach: ['C02', 'C03']
     },
     {
         id: 3,
         image: Img2,
         class: 'Standard Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦3000",
+        priceChild: "₦2500",
+        reserves: '18',
+        coach: ['C04','C05', 'C06']
     }
 ]
+
+
     export const trainSchedule = [
         {
             id: 1,
@@ -339,4 +347,69 @@ export const Classes = [
             distance: '20km'
         }
     ];
+    export const Faq = [
+        {
+            id: 1,
+            question: 'How can I create an account',
+            answer:'You can access the registration form by clicking on the Sign-Up/Register Now button on our platforms.'
+        },
+        {
+            id: 2,
+            question: 'I have registered and logged in, how do I get a ticket?',
+            answer: `
+      <ol>
+                <li>1. Select the Originating and Destination stations.</li>
+                <li>2. Select your desired journey date.</li>
+                <li>3. Click on the Find My Train button to show available trains for your trip.</li>
+                <li>4. Select train and coach. e.g. Business, Standard, First </li>
+                <li>5. Click on the dropdown (below Please select a coach), to see coach details.</li>
+                <li>6. Select coach pick a seat, and fill in all the passenger details</li>
+                <li>7. After providing all the necessary information, click on the "Make Payment" button to initiate the payment process and book your ticket.</li>
+                </ol>
+                
+            <p>Once you complete all the steps, QR based ticket will generated and sent to your mail. You can access your booked tickets in your booking history.</p>`
+            
+        },
+
+        {
+            id: 3,
+            question: 'I forgot my password.',
+            answer:'You can click on Forget Password link to set a new password.'
+        },
+        {
+            id: 4,
+            question: 'How long is my ticket valid for?',
+            answer:'Your ticket is valid until the date of expected travel.'
+        },
+        {
+            id: 5,
+            question: 'Is it necessary to carry a printout of the E-ticket while traveling?.',
+            answer:'No, it is not necessary to carry a printout. Passengers can show the E-ticket on their mobile or a mail with a valid ID proof to the ticket checker during the journey.'
+        },
+        {
+            id: 6,
+            question: 'Can I buy a ticket for next week?',
+            answer:'No, you can buy for the same day or the next day only.'
+        },
+        {
+            id: 7,
+            question: 'Can I get a refund?',
+            answer:'Currently, NRC has a NO REFUND policy.'
+        },
+        {
+            id: 8,
+            question: 'Can I book a return ticket?',
+            answer:'No, this feature is currently not available. You are required to book one-way tickets.'
+        },
+        {
+            id: 9,
+            question: 'I bought my online ticket from Ebute-Metta to Ibadan, but I am stuck at Agbado, can I board from Agbado?',
+            answer:'Yes, you can board from the nearest station, if your ticket covers it.'
+        },
+        {
+            id: 10,
+            question: 'I made payment for a ticket, and I got debited, but I did not get a ticket.',
+            answer:'On the Menu tab, Go to the profile, click on the My Tickets, and see ticket history. Select a ticket and reprint your ticket.If you can not find your tickets here, you can call our customer service number or send an email to info@gsds.ng with the payment receipt details, booking information, and reference number.'
+        },
+    ]
     

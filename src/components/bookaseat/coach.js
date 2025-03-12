@@ -7,7 +7,7 @@ export default function Coach({isOpen, onClose}) {
     if (!isOpen) return null;
 
     return (
-        <div className='w-[20%] mx-auto rounded-xl shadow-lg bg-white px-8 py-5 relative'>
+        <div className='w-[100%] mx-auto rounded-xl shadow-lg bg-white px-8 py-5 relative'>
             <IoIosClose onClick={onClose} className="absolute top-4 right-2 text-3xl text-gray-500 " />
         <div className=' flex flex-col gap-6 mb-5'>
             <div className='flex flex-col gap-2'>

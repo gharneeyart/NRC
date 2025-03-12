@@ -5,6 +5,8 @@ import { useSearchStore } from "@/store/useSearchStore";
 import { trainSchedule } from "@/db";
 import img from '/public/images/Frame 1000003438.svg'
 import img1 from '/public/images/Frame 1000003439.svg'
+import { useEffect, useState } from "react";
+import { Classes } from "@/db";
 
 // Helper to compute time difference between two times in "HH:mm" format
 function computeTimeDifference(dept, arr) {
@@ -25,7 +27,7 @@ function formatDate(dateStr) {
   const year = dateObj.getFullYear();
   return `${day} - ${month} - ${year}`;
 }
-export default function Hours() {
+export default function Hours({bg, text}) {
    // Get current pathname
    const pathname = usePathname()
   // Read persisted search values from the store
@@ -38,6 +40,14 @@ export default function Hours() {
   const arrivalStation = trainSchedule.find(
     (station) => station.name === to
   );
+  
+  if(selectedClass === 'First Class'){
+    bg= 'bg-[#E8FFED]', text='text-[#18A532]' 
+  }else if(selectedClass === 'Business Class'){
+    bg= 'bg-[#F9F1DF]', text='text-[#F4AC00]'
+  }else if(selectedClass === 'Standard Class'){
+    bg= 'bg-[#EDEDED]', text='text-[#595959]'
+  }
 
   // Use departureTime from the "from" station and arrivalTime from the "to" station.
   // Fallback to default times if a station isn’t found.
@@ -63,7 +73,7 @@ export default function Hours() {
             <Image src={img1} alt="train"  className="w-[66px] md:w-[100px] xl:w-[144px]" />
         </div>
         {pathname !== "/trip" && (
-            <p>{selectedClass}</p>
+            <p className={`${bg} ${text} text-lg font-semibold py-[15px] rounded-full px-[32px]`}>{selectedClass}</p>
           )}
        </div>
         <div  className="flex flex-col gap-[12px]">

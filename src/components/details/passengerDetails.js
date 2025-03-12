@@ -1,6 +1,6 @@
 export default function PassengerDetails() {
   return (
-    <div className="container w-full  text-[#263238] text-[14px] mx-auto">
+    <div className="container w-full lg:w-[520px] xl:w-[664px]  text-[#263238] text-[14px]">
       <div className="space-y-[1rem] lg:space-y-[1.813rem]">
         <h1 className="hidden lg:block text-lg lg:text-[1.5rem] xl:text-[1.819rem] font-bold">Passenger Details</h1>
         <h1 className="block lg:hidden font-bold text-lg">Book a Seat</h1>

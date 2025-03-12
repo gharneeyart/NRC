@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 import { BsSearch } from "react-icons/bs";
 
 export default function Hero() {

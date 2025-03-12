@@ -29,7 +29,7 @@ export default function Map(){
   }, []);
 
   return (
-    <MapContainer center={position} zoom={5} style={{ height: "400px", width: "100%" }} className='h-[100px] md:h-[150px] lg:[400px] container mx-auto'>
+    <MapContainer center={position} zoom={5} style={{ height: "400px", width: "100%" }} className='h-[100px] md:h-[150px] lg:[400px] '>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />

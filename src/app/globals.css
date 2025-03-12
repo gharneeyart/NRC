@@ -40,6 +40,16 @@
 
   
 }
+.faq-hero{
+  background-image: url('/images/View\ of\ train\ at\ night.svg');
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  
+}
 
 
 @media (width > 970px) {
@@ -73,9 +83,6 @@
     padding: 10rem;
   }
 
-  .body-password{
-    background-image: none;
-  }
   
 }
 
@@ -92,9 +99,19 @@
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
   }
+  .faq-hero{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
 }
 
+.register {
+  background: url("/images/138\ 1\ \(1\).png") center center / cover
+    no-repeat;
+}
 
-
-  
-
+@media (min-width: 1024px) {
+  .register {
+    background: none;
+  }
+}

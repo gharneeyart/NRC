@@ -32,13 +32,13 @@ export default function Nav() {
                     <Link href="/"><h1>Home</h1></Link>
                     <Link href="/about">About</Link>
                     <Link href="/timetables"><h1>Time Tables</h1></Link>
-                    <Link href="/"><h1>FAQs</h1></Link>
+                    <Link href="/faq"><h1>FAQs</h1></Link>
                     <Link href="/contact"><h1>Contact Us</h1></Link>
                 </div>
 
                 <div className="flex flex-col text-center  gap-[1.75rem] lg:flex-row lg:gap-[2.4rem]">
-                    <Link href="/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
-                    <Link href="/login"><button className="w-full text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
+                    <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
+                    <Link href="/auth/login"><button className="w-full text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
                 </div>
             </div>
             </div>

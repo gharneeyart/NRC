@@ -16,16 +16,4 @@ export default function Testimonial() {
         </div>
     )
 }
-{/* <Swiper className='flex flex-col lg:flex-row gap-[42.98px] lg:h-[297.3px] w-[333.06px] lg:w-[1236.39px] mx-auto '
-            // modules={[Pagination]}
-            // pagination={{ clickable: true }}
-            // spaceBetween={20}
-            // slidesPerView={1}
-            >
-                {Testimonials.map((testi)=>(
-                    <SwiperSlide key={testi?.id}>
-                        <TestimonialCard myTesti={testi}/>
-                    </SwiperSlide>
-                ))}
-            
-            </Swiper> */}
+

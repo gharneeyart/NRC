@@ -129,25 +129,33 @@ export const Classes = [
         id: 1,
         image: Imag,
         class: 'First Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦6000",
+        priceChild: "₦4500",
+        reserves: '8',
+        coach: ['C01']
         
     },
     {
         id: 2,
         image: Img1,
         class: 'Business Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦5000",
+        priceChild: "₦4000",
+        reserves: '12',
+        coach: ['C02', 'C03']
     },
     {
         id: 3,
         image: Img2,
         class: 'Standard Class',
-        price:'Adult - ₦6000 | Child - ₦4500',
-        reserves: 'Reserved - 18'
+        priceAdult: "₦3000",
+        priceChild: "₦2500",
+        reserves: '18',
+        coach: ['C04','C05', 'C06']
     }
 ]
+
+
     export const trainSchedule = [
         {
             id: 1,
@@ -339,7 +347,7 @@ export const Classes = [
             distance: '20km'
         }
     ];
-    export const Data = [
+    export const Faq = [
         {
             id: 1,
             question: 'How can I create an account',

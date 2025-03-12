@@ -1,9 +1,9 @@
-export default function AuthLayout({ children }){
-    return(
-        <html>
-            <body>
-                {children}
-            </body>
-        </html>
-    )
+import { Fragment } from "react";
+
+export default function AuthLayout({ children }) {
+  return (
+    <Fragment>
+      {children}
+    </Fragment>
+  );
 }

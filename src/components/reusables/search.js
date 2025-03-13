@@ -21,7 +21,8 @@ export default function SearchTrain({
     content3,
     inputW,
     btnWidth,
-    py
+    py,
+    inputText2
 }) {
     // Generate a unique list of station names from trainSchedule
     const stationNames = Array.from(
@@ -32,10 +33,23 @@ export default function SearchTrain({
     const { from, to, date, setFrom, setTo, setDate } = useSearchStore();
 
     // Use local state to synchronize with the store
+    const [showFrom, setShowFrom] = useState(false);
+    const [showTo, setShowTo] = useState(false);
+    const [showDate, setShowDate] = useState(false);
     const [localFrom, setLocalFrom] = useState(from);
     const [localTo, setLocalTo] = useState(to);
     const [localDate, setLocalDate] = useState(date);
 
+    const handleFrom = () => {
+            setShowFrom(!showFrom);
+        };
+    const handleTo = () => {
+            setShowTo(true);
+        };
+    const handleDate = () => {
+            setShowDate(true);
+        };
+  
     // Update store when local state changes
     useEffect(() => {
       setFrom(localFrom);
@@ -60,7 +74,9 @@ export default function SearchTrain({
                     <select
                         id="from"
                         value={localFrom}
-                        className={`${inputBg} ${inputBorder} ${inputText} ${inputPy} outline-none rounded-md px-2`}
+                        // onClick={}
+                        onInput={handleFrom}
+                        className={`${showFrom ? `${inputText2}`: `${inputText}`} ${inputBg} ${inputBorder}  ${inputPy} outline-none rounded-md px-2`}
                         onChange={(e) => {
                             const selected = e.target.value;
                             setLocalFrom(selected);
@@ -81,7 +97,8 @@ export default function SearchTrain({
                     <select
                         id="to"
                         value={localTo}
-                        className={`${inputBg} ${inputBorder} ${inputText} ${inputPy} outline-none rounded-md px-2`}
+                        onClick={handleTo}
+                        className={`${showTo ? `${inputText2}`: `${inputText}`} ${inputBg} ${inputBorder}  ${inputPy} outline-none rounded-md px-2`}
                         onChange={(e) => setLocalTo(e.target.value)}
                     >
                         <option value="">Select Destination Station</option>
@@ -98,7 +115,8 @@ export default function SearchTrain({
                         type="date"
                         id="date"
                         value={localDate}
-                        className={`${inputBg} ${inputBorder} ${inputText} ${inputPadding} outline-none rounded-md px-2`}
+                        onClick={handleDate}
+                        className={`${showDate? `${inputText2}`: `${inputText}`} ${inputBg} ${inputBorder}  ${inputPadding} outline-none rounded-md px-2`}
                         placeholder="Select Date"
                         onChange={(e) => setLocalDate(e.target.value)}
                     />

@@ -1,8 +1,11 @@
 'use client'
 
 import CustomDatePicker from "@/components/home/date";
-import ModalButton from "@/components/payment/paystackModal";
+import ModalButton from "@/components/modal/paystackModal";
+import ResetPassword from "@/components/modal/resetPasswordModal";
 import SearchTrain from "@/components/reusables/search";
+import Success from "@/components/modal/successModal";
+import Logout from "@/components/modal/logOutModal";
 
 
 export default function Book() {
@@ -25,8 +28,10 @@ export default function Book() {
         py='py-6 lg:py-8 xl:py-8'
       />
       <CustomDatePicker/>
-      <ModalButton/>
-     
+      {/* <ModalButton/> */}
+     <ResetPassword/>
+     <Success/>
+     <Logout/>
     </div>
   );
 }

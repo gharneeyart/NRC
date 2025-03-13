@@ -1,7 +1,7 @@
 "use client";
 import { useSearchStore } from "@/store/useSearchStore";
 import { useState, useEffect } from "react";
-import CoachModal from "../payment/coachModal";
+import CoachModal from "../modal/coachModal";
 import { Classes } from "@/db";
 
 const Search = ({ selectedSeats, setSelectedSeats, passengers, setPassengers }) => {

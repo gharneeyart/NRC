@@ -2,23 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+.slick-slide > div {
+  margin: 0 12px; /* Half of 24px to apply spacing on both sides */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.slick-list {
+  margin: 0 -12px; /* Negative margin to offset the spacing */
 }
 
 .about-hero{
@@ -34,11 +24,94 @@ body {
   padding: 3.5rem;
 }
 
+.body-password{
+  background-image: url('/images/138-1.svg'); 
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home-hero{
+  background-image: url('/images/Moving\ Train.png');
+  /* background-image: url('/images/138\ 1\ \(2\).png'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  
+}
+.faq-hero{
+  background-image: url('/images/View\ of\ train\ at\ night.svg');
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  
+}
+
+
+@media (width > 970px) {
+.backg{
+  background-image: url('/images/138\ 1\ \(2\).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+}
+}
+
+.backgd{
+  background-image: url('/images/train.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+}
+.backg{
+    background-image: url('/images/138\ 1\ \(2\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+
 @media (width > 768px) {
   .about-hero{
     padding: 10rem;
   }
-  .contact-hero{
+  contact-hero{
     padding: 10rem;
+  }
+
+  
+}
+
+ .backgd{
+    background-image: none;
+  }
+
+@media (width > 1023px){
+  .backg{
+    background-image: none;
+  }
+
+  .home-hero{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .faq-hero{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+.register {
+  background: url("/images/138\ 1\ \(1\).png") center center / cover
+    no-repeat;
+}
+
+@media (min-width: 1024px) {
+  .register {
+    background: none;
   }
 }

@@ -11,7 +11,7 @@ export default function Trip() {
     return (
         <div className="space-y-11 mt-6">
             <SearchTrain
-                w="w-[90%]"
+                w="w-11/12"
                 bg="bg-[#006B14]"
                 gap="gap-8"
                 btnBg="bg-[#FFFFFF]"
@@ -20,6 +20,7 @@ export default function Trip() {
                 inputBg="bg-[#FFFFFF36]"
                 inputBorder="border-2 border-[#FFFFFF61]"
                 inputText="text-[#FFFFFF]"
+                inputText2="text-[#ffffff]"
                 btnText="text-[#006B14]"
                 inputW="w-full lg:w-[25%] xl:w-[25%]"
                 btnWidth="w-full lg:w-[25%] xl:w-[20%]"

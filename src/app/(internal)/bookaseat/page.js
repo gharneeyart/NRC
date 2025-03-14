@@ -13,7 +13,7 @@ export default function Book() {
   return (
     <div>
       <SearchTrain
-        w="w-[90%]"
+        w="w-11/12"
         bg="bg-[#006B14]"
         gap="gap-8"
         btnBg="bg-[#FFFFFF]"
@@ -22,6 +22,7 @@ export default function Book() {
         inputBg="bg-[#FFFFFF36]"
         inputBorder="border-2 border-[#FFFFFF61]"
         inputText="text-[#FFFFFF]"
+        inputText2="text-[#ffffff]"
         btnText="text-[#006B14]"
         inputW="w-full lg:w-[25%] xl:w-[25%]"
         btnWidth="w-full lg:w-[25%] xl:w-[20%]"

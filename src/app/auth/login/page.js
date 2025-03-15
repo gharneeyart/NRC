@@ -28,7 +28,7 @@ export default function Login() {
       <div className="bg-white space-y-4 my-6 lg:my-0 pt-6 pb-20 md:pt-8 md:pb-8 px-4 md:px-8 rounded-lg lg:rounded-none  w-full  lg:w-1/2 lg:px-20">
         <div className="flex flex-col gap-1">
           <h1 className=" text-xl lg:text-[34px] font-bold">Welcome Back</h1>
-          <p className="text-[#3F3F3F] text-base lg:text-lg  ">sign in to continue</p>
+          <p className="text-[#3F3F3F] text-base lg:text-lg  ">Sign in to continue</p>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -91,7 +91,7 @@ export default function Login() {
           <p className="text-center pb-20 lg:pb-0">
             Don't have an account?{" "}
             <Link href="/auth/signup" className="text-[#006B14] ">
-              Sign up
+              Sign Up
             </Link>
           </p>
         </form>

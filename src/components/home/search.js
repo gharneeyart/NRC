@@ -1,5 +1,5 @@
 'use client'
-import Modal from "../payment/modal"
+import Modal from "../modal/modal"
 export default function Search() {
 
     return(

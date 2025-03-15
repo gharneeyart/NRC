@@ -86,18 +86,49 @@
 import trainData from "@/train.json"; // Import the JSON data
 import Link from "next/link";
 import { useSearchStore } from "@/store/useSearchStore";
+import { useState } from "react";
 
 export default function SearchTrain({
-    w, bg, btnBg, rounded, inputBg, gap, 
-    inputBorder, inputPy, inputPadding, inputText, 
-    btnText, content1, content2, content3, inputW, 
-    btnWidth, py
+    w,
+    bg,
+    btnBg,
+    rounded,
+    inputBg,
+    gap,
+    inputBorder,
+    inputPy,
+    inputPadding,
+    inputText,
+    btnText,
+    content1,
+    content2,
+    content3,
+    inputW,
+    btnWidth,
+    py,
+    inputText2
 }) {
     // Generate a unique list of station names from trainData
     const stationNames = Array.from(new Set(trainData.trains.flatMap(train => train.schedule.map(schedule => schedule.station_name))));
 
     // Pull state from Zustand store directly
     const { from, to, date, setFrom, setTo, setDate } = useSearchStore();
+
+    // Use local state to synchronize with the store
+    const [showFrom, setShowFrom] = useState(false);
+    const [showTo, setShowTo] = useState(false);
+    const [showDate, setShowDate] = useState(false);
+
+    const handleFrom = () => {
+            setShowFrom(!showFrom);
+        };
+    const handleTo = () => {
+            setShowTo(true);
+        };
+    const handleDate = () => {
+            setShowDate(true);
+        };
+  
 
     // Determine if the form is valid (all inputs are filled)
     const isFormValid = from !== "" && to !== "" && date !== "";
@@ -113,7 +144,9 @@ export default function SearchTrain({
                     <select
                         id="from"
                         value={from}
-                        className={`${inputBg} ${inputBorder} ${inputText} ${inputPy} outline-none rounded-md px-2`}
+                        onClick={handleFrom}
+                        // onInput={handleFrom}
+                        className={`${showFrom ? `${inputText2}`: `${inputText}`} ${inputBg} ${inputBorder}  ${inputPy} outline-none rounded-md px-2`}
                         onChange={(e) => {
                             const selected = e.target.value;
                             setFrom(selected);
@@ -131,8 +164,9 @@ export default function SearchTrain({
                     <select
                         id="to"
                         value={to}
-                        className={`${inputBg} ${inputBorder} ${inputText} ${inputPy} outline-none rounded-md px-2`}
                         onChange={(e) => setTo(e.target.value)}
+                        onClick={handleTo}
+                        className={`${showTo ? `${inputText2}`: `${inputText}`} ${inputBg} ${inputBorder}  ${inputPy} outline-none rounded-md px-2`} 
                     >
                         <option value="">Select Destination Station</option>
                         {stationNames.filter((station) => station !== from).map((station, index) => (
@@ -147,7 +181,8 @@ export default function SearchTrain({
                         id="date"
                         value={date}
                         min={today} // Set the min attribute to today's date
-                        className={`${inputBg} ${inputBorder} ${inputText} ${inputPadding} outline-none rounded-md px-2`}
+                        onClick={handleDate}
+                        className={`${showDate? `${inputText2}`: `${inputText}`} ${inputBg} ${inputBorder}  ${inputPadding} outline-none rounded-md px-2`}
                         placeholder="Select Date"
                         onChange={(e) => setDate(e.target.value)}
                     />

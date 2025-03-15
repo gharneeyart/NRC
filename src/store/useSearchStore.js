@@ -35,10 +35,14 @@ export const useSearchStore = create(
       to: '',
       date: '',
       selectedClass: '', // Store class name
+      selectedTrain: null,
+      timeOfDay: '',
       passengers: [], // Initialize passengers with default values
       setFrom: (from) => set({ from }),
       setTo: (to) => set({ to }),
       setDate: (date) => set({ date }),
+      setSelectedTrain: (selectedTrain) => set({ selectedTrain }),
+      setTimeOfDay: (timeOfDay) => set({ timeOfDay }),
       setSelectedClass: (cls) => set((state) => {
         // Clear passenger details, coach, and seat when a new class is selected
         if (state.selectedClass !== cls) {
@@ -55,7 +59,9 @@ export const useSearchStore = create(
         to: '',
         date: '',
         selectedClass: '',
-        passengers: []
+        passengers: [],
+        selectedTrain: null,
+        timeOfDay: ''
       }), // Add resetAll function to reset all states
     }),
     {
@@ -67,3 +73,5 @@ export const useSearchStore = create(
     }
   )
 );
+
+

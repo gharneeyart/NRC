@@ -309,6 +309,120 @@
 //     );
 // }
 
+// 'use client'
+// import { useSearchStore } from "@/store/useSearchStore";
+// import SearchTrain from "@/components/reusables/search";
+// import Class from "@/components/transport/class";
+// import Hours from "@/components/transport/hours";
+// import trainData from "@/train.json"; // Import the JSON data
+
+// export default function Trip() {
+//     // Retrieve the persisted search state
+//     const { from, to } = useSearchStore();
+
+//     // Determine the direction of travel based on the sequence of stations
+//     const direction = trainData.trains.reduce((result, train) => {
+//         const fromIndex = train.schedule.findIndex(station => station.station_name === from);
+//         const toIndex = train.schedule.findIndex(station => station.station_name === to);
+
+//         if (fromIndex !== -1 && toIndex !== -1) {
+//             if (fromIndex > toIndex) {
+//                 result = "Lagos-Ibadan";
+//             } else if (fromIndex < toIndex) {
+//                 result = "Ibadan-Lagos";
+//             }
+//         }
+//         return result;
+//     }, "");
+
+//     // Debugging: Log the direction
+//     console.log("Direction:", direction);
+
+//     // Filter trains based on the direction and time of day
+//     const filteredTrains = trainData.trains.filter(train => 
+//         train.train_name && train.train_name.includes(direction)
+//     );
+
+//     const morningTrains = filteredTrains.filter(train => train.train_name.includes("Morning"));
+//     const afternoonTrains = filteredTrains.filter(train => train.train_name.includes("Afternoon"));
+//     const eveningTrains = filteredTrains.filter(train => train.train_name.includes("Evening"));
+
+//     return (
+//         <div className="space-y-11 mt-6">
+//             <SearchTrain
+//                 w="w-11/12"
+//                 bg="bg-[#006B14]"
+//                 gap="gap-8"
+//                 btnBg="bg-[#FFFFFF]"
+//                 inputPy="py-2"
+//                 inputPadding="py-1.5"
+//                 inputBg="bg-[#FFFFFF36]"
+//                 inputBorder="border-2 border-[#FFFFFF61]"
+//                 inputText="text-[#FFFFFF]"
+//                 inputText2="text-[#ffffff]"
+//                 btnText="text-[#006B14]"
+//                 inputW="w-full lg:w-[25%] xl:w-[25%]"
+//                 btnWidth="w-full lg:w-[25%] xl:w-[20%]"
+//                 py="pt-6 pb-6 lg:pt-8 lg:pb-12 xl:pt-10 xl:pb-14"
+//             />
+
+//             {/* Render Trains based on Direction */}
+//             {direction && (
+//                 <>
+//                     <div className="space-y-11 mt-6">
+//                         {morningTrains.map((train, index) => (
+//                             <div key={index} className="w-[335px] md:w-[81%] lg:w-11/12 container mx-auto shadow-md rounded-b-md">
+//                                 <div className="font-semibold text-[16px] md:text-[20px] px-[39px] xl:text-[29px] text-center bg-[#E2F5E5] py-6 rounded-t-md">
+//                                     <h1>{train.train_name}</h1>
+//                                 </div>
+//                                 <div className="lg:px-11 ">
+//                                     <div>
+//                                         <Hours schedule={train.schedule} />
+//                                     </div>
+//                                     <div className="border-b"></div>
+//                                     <Class/>
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                     <div className="space-y-11 mt-6">
+//                         {afternoonTrains.map((train, index) => (
+//                             <div key={index} className="w-[335px] md:w-[81%] lg:w-11/12 container mx-auto shadow-md rounded-b-md">
+//                                 <div className="font-semibold text-[16px] md:text-[20px] px-[39px] xl:text-[29px] text-center bg-[#E2F5E5] py-6 rounded-t-md">
+//                                     <h1>{train.train_name}</h1>
+//                                 </div>
+//                                 <div className="lg:px-11 ">
+//                                     <div>
+//                                         <Hours schedule={train.schedule} />
+//                                     </div>
+//                                     <div className="border-b"></div>
+//                                     <Class/>
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                     <div className="space-y-11 mt-6">
+//                         {eveningTrains.map((train, index) => (
+//                             <div key={index} className="w-[335px] md:w-[81%] lg:w-11/12 container mx-auto shadow-md rounded-b-md">
+//                                 <div className="font-semibold text-[16px] md:text-[20px] px-[39px] xl:text-[29px] text-center bg-[#E2F5E5] py-6 rounded-t-md">
+//                                     <h1>{train.train_name}</h1>
+//                                 </div>
+//                                 <div className="lg:px-11 ">
+//                                     <div>
+//                                         <Hours schedule={train.schedule} />
+//                                     </div>
+//                                     <div className="border-b"></div>
+//                                     <Class/>
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </>
+//             )}
+//         </div>
+//     );
+// }
+
 'use client'
 import { useSearchStore } from "@/store/useSearchStore";
 import SearchTrain from "@/components/reusables/search";
@@ -350,7 +464,7 @@ export default function Trip() {
     return (
         <div className="space-y-11 mt-6">
             <SearchTrain
-                w="w-[90%]"
+                w="w-11/12"
                 bg="bg-[#006B14]"
                 gap="gap-8"
                 btnBg="bg-[#FFFFFF]"
@@ -359,20 +473,17 @@ export default function Trip() {
                 inputBg="bg-[#FFFFFF36]"
                 inputBorder="border-2 border-[#FFFFFF61]"
                 inputText="text-[#FFFFFF]"
+                inputText2="text-[#ffffff]"
                 btnText="text-[#006B14]"
                 inputW="w-full lg:w-[25%] xl:w-[25%]"
                 btnWidth="w-full lg:w-[25%] xl:w-[20%]"
                 py="pt-6 pb-6 lg:pt-8 lg:pb-12 xl:pt-10 xl:pb-14"
             />
-            <div className="mt-4 text-center">
-                <p>Search criteria: From: <strong>{from}</strong> | To: <strong>{to}</strong></p>
-            </div>
 
             {/* Render Trains based on Direction */}
             {direction && (
                 <>
                     <div className="space-y-11 mt-6">
-                        <h2 className="text-xl font-bold">{direction} - Morning Trains</h2>
                         {morningTrains.map((train, index) => (
                             <div key={index} className="w-[335px] md:w-[81%] lg:w-11/12 container mx-auto shadow-md rounded-b-md">
                                 <div className="font-semibold text-[16px] md:text-[20px] px-[39px] xl:text-[29px] text-center bg-[#E2F5E5] py-6 rounded-t-md">
@@ -383,13 +494,12 @@ export default function Trip() {
                                         <Hours schedule={train.schedule} />
                                     </div>
                                     <div className="border-b"></div>
-                                    <Class/>
+                                    <Class train={train} timeOfDay="Morning" />
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="space-y-11 mt-6">
-                        <h2 className="text-xl font-bold">{direction} - Afternoon Trains</h2>
                         {afternoonTrains.map((train, index) => (
                             <div key={index} className="w-[335px] md:w-[81%] lg:w-11/12 container mx-auto shadow-md rounded-b-md">
                                 <div className="font-semibold text-[16px] md:text-[20px] px-[39px] xl:text-[29px] text-center bg-[#E2F5E5] py-6 rounded-t-md">
@@ -400,13 +510,12 @@ export default function Trip() {
                                         <Hours schedule={train.schedule} />
                                     </div>
                                     <div className="border-b"></div>
-                                    <Class/>
+                                    <Class train={train} timeOfDay="Afternoon" />
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="space-y-11 mt-6">
-                        <h2 className="text-xl font-bold">{direction} - Evening Trains</h2>
                         {eveningTrains.map((train, index) => (
                             <div key={index} className="w-[335px] md:w-[81%] lg:w-11/12 container mx-auto shadow-md rounded-b-md">
                                 <div className="font-semibold text-[16px] md:text-[20px] px-[39px] xl:text-[29px] text-center bg-[#E2F5E5] py-6 rounded-t-md">
@@ -417,7 +526,7 @@ export default function Trip() {
                                         <Hours schedule={train.schedule} />
                                     </div>
                                     <div className="border-b"></div>
-                                    <Class/>
+                                    <Class train={train} timeOfDay="Evening" />
                                 </div>
                             </div>
                         ))}

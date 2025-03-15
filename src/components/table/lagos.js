@@ -3,7 +3,7 @@ import { trainSchedule } from "@/db"
 
 export default function Lagos(){
     return(
-        <div className="w-full">
+        <div className="w-11/12 container mx-auto">
             
       <div className="py-4   ">
       <h1 className="text-2xl font-semibold ">Lagos - Ibadan Mornin Train (LI1)</h1>
@@ -19,7 +19,7 @@ export default function Lagos(){
                 <tr className='text-[22px]'>
                     <th className=" py-3 font-semibold text-left pl-6">NO</th>
                     <th className=" py-3  font-semibold text-left px-3">Code</th>
-                    <th className=" py-3  font-semibold text-left px-3">Station Name</th>
+                    <th className=" py-3  font-semibold text-left px-3 w-[171px] lg:w-[270px]">Station Name</th>
                     <th className=" py-3  font-semibold text-left px-3">Arrival Time</th>
                     <th className=" py-3  font-semibold text-left px-3">Departure Time</th>
                     <th className=" py-3  font-semibold text-left px-3">Distance</th>
@@ -27,13 +27,13 @@ export default function Lagos(){
             </thead>
             <tbody>
                 {trainSchedule.map((schedule, index) => (
-                    <tr key={schedule.id} className="border border-gray-300 text-start text-[#263238] font-medium  text-lg lg:text-[22px] ">
+                    <tr key={schedule.id} className="border border-gray-300 text-start text-[#263238] font-medium  text-sm lg:text-[22px] ">
                         <td className="pb-6 pt-2 pl-6">{index + 1}</td>
-                        <td className="pb-6 pt-2 px-3">{schedule?.code}</td>
-                        <td className="pb-6 pt-2 px-3 ">{schedule?.name}</td>
-                        <td className="pb-6 pt-2 px-3">{schedule?.arrivalTime}</td>
-                        <td className="pb-6 pt-2 px-3">{schedule?.departureTime}</td>
-                        <td className="pb-6 pt-2 px-3">{schedule?.distance}</td>
+                        <td className="pb-6 pt-2 px-6 ">{schedule?.code}</td>
+                        <td className="pb-6 pt-2 px-6 w-[171px] lg:w-[270px] ">{schedule?.name}</td>
+                        <td className="pb-6 pt-2 px-6">{schedule?.arrivalTime}</td>
+                        <td className="pb-6 pt-2 px-6">{schedule?.departureTime}</td>
+                        <td className="pb-6 pt-2 px-6">{schedule?.distance}</td>
                     </tr>
                 ))}
             </tbody>

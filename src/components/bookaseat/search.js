@@ -64,7 +64,7 @@ const Search = ({ selectedSeats, setSelectedSeats, passengers, setPassengers }) 
           </div>
 
           {/* Seat */}
-          <div className="w-full flex flex-col justify-between">
+          <div className="w-full flex flex-col gap-3">
             <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Seat</label>
             <div>
               <CoachModal

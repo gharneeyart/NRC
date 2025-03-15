@@ -1,4 +1,3 @@
-'use client';
 import { useState } from 'react';
 import { IoIosClose } from "react-icons/io";
 import Image from 'next/image';
@@ -11,6 +10,7 @@ const seatLayout = Array.from({ length: 48 }, (_, i) => i + 1);
 
 export default function CoachModal({ selectedSeats, setSelectedSeats, passengers, setPassengers, selectedCoach }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [error, setError] = useState("");
 
   const toggleSeatSelection = (seatNumber) => {
     if (selectedSeats.includes(seatNumber)) {
@@ -18,19 +18,39 @@ export default function CoachModal({ selectedSeats, setSelectedSeats, passengers
       setPassengers(passengers.filter((passenger) => passenger.seat !== seatNumber));
     } else if (selectedSeats.length < 4) {
       setSelectedSeats([...selectedSeats, seatNumber]);
-      setPassengers([...passengers, { seat: seatNumber, coach: selectedCoach }]); // Assuming coach 'C01' for simplicity
+      setPassengers([
+        ...passengers,
+        {
+          passenger: '',
+          name: '',
+          nin: '',
+          email: '',
+          phone: '',
+          coach: selectedCoach,
+          seat: seatNumber,
+        },
+      ]);
+    }
+  };
+
+  const handleOpenModal = () => {
+    if (!selectedCoach) {
+      setError("Please select a coach before selecting a seat.");
+    } else {
+      setError("");
+      setIsModalOpen(true);
     }
   };
 
   return (
     <div>
       <button
-        onClick={() => setIsModalOpen(true)}
+        onClick={handleOpenModal}
         className="text-[#848484] px-5 w-full py-3 rounded-lg text-start transition border"
       >
         Select Seat
       </button>
-
+      {error && <p className="text-red-500 text-sm">{error}</p>}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
           <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full relative">
@@ -58,21 +78,21 @@ export default function CoachModal({ selectedSeats, setSelectedSeats, passengers
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-3 justify-between">
-                <div className="grid grid-cols-4 gap-2">
-                  {seatLayout.map((seatNumber) => (
-                    <div key={seatNumber} className="grid grid-cols-2 gap-2">
-                      <p
-                        className={`${
-                          selectedSeats.includes(seatNumber) ? 'bg-[#B22222]' : 'bg-[#E8EAEE]'
-                        } rounded-sm text-center text-[14px] cursor-pointer`}
-                        onClick={() => toggleSeatSelection(seatNumber)}
-                      >
-                        {seatNumber}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid grid-cols-8 gap-2">
+                {seatLayout.map((seatNumber) => (
+                  <button
+                    key={seatNumber}
+                    className={`${
+                      selectedSeats.includes(seatNumber)
+                        ? 'bg-[#006B14] text-white'
+                        : 'bg-[#E8EAEE] text-black'
+                    } rounded-sm text-center text-[14px] cursor-pointer p-2`}
+                    onClick={() => toggleSeatSelection(seatNumber)}
+                    aria-label={`Select seat ${seatNumber}`}
+                  >
+                    {seatNumber}
+                  </button>
+                ))}
               </div>
             </div>
             <div className="mt-4 flex justify-end">

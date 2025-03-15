@@ -12,7 +12,7 @@ export default function Testimonial() {
            </div>
            
            <TestimonialCard/>
-          
+          <noTrains/>
         </div>
     )
 }

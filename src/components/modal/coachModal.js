@@ -1,24 +1,40 @@
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
-import Image from 'next/image';
-import White from '/public/images/White Dot.png';
-import Oxblod from '/public/images/oxblod Dot.png';
-import Red from '/public/images/red dot.png';
+import Image from "next/image";
+import White from "/public/images/White Dot.png";
+import Oxblod from "/public/images/oxblod Dot.png";
+import Red from "/public/images/red dot.png";
 
 // Sequential seat layout from 1 to 48
 const seatLayout = Array.from({ length: 48 }, (_, i) => i + 1);
+const batchSize = 2;
+const batches = [];
+for (let i = 0; i < seatLayout.length; i += batchSize) {
+  batches.push(seatLayout.slice(i, i + batchSize));
+}
 
-export default function CoachModal({ selectedSeats, setSelectedSeats, passengers, setPassengers, selectedCoach }) {
+export default function CoachModal({
+  selectedSeats,
+  setSelectedSeats,
+  passengers,
+  setPassengers,
+  selectedCoach,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleSeatSelection = (seatNumber) => {
     if (selectedSeats.includes(seatNumber)) {
       setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
-      setPassengers(passengers.filter((passenger) => passenger.seat !== seatNumber));
+      setPassengers(
+        passengers.filter((passenger) => passenger.seat !== seatNumber)
+      );
     } else if (selectedSeats.length < 4) {
       setSelectedSeats([...selectedSeats, seatNumber]);
-      setPassengers([...passengers, { seat: seatNumber, coach: selectedCoach }]); // Assuming coach 'C01' for simplicity
+      setPassengers([
+        ...passengers,
+        { seat: seatNumber, coach: selectedCoach },
+      ]); // Assuming coach 'C01' for simplicity
     }
   };
 
@@ -64,11 +80,14 @@ export default function CoachModal({ selectedSeats, setSelectedSeats, passengers
                     <div key={seatNumber}>
                       <p
                         className={`${
-                          selectedSeats.includes(seatNumber) ? 'bg-[#B22222] text-white' : 'bg-[#E8EAEE]'
+                          selectedSeats.includes(seatNumber)
+                            ? "bg-[#B22222] text-white"
+                            : "bg-[#E8EAEE]"
                         } rounded-sm px-2  text-center text-[14px] cursor-pointer w-full`}
                         onClick={() => toggleSeatSelection(seatNumber)}
                       >
-                        {seatNumber}
+                        {seatNumber % 2 === 0 ? seatNumber - 1 : seatNumber}
+                  
                       </p>
                     </div>
                   ))}

@@ -8,11 +8,19 @@ const Search = ({ selectedSeats, setSelectedSeats, passengers, setPassengers }) 
   const { selectedClass, setSelectedClass } = useSearchStore();
   const [localClass, setLocalClass] = useState(selectedClass);
   const [selectedCoach, setSelectedCoach] = useState("");
+  const [filteredCoaches, setFilteredCoaches] = useState([]);
 
   useEffect(() => {
     setLocalClass(selectedClass);
   }, [selectedClass]);
 
+// Filter coaches based on the selected class
+useEffect(() => {
+  const filtered = Classes.find((cls) => cls.class === localClass)?.coach || [];
+  setFilteredCoaches(filtered);
+}, [localClass]);
+
+  // Handle class change event
   const handleClassChange = (e) => {
     const newClass = e.target.value;
     setLocalClass(newClass);
@@ -20,8 +28,7 @@ const Search = ({ selectedSeats, setSelectedSeats, passengers, setPassengers }) 
     setSelectedCoach(""); // Reset coach selection when class changes
   };
 
-  // Filter coaches based on the selected class
-  const filteredCoaches = Classes.find((cls) => cls.class === localClass)?.coach || [];
+  
 
   return (
     <div className="mb-11">

@@ -1,9 +1,10 @@
+'use client'
 import ResuableHero from "@/components/reusables/hero"
-import Map from '@/components/contact/map'
 import Get from "@/components/contact/get"
 import Form from '@/components/contact/form'
+import dynamic from "next/dynamic";
 
-
+const Map = dynamic(() => import("@/components/contact/map"), { ssr: false });
 export default function Contact() {
     return(
        <div>

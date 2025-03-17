@@ -1,20 +1,24 @@
 'use client'
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
+import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 
+// Dynamically import react-leaflet components with no SSR
+const MapContainer = dynamic(() => import("react-leaflet").then(mod => mod.MapContainer), { ssr: false });
+const TileLayer = dynamic(() => import("react-leaflet").then(mod => mod.TileLayer), { ssr: false });
+const Marker = dynamic(() => import("react-leaflet").then(mod => mod.Marker), { ssr: false });
+const Popup = dynamic(() => import("react-leaflet").then(mod => mod.Popup), { ssr: false });
+const L = dynamic(() => import("leaflet"), { ssr: false });
 
-export default function Map(){
+export default function Map() {
   const [position, setPosition] = useState([9.0820, 8.6753]);
- 
+
   const customIcon = new L.Icon({
     iconUrl: '/icons/location-icon.png',
     iconSize: [20, 20], 
     iconAnchor: [16, 32], 
     popupAnchor: [0, -32], 
   });
-
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -39,4 +43,3 @@ export default function Map(){
     </MapContainer>
   );
 };
-

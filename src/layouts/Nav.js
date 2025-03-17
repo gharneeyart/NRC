@@ -5,7 +5,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import Logo from "/public/icons/image 3.svg"
+import Logo from '/public/icons/image 3.svg'
 
 export default function Nav() {
     const [menuOpen, setMenuOpen] = useState(false);

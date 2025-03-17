@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from '/public/images/Mask Group 5.png'
+import React from '/images/Mask Group 5.png'
 
 export default function NoTicketFounnd(){
     return (

@@ -1,9 +1,9 @@
-"use client";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { IoIosClose } from "react-icons/io";
-import { BiHide } from "react-icons/bi";
-import { BiShow } from "react-icons/bi";
+'use client';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { IoIosClose } from 'react-icons/io';
+import { BiHide } from 'react-icons/bi';
+import { BiShow } from 'react-icons/bi';
 // import Image from "next/image";
 // import payTimer from "/icons/timer payment.svg";
 // import Dot from "/icons/paystackDot.svg";
@@ -18,7 +18,7 @@ export default function ResetPassword() {
   } = useForm();
 
   const onSubmit = (data) => {
-    alert("Signup successful!");
+    alert('Signup successful!');
     console.log(data);
     reset();
   };
@@ -54,10 +54,13 @@ export default function ResetPassword() {
               <IoIosClose size={20} />
             </button>
             <div className="text-left flex flex-col gap-2">
-                <h2 className="font-bold text-xl lg:text-3xl">Change Password</h2>
-                <p className="font-thin">Enter new password details below</p>
+              <h2 className="font-bold text-xl lg:text-3xl">Change Password</h2>
+              <p className="font-thin">Enter new password details below</p>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 w-full gap-6">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="grid grid-cols-1 w-full gap-6"
+            >
               <div>
                 <label
                   htmlFor="password"
@@ -67,20 +70,20 @@ export default function ResetPassword() {
                 </label>
                 <div className="relative">
                   <input
-                    {...register("password", {
-                      required: "This field is required",
+                    {...register('password', {
+                      required: 'This field is required',
                       minLength: {
                         value: 8,
-                        message: "Password must be at least 8 characters long",
+                        message: 'Password must be at least 8 characters long',
                       },
                       pattern: {
                         value:
                           /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                         message:
-                          "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+                          'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character',
                       },
                     })}
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     id="password"
                     className="w-full border rounded-md p-2 outline-none focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
                     placeholder="Enter password"
@@ -113,12 +116,12 @@ export default function ResetPassword() {
                 </label>
                 <div className="relative">
                   <input
-                    {...register("confirmPassword", {
-                      required: "This field is required",
+                    {...register('confirmPassword', {
+                      required: 'This field is required',
                       validate: (value) =>
-                        value === watch("password") || "Passwords do not match",
+                        value === watch('password') || 'Passwords do not match',
                     })}
-                    type={showConfirmPassword ? "text" : "password"}
+                    type={showConfirmPassword ? 'text' : 'password'}
                     id="confirmPassword"
                     className="w-full border rounded-md p-2  outline-none focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
                     placeholder="Enter password"
@@ -142,7 +145,7 @@ export default function ResetPassword() {
                 )}
               </div>
               <button
-                type="submit" 
+                type="submit"
                 className="w-full mt-3 bg-[#18A532] text-white py-3 rounded-md font-medium hover:bg-green-600 transition duration-200"
               >
                 Submit

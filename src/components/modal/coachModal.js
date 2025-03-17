@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IoIosClose } from "react-icons/io";
+import { IoIosClose } from 'react-icons/io';
 import Image from 'next/image';
 import White from '/public/images/White Dot.png';
 import Oxblod from '/public/images/oxblod Dot.png';
@@ -8,14 +8,22 @@ import Red from '/public/images/red dot.png';
 // Sequential seat layout from 1 to 48
 const seatLayout = Array.from({ length: 48 }, (_, i) => i + 1);
 
-export default function CoachModal({ selectedSeats, setSelectedSeats, passengers, setPassengers, selectedCoach }) {
+export default function CoachModal({
+  selectedSeats,
+  setSelectedSeats,
+  passengers,
+  setPassengers,
+  selectedCoach,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const toggleSeatSelection = (seatNumber) => {
     if (selectedSeats.includes(seatNumber)) {
       setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
-      setPassengers(passengers.filter((passenger) => passenger.seat !== seatNumber));
+      setPassengers(
+        passengers.filter((passenger) => passenger.seat !== seatNumber)
+      );
     } else if (selectedSeats.length < 4) {
       setSelectedSeats([...selectedSeats, seatNumber]);
       setPassengers([
@@ -35,9 +43,9 @@ export default function CoachModal({ selectedSeats, setSelectedSeats, passengers
 
   const handleOpenModal = () => {
     if (!selectedCoach) {
-      setError("Please select a coach before selecting a seat.");
+      setError('Please select a coach before selecting a seat.');
     } else {
-      setError("");
+      setError('');
       setIsModalOpen(true);
     }
   };
@@ -93,7 +101,7 @@ export default function CoachModal({ selectedSeats, setSelectedSeats, passengers
                     {seatNumber}
                   </button>
                 ))}
-              {/* <div>
+                {/* <div>
                 <div className="grid grid-cols-4 justify-between gap-2 w-full">
                   {seatLayout.map((seatNumber) => (
                     <div key={seatNumber}>

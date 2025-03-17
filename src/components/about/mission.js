@@ -52,7 +52,7 @@
 //   );
 // }
 import Image from "next/image";
-import star from "/icons/Vector (7).svg";
+import star from "/public/icons/Vector (7).svg";
 import triple from "/public/images/Frame 1618869461.svg";
 
 export default function Mission() {

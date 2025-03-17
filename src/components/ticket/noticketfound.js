@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import React from '/images/Mask Group 5.png'
+import ErrorImg from '/public/images/Mask Group 5.png'
 
 export default function NoTicketFounnd(){
     return (
         <div className='flex flex-col gap-6 items-center my-10 px-16 py-8 '>
             <div>   
-            <Image src={React} alt="" width={200}/>
+            <Image src={ErrorImg} alt="" width={200}/>
             </div>
         <div className="text-center space-y-3  lg:w-[600px]">
         <h1 className="font-bold text-[24px]">No Tickets Found</h1>

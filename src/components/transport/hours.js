@@ -96,8 +96,8 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useSearchStore } from "@/store/useSearchStore";
 // import trainData from "@/train.json"; // Import the JSON data
-import img from '/images/Frame 1000003438.svg'
-import img1 from '/images/Frame 1000003439.svg'
+import img from '/public/images/Frame 1000003438.svg'
+import img1 from '/public/images/Frame 1000003439.svg'
 // import { useEffect, useState } from "react";
 // import { Classes } from "@/db";
 

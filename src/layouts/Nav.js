@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import Link from "next/link";
-import Logo from '/icons/image 3.svg'
+import Logo from '/public/icons/image 3.svg'
 
 export default function Nav() {
     const [menuOpen, setMenuOpen] = useState(false);

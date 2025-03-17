@@ -1,4 +1,4 @@
-import Img from '/images/分组 6 copy.svg'
+import Img from '/public/images/分组 6 copy.svg'
 import Image from 'next/image'
 export default function notrains(){
     return (

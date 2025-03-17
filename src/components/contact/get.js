@@ -10,11 +10,11 @@ import Facebook from "/public/images/Vector (3).svg";
 
 export default function Get() {
   return (
-    <div className="bg-[#F2FAF4]  rounded-md px-2 md:px-6 py-4  ">
+    <div className="bg-[#F2FAF4]  rounded-xl px-2 md:px-6 py-4  ">
       <div className=" flex flex-col mt-[16px]  lg:p-0 ">
         <div className="flex flex-col gap-[40px] p-2 w-full">
           <div className="w-full">
-            <h1 className="text-3xl font-bold">Get In Touch</h1>
+            <h1 className="text-3xl lg:text-4xl font-bold">Get In Touch</h1>
             <p className="text-[14px] font-normal">
               Fill up the form and our team will get back to you within 24
               hours.

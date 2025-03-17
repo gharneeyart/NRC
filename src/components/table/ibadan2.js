@@ -1,8 +1,8 @@
 import { Morning } from "@/db";
 
-export default function HomePage() {
+export default function Ibadan2() {
     return (
-         <div className="">
+         <div className="pb-[234px] w-11/12 container mx-auto">
                 
           <div className="py-4   ">
           <h1 className="text-2xl font-semibold ">Lagos - Ibadan Mornin Train (LI1)</h1>
@@ -16,23 +16,23 @@ export default function HomePage() {
             <table className=" px-6 lg:px-0 w-full">
                 <thead className="bg-[#F2FAF4] ">
                     <tr>
-                        <th className=" py-3 px-4 font-semibold">NO</th>
-                        <th className=" py-3 px-4 font-semibold">Code</th>
-                        <th className=" py-3 px-4 font-semibold text-left">Station Name</th>
-                        <th className=" py-3 px-4 font-semibold">Arrival Time</th>
-                        <th className=" py-3 px-4 font-semibold">Departure Time</th>
-                        <th className=" py-3 px-4 font-semibold">Distance</th>
+                        <th className=" py-3 font-semibold pl-6 text-left">NO</th>
+                        <th className=" py-3 px-3 font-semibold text-left">Code</th>
+                        <th className=" py-3 px-3 font-semibold text-left w-[171px] lg:w-[270px]">Station Name</th>
+                        <th className=" py-3 px-3 font-semibold text-left">Arrival Time</th>
+                        <th className=" py-3 px-3 font-semibold text-left">Departure Time</th>
+                        <th className=" py-3 px-3 font-semibold text-left">Distance</th>
                     </tr>
                 </thead>
                 <tbody>
                     {Morning.map((morning, index) => (
-                        <tr key={morning?.id} className="border border-gray-300 text-start  font-medium text-[#263238] text-lg text-[22px]">
+                        <tr key={morning?.id} className="border border-gray-300 text-start  font-medium text-[#263238] text-sm lg:text-[18px] ">
                             <td className="pb-6 pt-2 pl-6">{index + 1}</td>
-                            <td className="pb-6 pt-2 pl-10">{morning?.code}</td>
-                            <td className="pb-6 pt-2 px-3  ">{morning?.name}</td>
-                            <td className="pb-6 pt-2 pl-12">{morning?.arrivalTime}</td>
-                            <td className="pb-6 pt-2 pl-12">{morning?.departureTime}</td>
-                            <td className="pb-6 pt-2 pl-8">{morning?.distance}</td>
+                            <td className="pb-6 pt-2 px-6">{morning?.code}</td>
+                            <td className="pb-6 pt-2 px-6 ">{morning?.name}</td>
+                            <td className="pb-6 pt-2 px-6">{morning?.arrivalTime}</td>
+                            <td className="pb-6 pt-2 px-6">{morning?.departureTime}</td>
+                            <td className="pb-6 pt-2 px-6">{morning?.distance}</td>
                         </tr>
                     ))}
                 </tbody>

@@ -3,6 +3,7 @@ import notFound from '/public/images/13315300_5203298 1.svg'
 import arrow from '/public/icons/Arrow-28.svg'
 import Link from "next/link";
 
+
 export default function NotFound() {
     return(
         <div className='flex flex-col items-center my-10'> 
@@ -16,6 +17,8 @@ export default function NotFound() {
                 <Link href='/'>Go home</Link>
             </span>
         </div>
+       
+        
     </div>
     )
     

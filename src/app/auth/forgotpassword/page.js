@@ -5,7 +5,7 @@ import Image from "next/image";
 import logo from '/public/images/image-3.svg'
 import image from '/public/images/138-1(2).svg'
 import Link from "next/link";
-const ForgotPassword = () => {
+export default function ForgotPassword(){
     const [loading, setLoading] = useState(false)
         const [apiError, setApiError] = useState("")
     
@@ -51,7 +51,7 @@ const ForgotPassword = () => {
               {errors.email && <p className="text-red-600 mb-7">{errors.email.message}</p>}
               <button
                 type="submit"
-                className="bg-[#18A532] text-white  w-full py-3 rounded-md mb-2 "
+                className="bg-[#18A532] text-white  w-full py-2 rounded-md mb-2 "
               >
                 Reset
               </button>
@@ -59,7 +59,7 @@ const ForgotPassword = () => {
           </div>
 
           <p className="text-center text-gray-700 text-sm lg:text-base">
-            Don’t have an account?{" "}
+            Don't have an account?{" "}
             <Link href="/auth/signup" className="text-green-600 font-semibold">Sign Up</Link>
           </p>
         </div>
@@ -74,5 +74,3 @@ const ForgotPassword = () => {
     </div>
   );
 };
-
-export default ForgotPassword;

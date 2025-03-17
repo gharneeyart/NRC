@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import Logo from '/public/icons/image 3.svg';
+import Facebook from '/public/icons/Facebook (1).svg';
+import Instagram from '/public/icons/Frame 1000003414.svg';
+import Twitter from '/public/icons/Frame 1000003415.svg';
 
 
 export default function Footer() {
@@ -7,12 +11,12 @@ export default function Footer() {
     <div className="bg-[#F0F7F6]">
       <div className='w-11/12 container mx-auto flex flex-col lg:flex-row justify-items-center gap-[3.375rem] xl:gap-[4.313rem] justify-between items-center text-center lg:text-start lg:items-start py-[2.463rem]'>
         <div className="space-y-[9px] justify-items-center lg:justify-items-start">
-          <Link href="/"><Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.svg" width={100} height={100} priority={true} alt="NRC-logo"/></Link>
+          <Link href="/"><Image className="w-[8.893rem] h-[3.344rem]" src={Logo} width={100} height={100} priority={true} alt="NRC-logo"/></Link>
           <p className="">E-Ticketing App : Lagos - Ibadan</p>
           <div className="flex flex-row pt-[13px] gap-[0.875rem]">
-          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src="/icons/Facebook (1).svg" width={100} height={100} alt="Facebook-logo"/>
-          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src="/icons/Frame 1000003414.svg" width={100} height={100} alt="Instagram-logo"/>
-          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src="/icons/Frame 1000003415.svg" width={100} height={100} alt="Twitter-logo"/>
+          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src={Facebook} width={100} height={100} alt="Facebook-logo"/>
+          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src={Instagram} width={100} height={100} alt="Instagram-logo"/>
+          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src={Twitter} width={100} height={100} alt="Twitter-logo"/>
           </div>
         </div>
 

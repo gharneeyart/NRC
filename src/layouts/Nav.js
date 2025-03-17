@@ -70,7 +70,7 @@ const closeMenu = () => {
         <div className="w-full bg-white py-[2.49rem] fixed top-0 left-0 right-0 z-50 border border-[#D8D8D8]">
             <div className="w-11/12 container mx-auto flex items-center justify-between">
             <Link href="/">
-                <Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.svg" alt="NRC-logo" width={100} height={100} priority={true} />
+                <Image className="w-[8.893rem] h-[3.344rem]" src={Logo} alt="NRC-logo" width={100} height={100} priority={true} />
             </Link>
 
             <div className="lg:hidden text-2xl  px-4 cursor-pointer" onClick={openMenubar}>

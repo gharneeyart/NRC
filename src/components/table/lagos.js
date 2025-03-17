@@ -16,7 +16,7 @@ export default function Lagos(){
             
         <table className=" px-6 lg:px-0 w-full ">
             <thead className="bg-[#F2FAF4] ">
-                <tr className='text-[22px]'>
+                <tr>
                     <th className=" py-3 font-semibold text-left pl-6">NO</th>
                     <th className=" py-3  font-semibold text-left px-3">Code</th>
                     <th className=" py-3  font-semibold text-left px-3 w-[171px] lg:w-[270px]">Station Name</th>
@@ -27,10 +27,10 @@ export default function Lagos(){
             </thead>
             <tbody>
                 {trainSchedule.map((schedule, index) => (
-                    <tr key={schedule.id} className="border border-gray-300 text-start text-[#263238] font-medium  text-sm lg:text-[22px] ">
+                    <tr key={schedule.id} className="border border-gray-300 text-start text-[#263238] font-medium  text-sm lg:text-[18px] ">
                         <td className="pb-6 pt-2 pl-6">{index + 1}</td>
                         <td className="pb-6 pt-2 px-6 ">{schedule?.code}</td>
-                        <td className="pb-6 pt-2 px-6 w-[171px] lg:w-[270px] ">{schedule?.name}</td>
+                        <td className="pb-6 pt-2 px-6 ">{schedule?.name}</td>
                         <td className="pb-6 pt-2 px-6">{schedule?.arrivalTime}</td>
                         <td className="pb-6 pt-2 px-6">{schedule?.departureTime}</td>
                         <td className="pb-6 pt-2 px-6">{schedule?.distance}</td>

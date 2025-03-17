@@ -1,6 +1,6 @@
 import Img from '/public/images/分组 6 copy.svg'
 import Image from 'next/image'
-export default function NoTrains(){
+export default function notrains(){
     return (
         <div className='w-[80%] mx-auto'>
          <Image src={Img} alt="nosearch" className='flex justify-center mx-auto w-[50%] 2xl:w-[25%] lg:w-[40%] mb-7' width={100} height={100}/>

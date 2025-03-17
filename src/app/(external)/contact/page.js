@@ -3,6 +3,7 @@ import Map from '@/components/contact/map'
 import Get from "@/components/contact/get"
 import Form from '@/components/contact/form'
 
+
 export default function Contact() {
     return(
        <div>
@@ -16,6 +17,7 @@ export default function Contact() {
         <Form/>
        </div>
         <Map/>
+      
        </div>
         
     )

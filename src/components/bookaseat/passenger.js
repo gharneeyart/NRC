@@ -133,10 +133,10 @@
 // }
 
 
-'use client';
+
 'use client';
 import { useState, useEffect } from 'react';
-import { useSearchStore } from '@/store/useSearchStore';
+// import { useSearchStore } from '@/store/useSearchStore';
 
 const Passenger = ({
   index,

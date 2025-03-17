@@ -1,6 +1,6 @@
 import Image from "next/image"
-import NotFound from '/images/Group 26795.png'
-import Link from "next/link"
+import NotFound from '/public/images/Group 26795.png'
+// import Link from "next/link"
 
 
 export default function Answer(){

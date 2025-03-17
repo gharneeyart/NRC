@@ -57,6 +57,7 @@ import triple from "/public/images/Frame 1618869461.svg";
 
 export default function Mission() {
   return (
+
     <div className="text-black w-full items-center mt-12 lg:w-[90%] lg:grid grid-cols-2 mx-auto items-center 4xl:w-[80%] 4xl:gap-2">
       
       <div>

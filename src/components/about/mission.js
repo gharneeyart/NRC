@@ -58,19 +58,19 @@ import triple from "/public/images/Frame 1618869461.svg";
 export default function Mission() {
   return (
 
-    <div className="text-black w-full  mt-12 lg:w-[90%] lg:grid grid-cols-2 mx-auto items-center 4xl:w-[80%] 4xl:gap-2">
+    <div className="w-11/12 container mx-auto text-black  my-14  flex flex-col lg:flex-row items-center  justify-between ">
       
-      <div>
+      <div className="w-full lg:w-[45%] 2xl:w-[40%] mb-8 lg:mb-0">
         <Image 
           src={triple} 
-          className="lg:w-[90%] lg:h-auto 2xl:w-[80%] md:w-[50%] md:ml-7 px-7 lg:p-0 2xl:p-0" 
+          className="w-full lg:h-full object-cover " 
           alt="trains"
         />
       </div>
 
-      <div className="lg:text-xl 2xl:text-2xl lg:gap-3 2xl:gap-10 4xl:gap-3 flex flex-col md:ml-4 lg:h-full lg:min-h-[500px] xl:h-full xl:min-h-[600px] lg:w-[90%] xl:w-[70%] w-90% mx-auto items-center px-7 lg:p-0 xl:p-0">
+      <div className="lg:text-xl 2xl:text-2xl lg:gap-3 2xl:gap-10 4xl:gap-3 flex flex-col md:ml-4  w-full lg:w-[50%]    px-7 lg:p-0 xl:p-0">
         <div>
-          <h1 className="font-bold text-3xl lg:mb-3 xl:mb-9 mb-6 mt-7 lg:text-4xl 2xl:text-5xl">
+          <h1 className="font-bold text-3xl lg:mb-3 xl:mb-9 mb-6  lg:text-4xl 2xl:text-5xl">
             Our Mission
           </h1>
           <p className="mb-2 lg:mb-3 2xl:mb-1 text-[#4E4E4E] lg:text-lg 2xl:text-xl font-semibold">

@@ -1,7 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import "odometer/themes/odometer-theme-default.css";
-import Odometer from "odometer";
+import dynamic from "next/dynamic";
+
+// Dynamically import Odometer with no SSR
+const Odometer = dynamic(() => import("odometer"), { ssr: false });
 
 export default function Count() {
   const odometerRefs = {

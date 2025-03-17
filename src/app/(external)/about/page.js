@@ -1,10 +1,13 @@
-import Count from "@/components/about/count";
+// import Count from "@/components/about/count";
+'use client'
 import Testimonial from "@/components/about/testimonials";
 import Mission from "@/components/about/mission"
 import ResuableHero from "@/components/reusables/hero";
 import Services from "@/components/reusables/services";
 import Companion from "@/components/reusables/railCompanion";
+import dynamic from "next/dynamic";
 
+const Count = dynamic(() => import("@/components/about/count"), { ssr: false });
 export default function About() {
     return(
         <div className="">

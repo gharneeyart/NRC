@@ -16,23 +16,23 @@ export default function Ibadan(){
         <table className=" px-6 lg:px-0 w-full">
             <thead className="bg-[#F2FAF4] ">
                 <tr>
-                    <th className=" py-3 px-4 font-semibold">NO</th>
-                    <th className=" py-3 px-4 font-semibold">Code</th>
-                    <th className=" py-3 px-4 text-left font-semibold w-[171px] lg:w-[270px]">Station Name</th>
-                    <th className=" py-3 px-4 font-semibold">Arrival Time</th>
-                    <th className=" py-3 px-4 font-semibold">Departure Time</th>
-                    <th className=" py-3 px-4 font-semibold">Distance</th>
+                    <th className=" py-3 font-semibold pl-6 text-left">NO</th>
+                    <th className=" py-3 px-3 font-semibold text-left">Code</th>
+                    <th className=" py-3 px-3 text-left font-semibold w-[171px] lg:w-[270px]">Station Name</th>
+                    <th className=" py-3 px-3 font-semibold text-left">Arrival Time</th>
+                    <th className=" py-3 px-3 font-semibold text-left">Departure Time</th>
+                    <th className=" py-3 px-3 font-semibold text-left">Distance</th>
                 </tr>
             </thead>
             <tbody>
                 {Schedule.map((item, index) => (
-                    <tr key={item.id} className="border border-gray-300 text-start font-medium text-sm  text-[#263238] lg:text-lg  ">
+                    <tr key={item.id} className="border border-gray-300 text-start font-medium text-sm  text-[#263238] lg:text-[18px]  ">
                         <td className="pb-6 pt-2 pl-6">{index + 1}</td>
-                        <td className="pb-6 pt-2 pl-6">{item.code}</td>
-                        <td className="pb-6 pt-2 pl-6 w-[171px] lg:w-[270px]  ">{item.name}</td>
-                        <td className="pb-6 pt-2 pl-6">{item.arrivalTime}</td>
-                        <td className="pb-6 pt-2 pl-6">{item.departureTime}</td>
-                        <td className="pb-6 pt-2 pl-6">{item.distance || "N/A"}</td>
+                        <td className="pb-6 pt-2 px-6">{item.code}</td>
+                        <td className="pb-6 pt-2 px-6 ">{item.name}</td>
+                        <td className="pb-6 pt-2 px-6">{item.arrivalTime}</td>
+                        <td className="pb-6 pt-2 px-6">{item.departureTime}</td>
+                        <td className="pb-6 pt-2 px-6">{item.distance || "N/A"}</td>
                     </tr>
                 ))}
             </tbody>

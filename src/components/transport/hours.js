@@ -95,11 +95,11 @@
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useSearchStore } from "@/store/useSearchStore";
-import trainData from "@/train.json"; // Import the JSON data
+// import trainData from "@/train.json"; // Import the JSON data
 import img from '/images/Frame 1000003438.svg'
 import img1 from '/images/Frame 1000003439.svg'
-import { useEffect, useState } from "react";
-import { Classes } from "@/db";
+// import { useEffect, useState } from "react";
+// import { Classes } from "@/db";
 
 // Helper to compute time difference between two times in "HH:mm" format
 function computeTimeDifference(dept, arr) {

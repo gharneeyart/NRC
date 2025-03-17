@@ -1,5 +1,4 @@
 'use client'
-import React from 'react';
 import { useSearchStore } from '@/store/useSearchStore'; // Import useSearchStore
 import { Classes } from '@/db'; // Import Classes from db.js
 

@@ -4,6 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import Link from "next/link";
+import Logo from '/icons/image 3.svg'
 
 export default function Nav() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Nav() {
         <div className="w-full bg-white py-[2.49rem]">
             <div className="w-11/12 container mx-auto flex items-center justify-between">
             <Link href="/">
-                <Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.svg" alt="NRC-logo" width={100} height={100} priority={true} />
+                <Image className="w-[8.893rem] h-[3.344rem]" src={Logo} alt="NRC-logo" width={100} height={100} priority={true} />
             </Link>
 
             <div className="lg:hidden text-2xl  px-4 cursor-pointer" onClick={toggleMenu}>

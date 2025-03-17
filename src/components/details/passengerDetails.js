@@ -1,5 +1,4 @@
 'use client';
-import React from "react";
 import { useSearchStore } from "@/store/useSearchStore";
 
 export default function PassengerDetails() {
@@ -22,7 +21,7 @@ export default function PassengerDetails() {
           </thead>
           <tbody>
             {passengers.map((passenger, index) => (
-              <React.Fragment key={index}>
+              <div key={index}>
                 <tr className="text-sm lg:text-[1rem] xl:text-[1.375rem] font-semibold">
                   <td className="px-[0.703rem] lg:px-[1.878rem] pt-[0.214rem] lg:pt-[0.779rem]">{passenger.name}</td>
                   <td className="pt-[0.214rem] lg:pt-[0.779rem]">{passenger.passenger}</td>
@@ -32,7 +31,7 @@ export default function PassengerDetails() {
                   <td className="text-[#6D6D6D] pt-[6.36px] lg:pt-[9px]">{passenger.email}</td>
                   <td className="text-[#6D6D6D] pt-[4.24px] lg:pt-[6px]">{passenger.phone}</td>
                 </tr>
-              </React.Fragment>
+              </div>
             ))}
           </tbody>
         </table>

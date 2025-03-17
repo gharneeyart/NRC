@@ -1,8 +1,8 @@
 import Image from "next/image"
-import fram1 from '/public/images/Frame 41010 (1).svg'
-import fram2 from '/public/images/qr-code-svgrepo-com (2) 1.svg'
-import fram3 from '/public/icons/ic_baseline-apple.svg'
-import fram4 from '/public/icons/mage_playstore.svg'
+import fram1 from '/images/Frame 41010 (1).svg'
+import fram2 from '/images/qr-code-svgrepo-com (2) 1.svg'
+import fram3 from '/icons/ic_baseline-apple.svg'
+import fram4 from '/icons/mage_playstore.svg'
 
 
 export default function Companion() {

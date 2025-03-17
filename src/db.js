@@ -1,7 +1,7 @@
-import Calender from '/public/icons/calendar-1-svgrepo-com 1.svg'
-import Security from '/public/icons/security-safe-svgrepo-com 1.svg'
-import Station from '/public/icons/station-svgrepo-com 1.svg'
-import Train from '/public/icons/train-svgrepo-com 1.svg'
+import Calender from '/icons/calendar-1-svgrepo-com 1.svg'
+import Security from '/icons/security-safe-svgrepo-com 1.svg'
+import Station from '/icons/station-svgrepo-com 1.svg'
+import Train from '/icons/train-svgrepo-com 1.svg'
 
 
 export const Discover =[

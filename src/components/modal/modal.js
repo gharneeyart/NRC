@@ -1,9 +1,9 @@
 'use client'
 import { useModal } from "@/context/modalContext";
 import Image from "next/image";
-import payTimer from "/public/icons/timer payment.svg";
-import Dot from "/public/icons/paystackDot.svg";
-import paystackLogo from "/public/icons/paystackLogo.svg";
+import payTimer from "/icons/timer payment.svg";
+import Dot from "/icons/paystackDot.svg";
+import paystackLogo from "/icons/paystackLogo.svg";
 import { IoIosClose } from "react-icons/io";
 export default function Modal() {
     const { isModalOpen, closeModal } = useModal();

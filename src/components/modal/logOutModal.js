@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import LogoutLogo from "/public/images/logout.png";
+import LogoutLogo from "/images/logout.png";
 import { IoIosClose } from "react-icons/io";
 export default function Logout() {
   const [isOpen, setIsOpen] = useState(false);

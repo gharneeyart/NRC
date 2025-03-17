@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import Image from "next/image";
-import payTimer from "/public/icons/timer payment.svg";
-import Dot from "/public/icons/paystackDot.svg";
-import paystackLogo from "/public/icons/paystackLogo.svg";
+import payTimer from "/icons/timer payment.svg";
+import Dot from "/icons/paystackDot.svg";
+import paystackLogo from "/icons/paystackLogo.svg";
 
 export default function ModalDemo() {
   const [isOpen, setIsOpen] = useState(false);

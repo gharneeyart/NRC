@@ -183,13 +183,13 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import Train from "/public/images/train.png";
+import Train from "/images/train.png";
 // import trainLogo from "../../../assets/icon/TrainLogo.png";
 // import { LuEyeOff } from "react-icons/lu";
 import { BiHide } from "react-icons/bi";
 import { BiShow } from "react-icons/bi";
 import { useForm } from "react-hook-form";
-import Logo from "/public/images/Logo.png";
+import Logo from "/images/Logo.png";
 import Link from "next/link";
 
 export default function Register() {

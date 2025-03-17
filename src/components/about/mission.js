@@ -43,8 +43,8 @@
 // }
 
 import Image from "next/image";
-import star from "/public/icons/Vector (7).svg";
-import train from "/public/images/Old train in thailand.svg";
+import star from "/icons/Vector (7).svg";
+import train from "/images/Old train in thailand.svg";
 
 export default function Mission() {
   return (

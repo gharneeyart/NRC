@@ -120,7 +120,7 @@ export default function SearchTrain({
     const [showDate, setShowDate] = useState(false);
 
     const handleFrom = () => {
-            setShowFrom(!showFrom);
+            setShowFrom(true);
         };
     const handleTo = () => {
             setShowTo(true);

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import Train from "/public/images/138 1 (1).png";
-import Logo from "/public/icons/image 3.png";
+import Train from "/images/138 1 (1).png";
+import Logo from "/icons/image 3.png";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { useState } from "react";

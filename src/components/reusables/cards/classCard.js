@@ -16,8 +16,8 @@ export default function ClassCard({myBookings}) {
                <Image src={myBookings?.image} alt={myBookings?.class} />
                </div>
                 <div className="flex flex-col gap-[10px]">
-                <h2 className="font-semibold text-[18px] xl:text-[26px]">{myBookings?.class}</h2>
-                <div className="flex gap-2 font-medium text-[15px]  xl:text-[22px] items-center">
+                <h2 className="font-semibold text-[17px] xl:text-[26px]">{myBookings?.class}</h2>
+                <div className="flex gap-2 font-medium text-[14px]  xl:text-[22px] items-center">
                 <p className="">Adult - {myBookings?.priceAdult}</p> |
                 <p className="">Child - {myBookings?.priceChild}</p>
                 </div>

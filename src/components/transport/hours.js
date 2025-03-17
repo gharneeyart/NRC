@@ -56,33 +56,33 @@ export default function Hours({bg, text}) {
   const timeDiff = computeTimeDifference(departureTime, arrivalTime);
     return (
       <div className="mb-[46px] mt-[19px] ">
-        <div className="flex flex-col lg:flex-row  justify-between text-center lg:text-left gap-8 ">
+        <div className="grid grid-cols-1 lg:grid-cols-4 items-center  text-center lg:text-left  ">
         <div className="flex flex-col gap-[12px]">
-          <div className=" flex flex-col gap-[6px] lg:w-[282px]">
-          <h1 className="font-semibold text-[16px] md:text-[22px] xl:text-[28px]">{departureTime}</h1>
-          <p className="text-[#767676] text-[14px] md:text-[20px] xl:text-[22px]">
+          <div className=" flex flex-col gap-[6px] ">
+          <h1 className="font-semibold text-[16px] md:text-[20px] xl:text-[28px]">{departureTime}</h1>
+          <p className="text-[#767676] text-[14px] md:text-[16px] xl:text-[22px]">
               {from}
             </p>
           </div>
-            <p className="text-[#767676] text-[14px] md:text-[20px] xl:text-[22px]">{formatDate(date) }</p>
+            <p className="text-[#767676] text-[14px] md:text-[16px] xl:text-[22px]">{formatDate(date) }</p>
         </div>
-       <div className="flex flex-col gap-6 items-center text-center justify-center ">
-       <div className="flex flex-row gap-6 items-center text-center justify-center ">
+       <div className="col-span-2 flex flex-col  gap-6 items-center text-center justify-center ">
+       <div className=" flex flex-row gap-6 items-center text-center justify-center ">
             <Image src={img} alt="train" className="w-[66px] md:w-[100px]  xl:w-[144px] " />
-           <p className="font-semibold text-[14px] md:text-[20px] xl:text-[28px]">{timeDiff}</p>
+           <p className=" font-semibold text-[14px] md:text-[16px] xl:text-[28px]">{timeDiff}</p>
             <Image src={img1} alt="train"  className="w-[66px] md:w-[100px] xl:w-[144px]" />
         </div>
         {pathname !== "/trip" && (
             <p className={`${bg} ${text} text-lg font-semibold py-[15px] rounded-full px-[32px]`}>{selectedClass}</p>
           )}
        </div>
-        <div  className="flex flex-col gap-[12px]">
-        <div  className=" flex flex-col gap-[6px] lg:w-[282px]">
+        <div  className="flex flex-col gap-[12px] text-left">
+        <div  className=" flex flex-col gap-[6px] ">
         <h1 className="font-semibold text-[16px] md:text-[22px] xl:text-[28px]">{arrivalTime}</h1>
-            <p className="text-[#767676] text-[14px] md:text-[20px] xl:text-[22px]">{to }</p>
+            <p className="text-[#767676] text-[14px]  md:text-[16px] xl:text-[22px]">{to }</p>
             {/* <p className="text-[#767676] text-[14px] md:text-[20px] xl:text-[22px]">Ebute Metta</p> */}
         </div>
-            <p className="text-[#767676] text-[14px] md:text-[20px] xl:text-[22px]">{formatDate(date) }</p>
+            <p className="text-[#767676] text-[14px] md:text-[16px]  xl:text-[22px]">{formatDate(date) }</p>
         </div>
         </div>
       </div>

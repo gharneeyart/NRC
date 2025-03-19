@@ -1,8 +1,8 @@
-"use client";
-import Image from "next/image";
-import { useState } from "react";
-import LogoutLogo from "/public/images/logout.png";
-import { IoIosClose } from "react-icons/io";
+'use client';
+import Image from 'next/image';
+import { useState } from 'react';
+import LogoutLogo from '../../images/logout.png';
+import { IoIosClose } from 'react-icons/io';
 export default function Logout() {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -23,7 +23,7 @@ export default function Logout() {
             >
               <IoIosClose size={20} />
             </button>
-            <Image src={LogoutLogo} className="w-[80px]" />
+            <Image src={LogoutLogo} className="w-[80px]" alt="logout" />
             <div className="flex flex-col items-center justify-center gap-2">
               <h2 className="font-bold text-xl">Log Out</h2>
               <p className="text-center font-thin">

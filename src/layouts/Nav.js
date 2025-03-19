@@ -7,7 +7,8 @@ import Link from 'next/link';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import Logo from '../icons/image 3.svg';
 import { useAuth } from '@/context/AuthContext';
-import Marquee from "@/components/home/marquee";
+import Marquee from '@/components/home/marquee';
+
 
 
 export default function Nav() {
@@ -74,9 +75,10 @@ export default function Nav() {
   };
 
   return (
-    <div>
-      <Marquee/>
-      <div className="w-full bg-white py-[2.49rem] fixed top-0 left-0 right-0 z-50 border border-[#D8D8D8]">
+   
+      <div className='fixed left-0 right-0 z-50'>
+        <Marquee/>
+        <div className="w-full bg-white py-[2.49rem]  border border-[#D8D8D8]">
       <div className="w-11/12 container mx-auto flex items-center justify-between">
         <Link href="/">
           <Image
@@ -207,6 +209,7 @@ export default function Nav() {
         </div>
       </div>
     </div>
-    </div>
+      </div>
+  
   );
 }

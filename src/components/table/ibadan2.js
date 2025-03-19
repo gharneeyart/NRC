@@ -1,4 +1,4 @@
-import { Morning } from "@/db";
+import { Morning } from '@/db';
 
 export default function Ibadan2() {
     return (
@@ -39,4 +39,5 @@ export default function Ibadan2() {
             </table>
         </div>
     )
+
 }

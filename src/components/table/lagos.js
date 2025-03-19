@@ -1,4 +1,4 @@
-import { trainSchedule } from "@/db"
+import { trainSchedule } from '@/db';
 
 
 export default function Lagos(){
@@ -39,7 +39,5 @@ export default function Lagos(){
             </tbody>
         </table>
     </div>
-    
-    
-    )
+  );
 }

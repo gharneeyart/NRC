@@ -1,27 +1,38 @@
-"use client";
-import { useSearchStore } from "@/store/useSearchStore";
-import { useState, useEffect } from "react";
-import CoachModal from "../modal/coachModal";
-import { Classes } from "@/db";
+'use client';
+import { useSearchStore } from '@/store/useSearchStore';
+import { useState, useEffect } from 'react';
+import CoachModal from '../modal/coachModal';
+import { Classes } from '@/db';
 
-const Search = ({ selectedSeats, setSelectedSeats, passengers, setPassengers }) => {
+const Search = ({
+  selectedSeats,
+  setSelectedSeats,
+  passengers,
+  setPassengers,
+}) => {
   const { selectedClass, setSelectedClass } = useSearchStore();
   const [localClass, setLocalClass] = useState(selectedClass);
-  const [selectedCoach, setSelectedCoach] = useState("");
+  const [selectedCoach, setSelectedCoach] = useState('');
+  const [filteredCoaches, setFilteredCoaches] = useState([]);
 
   useEffect(() => {
     setLocalClass(selectedClass);
   }, [selectedClass]);
 
+  // Filter coaches based on the selected class
+  useEffect(() => {
+    const filtered =
+      Classes.find((cls) => cls.class === localClass)?.coach || [];
+    setFilteredCoaches(filtered);
+  }, [localClass]);
+
+  // Handle class change event
   const handleClassChange = (e) => {
     const newClass = e.target.value;
     setLocalClass(newClass);
     setSelectedClass(newClass);
-    setSelectedCoach(""); // Reset coach selection when class changes
+    setSelectedCoach(''); // Reset coach selection when class changes
   };
-
-  // Filter coaches based on the selected class
-  const filteredCoaches = Classes.find((cls) => cls.class === localClass)?.coach || [];
 
   return (
     <div className="mb-11">
@@ -29,14 +40,16 @@ const Search = ({ selectedSeats, setSelectedSeats, passengers, setPassengers }) 
         <div className="lg:flex gap-12 w-full">
           {/* Class */}
           <div className="w-full">
-            <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Class</label>
+            <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
+              Class
+            </label>
             <select
               value={localClass}
               onChange={handleClassChange}
               className="border px-5 py-3 rounded-lg mt-3 mb-3 lg:mb-0 w-full h-12 text-[#848484]"
             >
               <option value="" disabled className="text-[#848484]">
-                {selectedClass || "Select Class"}
+                {selectedClass || 'Select Class'}
               </option>
               <option value="First Class">First Class</option>
               <option value="Business Class">Business Class</option>
@@ -46,7 +59,9 @@ const Search = ({ selectedSeats, setSelectedSeats, passengers, setPassengers }) 
 
           {/* Coach */}
           <div className="w-full">
-            <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Coach</label>
+            <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
+              Coach
+            </label>
             <select
               value={selectedCoach}
               onChange={(e) => setSelectedCoach(e.target.value)}
@@ -65,7 +80,9 @@ const Search = ({ selectedSeats, setSelectedSeats, passengers, setPassengers }) 
 
           {/* Seat */}
           <div className="w-full flex flex-col gap-3">
-            <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Seat</label>
+            <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
+              Seat
+            </label>
             <div>
               <CoachModal
                 selectedSeats={selectedSeats}

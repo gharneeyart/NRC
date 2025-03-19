@@ -1,16 +1,23 @@
-import { Schedule } from "@/db"
+import { Schedule } from '@/db';
 
-export default function Ibadan(){
-    return(
-        <div className="w-11/12 container mx-auto">
-            
+export default function Ibadan() {
+  return (
+    <div className="w-11/12 container mx-auto">
       <div className="py-4   pr-10 ">
-      <h1 className="text-2xl font-semibold ">Ibadan - Lagos Mornin Train (IL2)</h1>
-                <div className="space-x-5">
-        <span className=" border-r-2 border-[#263238] pr-2">Train Type - <b>100 KM</b></span>
-        <span className=" border-r-2 border-[#263238] pr-2">Total Time - <b>2 hrs, 33 mins</b></span>
-        <span>Total Distance - <b>180 KM</b></span>
-    </div>
+        <h1 className="text-2xl font-semibold ">
+          Ibadan - Lagos Mornin Train (IL2)
+        </h1>
+        <div className="space-x-5">
+          <span className=" border-r-2 border-[#263238] pr-2">
+            Train Type - <b>100 KM</b>
+          </span>
+          <span className=" border-r-2 border-[#263238] pr-2">
+            Total Time - <b>2 hrs, 33 mins</b>
+          </span>
+          <span>
+            Total Distance - <b>180 KM</b>
+          </span>
+        </div>
       </div>
             
         <table className=" px-6 lg:px-0 w-full">
@@ -38,6 +45,5 @@ export default function Ibadan(){
             </tbody>
         </table>
     </div>
-
-    )
+  );
 }

@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Image from 'next/image';
-import logo from '/public/images/image-3.svg';
-import image from '/public/images/138-1(2).svg';
+import logo from '../../../images/image-3.svg';
+import image from '../../../images/138-1(2).svg';
 import Link from 'next/link';
 
 export default function ForgotPassword() {

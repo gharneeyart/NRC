@@ -3,7 +3,7 @@ import { useSearchStore } from '@/store/useSearchStore';
 
 export default function PassengerDetails() {
   // Retrieve passenger details from Zustand store
-  const { passengers } = useSearchStore();
+  const { passengers, selectedCoach } = useSearchStore();
 
   return (
     <div className="container w-full lg:w-[520px] xl:w-[664px]  text-[#263238] text-[14px]">
@@ -31,10 +31,10 @@ export default function PassengerDetails() {
                     {passenger.name}
                   </td>
                   <td className="pt-[0.214rem] lg:pt-[0.779rem]">
-                    {passenger.passenger}
+                    {passenger.type}
                   </td>
                   <td className="pt-[0.214rem] lg:pt-[0.779rem]">
-                    {passenger.coach}/{passenger.seat}
+                    {selectedCoach}/{passenger.seat}
                   </td>
                 </tr>
                 <tr className="flex flex-col px-[0.703rem] lg:px-[1.878rem] text-sm lg:text-[1rem] xl:text-[20px]">

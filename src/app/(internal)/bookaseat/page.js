@@ -530,8 +530,8 @@ import { useSearchStore } from '@/store/useSearchStore';
 import axios from 'axios';
 
 export default function Book() {
-  const [selectedSeats, setSelectedSeats] = useState([]);
-  const { passengers, setPassengers, selectedTrain, contactDetails, selectedClass, selectedCoach } = useSearchStore();
+  // const [selectedSeats, setSelectedSeats] = useState([]);
+  const { passengers, setPassengers, selectedTrain, contactDetails, selectedClass, selectedCoach, selectedSeats, setSelectedSeats } = useSearchStore();
   const [errors, setErrors] = useState([]); // Array to hold errors for each passenger
   const router = useRouter();
 
@@ -611,7 +611,7 @@ export default function Book() {
 
     try {
       const response = await axios.post('/bookings', bookingData);
-      if (response.status === 200 || response.status === 200) {
+      if (response.status === 201) {
         console.log('Booking created successfully:', response.data);
         router.push('/payment');
       } else {

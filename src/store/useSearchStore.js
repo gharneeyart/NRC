@@ -84,6 +84,7 @@ export const useSearchStore = create(
       date: '',
       selectedClass: '',
       selectedCoach:'',
+      selectedSeats: [],
       selectedTrain: null,
       timeOfDay: '',
       passengers: [],
@@ -92,6 +93,7 @@ export const useSearchStore = create(
       setTo: (to) => set({ to }),
       setDate: (date) => set({ date }),
       setSelectedTrain: (selectedTrain) => set({ selectedTrain }),
+      setSelectedSeats: (selectedSeats) => set({ selectedSeats }),
       setTimeOfDay: (timeOfDay) => set({ timeOfDay }),
       setSelectedCoach: (selectedCoach) => set({ selectedCoach }), // Add setSelectedCoach
       setSelectedClass: (cls) =>

@@ -76,7 +76,7 @@ export default function Nav() {
       <div className="w-11/12 container mx-auto flex items-center justify-between">
         <Link href="/">
           <Image
-            className="w-[8.893rem] h-[3.344rem]"
+            className="w-[8.893rem] h-[3.344rem] "
             src={Logo}
             alt="NRC-logo"
             width={100}

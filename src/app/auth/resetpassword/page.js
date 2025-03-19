@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Image from 'next/image';
 import logo from '/public/images/image-3.svg';
@@ -7,8 +7,8 @@ import image from '/public/images/138-1(2).svg';
 import Link from 'next/link';
 
 export default function ResetPassword() {
-  const [loading, setLoading] = useState(false);
-  const [apiError, setApiError] = useState('');
+  // const [loading, setLoading] = useState(false);
+  // const [apiError, setApiError] = useState('');
 
   const {
     register,

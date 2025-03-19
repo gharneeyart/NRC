@@ -6,8 +6,10 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import Logo from '/public/icons/image 3.svg';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Nav() {
+  const { auth, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
 
@@ -64,6 +66,11 @@ export default function Nav() {
     };
   }, [dropOpen]);
 
+  const getInitials = (firstName, lastName) => {
+    if (!firstName || !lastName) return '';
+    return `${firstName.charAt(0)}${lastName.charAt(0)}`;
+  };
+
   return (
     <div className="w-full bg-white py-[2.49rem] fixed top-0 left-0 right-0 z-50 border border-[#D8D8D8]">
       <div className="w-11/12 container mx-auto flex items-center justify-between">
@@ -116,13 +123,53 @@ export default function Nav() {
               <h1 className="hover:text-[#006B14]">Contact Us</h1>
             </Link>
 
-            <div className="w-[198px] bg-whitej mx-auto items-center justify-center relative block lg:hidden">
+            {auth ? (
+              <div className="w-[228px] bg-white mx-auto items-center justify-center relative block lg:hidden">
+                <div className="flex gap-[8px] items-center">
+                  <div className="h-[51px] w-[51px] flex items-center justify-center text-lg text-[#006B14] text-center rounded-full bg-[#F0F7F6]">
+                    <h1>{getInitials(auth?.user?.firstName, auth?.user?.lastName)}</h1>
+                  </div>
+                  <div className="text-base text-[#3C3C3C]">
+                    <h3>{`${auth?.user?.firstName} ${auth?.user?.lastName}`}</h3>
+                  </div>
+                  <div
+                    className="text-[#4F4F4F] text-4xl cursor-pointer "
+                    onClick={openMenu}
+                  >
+                    <RiArrowDropDownLine />
+                  </div>
+                </div>
+
+              {dropOpen && (
+                <div className="w-[166px] py-[4px] absolute top-14 right-0 bg-white rounded-[10px] text-[#111014] text-[16px] drop-shadow shadow-[#00000026] cursor-pointer">
+                  <div>
+                    <ul className="px-[10px] py-[10px] grid gap-[10px]">
+                      <li className="hover:text-[#006B14] ">My Tickets</li>
+                      <li className="hover:text-[#006B14]">Reset Password</li>
+                      <li className="text-[#DB3E3E] hover:text-[#006B14]" onClick={logout}>
+                        Log Out
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+             ) : (
+              <div className="flex flex-col text-center gap-[1.75rem] lg:flex-row lg:gap-[2.4rem]  lg:hidden">
+                <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
+                <Link href="/auth/login"><button className="w-full text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
+              </div>
+            )}
+          </div>
+
+          {auth ? (
+            <div className="w-[218px] bg-white gap-[23px] mx-auto items-center justify-center relative hidden lg:block">
               <div className="flex gap-[8px] items-center">
                 <div className="h-[51px] w-[51px] flex items-center justify-center text-lg text-[#006B14] text-center rounded-full bg-[#F0F7F6]">
-                  <h1>M.K</h1>
+                  <h1>{getInitials(auth?.user?.firstName, auth?.user?.lastName)}</h1>
                 </div>
                 <div className="text-base text-[#3C3C3C]">
-                  <h3>Michael Kay</h3>
+                  <h3>{`${auth?.user?.firstName} ${auth?.user?.lastName}`}</h3>
                 </div>
                 <div
                   className="text-[#4F4F4F] text-4xl cursor-pointer "
@@ -132,45 +179,14 @@ export default function Nav() {
                 </div>
               </div>
 
-              {dropOpen && (
-                <div className="w-[166px] py-[4px] absolute top-14 right-0 bg-white rounded-[10px] text-[#111014] text-[16px] drop-shadow shadow-[#00000026] cursor-pointer">
-                  <div>
-                    <ul className="px-[10px] py-[10px] grid gap-[10px]">
-                      <li className="hover:text-[#006B14] ">My Tickets</li>
-                      <li className="hover:text-[#006B14]">Reset Password</li>
-                      <li className="text-[#DB3E3E] hover:text-[#006B14]">
-                        Log Out
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div className="w-[198px] bg-white  gap-[23px] mx-auto items-center justify-center relative  hidden lg:block">
-            <div className="flex gap-[8px] items-center">
-              <div className="h-[51px] w-[51px] flex items-center justify-center text-lg text-[#006B14] text-center rounded-full bg-[#F0F7F6]">
-                <h1>M.K</h1>
-              </div>
-              <div className="text-base text-[#3C3C3C]">
-                <h3>Michael Kay</h3>
-              </div>
-              <div
-                className="text-[#4F4F4F] text-4xl cursor-pointer "
-                onClick={openMenu}
-              >
-                <RiArrowDropDownLine />
-              </div>
-            </div>
 
             {dropOpen && (
-              <div className="w-[166px] py-[4px] absolute top-14 right-0 bg-white rounded-[10px] text-[#111014] text-[16px] drop-shadow shadow-[#00000026] cursor-pointer">
+              <div className="w-[166px] py-[4px] absolute top-14 right-0 bg-white rounded-[10px] text-[#111014] text-[16px] drop-shadow shadow-[#00000026] cursor-pointer ">
                 <div>
                   <ul className="px-[10px] py-[10px] grid gap-[10px]">
                     <li className="hover:text-[#006B14] ">My Tickets</li>
                     <li className="hover:text-[#006B14]">Reset Password</li>
-                    <li className="text-[#DB3E3E] hover:text-[#006B14]">
+                    <li className="text-[#DB3E3E] hover:text-[#006B14]" onClick={logout}>
                       Log Out
                     </li>
                   </ul>
@@ -178,6 +194,12 @@ export default function Nav() {
               </div>
             )}
           </div>
+          ) : (
+            <div className="flex flex-col lg:flex-row text-center gap-[1.75rem] lg:gap-[2.4rem] lg:block">
+              <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
+              <Link href="/auth/login"><button className="w-full text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

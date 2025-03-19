@@ -1,13 +1,16 @@
 'use client';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 import Image from 'next/image';
 import logo from '/public/images/image-3.svg';
 import image from '/public/images/138-1(2).svg';
 import Link from 'next/link';
+
 export default function ForgotPassword() {
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const {
     register,
@@ -17,7 +20,18 @@ export default function ForgotPassword() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    setLoading(true);
+    setApiError('');
+    setSuccessMessage('');
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/forgot-password`, data);
+      setSuccessMessage(response.data.message);
+      reset();
+    } catch (error) {
+      setApiError(error.response?.data?.message || 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -57,11 +71,18 @@ export default function ForgotPassword() {
             {errors.email && (
               <p className="text-red-600 mb-7">{errors.email.message}</p>
             )}
+            {apiError && (
+              <p className="text-red-600 mb-7">{apiError}</p>
+            )}
+            {successMessage && (
+              <p className="text-green-600 mb-7">{successMessage}</p>
+            )}
             <button
               type="submit"
               className="bg-[#18A532] text-white  w-full py-2 rounded-md mb-2 "
+              disabled={loading}
             >
-              Reset
+              {loading ? 'Sending...' : 'Reset'}
             </button>
           </form>
         </div>

@@ -28,11 +28,11 @@ export default function Ibadan(){
                 {Schedule.map((item, index) => (
                     <tr key={item.id} className="border border-gray-300 text-start font-medium text-sm  text-[#263238] lg:text-[18px]  ">
                         <td className="pb-6 pt-2 pl-6">{index + 1}</td>
-                        <td className="pb-6 pt-2 px-6">{item.code}</td>
-                        <td className="pb-6 pt-2 px-6 ">{item.name}</td>
-                        <td className="pb-6 pt-2 px-6">{item.arrivalTime}</td>
-                        <td className="pb-6 pt-2 px-6">{item.departureTime}</td>
-                        <td className="pb-6 pt-2 px-6">{item.distance || "N/A"}</td>
+                        <td className="pb-6 pt-2 px-4">{item.code}</td>
+                        <td className="pb-6 pt-2 px-4 ">{item.name}</td>
+                        <td className="pb-6 pt-2 px-4">{item.arrivalTime}</td>
+                        <td className="pb-6 pt-2 px-4">{item.departureTime}</td>
+                        <td className="pb-6 pt-2 px-4">{item.distance}</td>
                     </tr>
                 ))}
             </tbody>

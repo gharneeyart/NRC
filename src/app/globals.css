@@ -15,13 +15,14 @@
   background-image: url("/images/Old\ western\ train\ tracks.png");
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 3.5rem 1rem;
+  padding: 5rem 2rem;
+  
 }
 .contact-hero{
   background-image: url("/images/Motion\ blur\ of\ automatic\ train\ moving\ inside\ tunnel\ in\ tokyo\,\ japan..png");
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 3.5rem;
+  padding: 5rem 2rem;
 }
 
 .body-password{
@@ -77,10 +78,11 @@
 
 @media (width > 768px) {
   .about-hero{
-    padding: 10rem;
+    padding: 13rem 10rem;
+    
   }
   contact-hero{
-    padding: 10rem;
+    padding:  10rem;
   }
 
   

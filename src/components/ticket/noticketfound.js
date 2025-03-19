@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ErrorImg from '/public/images/Mask Group 5.png';
+import ErrorImg from '../../images/Mask Group 5.png';
 
 export default function NoTicketFound() {
   return (

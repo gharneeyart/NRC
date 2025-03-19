@@ -1,7 +1,7 @@
-import Calender from '/public/icons/calendar-1-svgrepo-com 1.svg';
-import Security from '/public/icons/security-safe-svgrepo-com 1.svg';
-import Station from '/public/icons/station-svgrepo-com 1.svg';
-import Train from '/public/icons/train-svgrepo-com 1.svg';
+import Calender from './icons/calendar-1-svgrepo-com 1.svg';
+import Security from './icons/security-safe-svgrepo-com 1.svg';
+import Station from './icons/station-svgrepo-com 1.svg';
+import Train from './icons/train-svgrepo-com 1.svg';
 
 export const Discover = [
   {
@@ -60,8 +60,8 @@ export const Discover = [
 //         name: 'Kemi Olufemi'
 //     },
 // ]
-import Image1 from '/public/images/image 16.png';
-import Image2 from '/public/images/image.png';
+import Image1 from './images/image 16.png';
+import Image2 from './images/image.png';
 
 export const NewsUpdates = [
   {
@@ -93,9 +93,9 @@ export const NewsUpdates = [
   },
 ];
 
-import img from '/public/images/Frame 40970.svg';
-import img1 from '/public/images/Frame 40971.svg';
-import img2 from '/public/images/Frame 40972.svg';
+import img from './images/Frame 40970.svg';
+import img1 from './images/Frame 40971.svg';
+import img2 from './images/Frame 40972.svg';
 
 export const Explores = [
   {
@@ -118,9 +118,9 @@ export const Explores = [
   },
 ];
 
-import Imag from '/public/icons/Frame 1000003430.svg';
-import Img1 from '/public/icons/Frame 1000003430 (1).svg';
-import Img2 from '/public/icons/Frame 1000003430 (2).svg';
+import Imag from './icons/Frame 1000003430.svg';
+import Img1 from './icons/Frame 1000003430 (1).svg';
+import Img2 from './icons/Frame 1000003430 (2).svg';
 export const Classes = [
   {
     id: 1,

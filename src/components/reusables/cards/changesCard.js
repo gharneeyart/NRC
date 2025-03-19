@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import Cards from '../../../images/Frame 40989 (1).svg'
 export default function Card() {
   return (
     <div>
       <div className="w-full relative">
         <Image
           className="container w-full h-full rounded-[0.432rem] lg:rounded-[0.77rem]"
-          src="/images/Frame 40989 (1).svg"
+          src={Cards}
           width={100}
           height={100}
           alt="train-times"

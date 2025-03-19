@@ -16,9 +16,9 @@
 
 
 import ClassCard from '../reusables/cards/classCard';
-import Imag from '/public/icons/Frame 1000003430.svg';
-import Img1 from '/public/icons/Frame 1000003430 (1).svg';
-import Img2 from '/public/icons/Frame 1000003430 (2).svg';
+import Imag from '../../icons/Frame 1000003430.svg';
+import Img1 from '../../icons/Frame 1000003430 (1).svg';
+import Img2 from '../../icons/Frame 1000003430 (2).svg';
 
 const classImages = {
   'First Class': Imag,

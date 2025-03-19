@@ -260,9 +260,9 @@
 import { useState } from 'react';
 import { IoIosClose } from 'react-icons/io';
 import Image from 'next/image';
-import White from '/public/images/White Dot.png';
-import Oxblod from '/public/images/oxblod Dot.png';
-import Red from '/public/images/red dot.png';
+import White from '../../images/White Dot.png';
+import Oxblod from '../../images/oxblod Dot.png';
+import Red from '../../images/red dot.png';
 
 export default function CoachModal({
   selectedSeats,

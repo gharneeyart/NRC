@@ -3,7 +3,9 @@ import Image from "next/image"
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
+import Marquee from "@/components/home/marquee";
 import Link from "next/link";
+
 
 export default function Nav() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -15,6 +17,8 @@ export default function Nav() {
     }
 
     return (
+       <div>
+        <Marquee/>
         <div className="w-full bg-white py-[2.49rem]">
             <div className="w-11/12 container mx-auto flex items-center justify-between">
             <Link href="/">
@@ -40,6 +44,7 @@ export default function Nav() {
                     <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
                     <Link href="/auth/login"><button className="w-full text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
                 </div>
+            </div>
             </div>
             </div>
         </div>

@@ -1,15 +1,11 @@
-import "./globals.css";
-import ClientSideWrapper from "@/components/clientSide";
-
-
+import './globals.css';
+import ClientSideWrapper from '@/components/clientSide';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ClientSideWrapper>
-          {children}
-        </ClientSideWrapper>
+        <ClientSideWrapper>{children}</ClientSideWrapper>
       </body>
     </html>
   );

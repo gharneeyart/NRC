@@ -1,5 +1,5 @@
-import Nav from "@/layouts/Nav";
-import Footer from "@/layouts/Footer";
+import Nav from '@/layouts/Nav';
+import Footer from '@/layouts/Footer';
 
 export default function ExternalLayout({ children }) {
   return (

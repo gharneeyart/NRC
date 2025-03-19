@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation'; // Use usePathname from next/navigation
 import { useSearchStore } from '@/store/useSearchStore';
@@ -13,9 +13,5 @@ export default function ClientSideWrapper({ children }) {
     }
   }, [pathname, resetAll]);
 
-  return (
-    <div>
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 }

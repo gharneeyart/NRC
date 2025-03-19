@@ -1,7 +1,10 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import "odometer/themes/odometer-theme-default.css";
-import Odometer from "odometer";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import 'odometer/themes/odometer-theme-default.css';
+import dynamic from 'next/dynamic';
+
+// Dynamically import Odometer with no SSR
+const Odometer = dynamic(() => import('odometer'), { ssr: false });
 
 export default function Count() {
   const odometerRefs = {
@@ -11,17 +14,32 @@ export default function Count() {
   };
 
   const [values, setValues] = useState({
-    customers: 100,  // Set initial deterministic values
+    customers: 100, // Set initial deterministic values
     covered: 140,
     routes: 140,
   });
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // Ensure this runs only on the client
+    if (typeof window === 'undefined') return; // Ensure this runs only on the client
 
-    const customersOdometer = new Odometer({ el: odometerRefs.customers.current, value: 0, format: "(,ddd)", duration: 2000 });
-    const coveredOdometer = new Odometer({ el: odometerRefs.covered.current, value: 0, format: "(,ddd)", duration: 2000 });
-    const routesOdometer = new Odometer({ el: odometerRefs.routes.current, value: 0, format: "(,ddd)", duration: 2000 });
+    const customersOdometer = new Odometer({
+      el: odometerRefs.customers.current,
+      value: 0,
+      format: '(,ddd)',
+      duration: 2000,
+    });
+    const coveredOdometer = new Odometer({
+      el: odometerRefs.covered.current,
+      value: 0,
+      format: '(,ddd)',
+      duration: 2000,
+    });
+    const routesOdometer = new Odometer({
+      el: odometerRefs.routes.current,
+      value: 0,
+      format: '(,ddd)',
+      duration: 2000,
+    });
 
     let customerTarget = 100;
     let coveredTarget = 140;
@@ -70,22 +88,47 @@ export default function Count() {
       <div className="w-9/12 md:w-10/12 container mx-auto text-white flex flex-col md:flex-row lg:flex-row py-10 gap-4 justify-between">
         <div className="flex lg:flex-row flex-col items-center gap-[14px] ">
           <div className="flex items-center">
-            <span ref={odometerRefs.customers} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.customers}</span><span className="font-bold lg:text-[54px] text-[36px] mb-2">k+</span>
+            <span
+              ref={odometerRefs.customers}
+              className="font-bold lg:text-[54px] text-[36px]  odometer"
+            >
+              {values.customers}
+            </span>
+            <span className="font-bold lg:text-[54px] text-[36px] mb-2">
+              k+
+            </span>
           </div>
-          <p className="flex flex-row lg:flex-col font-medium gap-[2px] text-left w-28"><span>Happy</span>Customers</p>
+          <p className="flex flex-row lg:flex-col font-medium gap-[2px] text-left w-28">
+            <span>Happy</span>Customers
+          </p>
         </div>
         <div className="flex lg:flex-row flex-col items-center gap-[14px] ">
           <div className="flex items-center justify-center">
-            <span ref={odometerRefs.covered} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.covered}</span>
+            <span
+              ref={odometerRefs.covered}
+              className="font-bold lg:text-[54px] text-[36px]  odometer"
+            >
+              {values.covered}
+            </span>
             <h1 className="font-bold lg:text-[54px] text-[36px] mb-2">+</h1>
           </div>
-          <p className="flex flex-row lg:flex-col  font-medium  gap-[2px]  text-left w-28"><span>Routes </span>Covered</p>
+          <p className="flex flex-row lg:flex-col  font-medium  gap-[2px]  text-left w-28">
+            <span>Routes </span>Covered
+          </p>
         </div>
-        <div  className="flex lg:flex-row flex-col items-center gap-[14px]">
+        <div className="flex lg:flex-row flex-col items-center gap-[14px]">
           <div className="flex items-center">
-            <span ref={odometerRefs.routes} className="font-bold lg:text-[54px] text-[36px]  odometer">{values.routes}</span><h1 className="font-bold lg:text-[54px] text-[36px] mb-2">+</h1>
+            <span
+              ref={odometerRefs.routes}
+              className="font-bold lg:text-[54px] text-[36px]  odometer"
+            >
+              {values.routes}
+            </span>
+            <h1 className="font-bold lg:text-[54px] text-[36px] mb-2">+</h1>
           </div>
-          <p className="flex flex-row  lg:flex-col font-medium  gap-[2px]  text-left w-28"><span>Routes </span>Covered</p>
+          <p className="flex flex-row  lg:flex-col font-medium  gap-[2px]  text-left w-28">
+            <span>Routes </span>Covered
+          </p>
         </div>
       </div>
     </div>

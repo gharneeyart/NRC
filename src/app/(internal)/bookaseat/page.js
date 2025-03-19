@@ -137,15 +137,15 @@
 //   );
 // }
 
-'use client'
-import { useState, useEffect } from "react";
-import Search from "@/components/bookaseat/search";
-import Passenger from "@/components/bookaseat/passenger";
-import ContactDetails from "@/components/bookaseat/contactDetails";
-import SearchTrain from "@/components/reusables/search";
-import Hours from "@/components/transport/hours";
-import { useRouter } from "next/navigation";
-import { useSearchStore } from "@/store/useSearchStore";
+'use client';
+import { useState, useEffect } from 'react';
+import Search from '@/components/bookaseat/search';
+import Passenger from '@/components/bookaseat/passenger';
+import ContactDetails from '@/components/bookaseat/contactDetails';
+import SearchTrain from '@/components/reusables/search';
+import Hours from '@/components/transport/hours';
+import { useRouter } from 'next/navigation';
+import { useSearchStore } from '@/store/useSearchStore';
 
 export default function Book() {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -154,14 +154,15 @@ export default function Book() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("Passengers array:", passengers);
+    console.log('Passengers array:', passengers);
   }, [passengers]);
 
   const validatePassenger = (passenger) => {
     const errors = {};
     if (!passenger.passenger) errors.passenger = 'Passenger type is required.';
     if (!passenger.name) errors.name = 'Name is required.';
-    if (!passenger.nin || !/^\d{11}$/.test(passenger.nin)) errors.nin = 'NIN must be 11 digits.';
+    if (!passenger.nin || !/^\d{11}$/.test(passenger.nin))
+      errors.nin = 'NIN must be 11 digits.';
     if (!passenger.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(passenger.email))
       errors.email = 'Invalid email.';
     if (!passenger.phone || !/^\d{11}$/.test(passenger.phone))
@@ -170,19 +171,23 @@ export default function Book() {
   };
 
   const handleProceed = () => {
-    console.log("Validating passengers...");
+    console.log('Validating passengers...');
 
-    const validationErrors = passengers.map((passenger) => validatePassenger(passenger));
+    const validationErrors = passengers.map((passenger) =>
+      validatePassenger(passenger)
+    );
     setErrors(validationErrors); // Update errors state
 
-    const allPassengersValid = validationErrors.every((error) => Object.keys(error).length === 0);
+    const allPassengersValid = validationErrors.every(
+      (error) => Object.keys(error).length === 0
+    );
 
     if (!allPassengersValid) {
-      console.log("Validation errors:", validationErrors);
+      console.log('Validation errors:', validationErrors);
       return;
     }
 
-    console.log("All passengers validated successfully.");
+    console.log('All passengers validated successfully.');
     router.push('/paymentpart');
   };
 
@@ -190,7 +195,7 @@ export default function Book() {
     const updatedPassengers = [...passengers];
     updatedPassengers[index] = updatedPassenger;
     setPassengers(updatedPassengers);
-    console.log("Updated passengers array:", updatedPassengers);
+    console.log('Updated passengers array:', updatedPassengers);
   };
 
   const handleNavigateHome = () => {
@@ -246,7 +251,9 @@ export default function Book() {
                   selectedSeats={selectedSeats}
                   setSelectedSeats={setSelectedSeats}
                   passengerData={passenger}
-                  onUpdatePassenger={(updatedPassenger) => handleUpdatePassenger(index, updatedPassenger)}
+                  onUpdatePassenger={(updatedPassenger) =>
+                    handleUpdatePassenger(index, updatedPassenger)
+                  }
                   errors={errors[index] || {}} // Pass errors for this passenger
                 />
               ))}

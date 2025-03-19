@@ -1,77 +1,119 @@
-'use client'
-import Image from "next/image"
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoCloseOutline } from "react-icons/io5";
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import Logo from '/public/icons/image 3.svg'
+'use client';
+import Image from 'next/image';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { IoCloseOutline } from 'react-icons/io5';
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { RiArrowDropDownLine } from 'react-icons/ri';
+import Logo from '/public/icons/image 3.svg';
 
 export default function Nav() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const navRef = useRef(null)
-    const closeMenubar = () => {
-        setMenuOpen(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
+
+  const closeMenubar = () => {
+    setMenuOpen(false);
+  };
+
+  const openMenubar = () => {
+    if (window.innerWidth <= 1024) {
+      // Check if the screen width is less than 1024px (mobile devices)
+      setMenuOpen(!menuOpen);
     }
-    
-    const openMenubar = () =>{
-    if (window.innerWidth <= 1024) { // Check if the screen width is less than 1024px (mobile devices)
-        setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        closeMenubar();
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
     }
-}
-// useEffect(() => {
-//     const handleClickOutside = (event) => {
-//         if (navRef.current && !navRef.current.contains(event.target)) {
-//             closeMenubar();
-//         }
-//     };
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
 
-//     if (menuOpen) {
-//         document.addEventListener("mousedown", handleClickOutside);
-//     } else {
-//         document.removeEventListener("mousedown", handleClickOutside);
-//     }
-//     return () => {
-//         document.removeEventListener("mousedown", handleClickOutside);
-//     };
-// }, [menuOpen]);
-
-
-const [dropOpen, setDropOpenMenu] = useState(false);
-const openMenu = () => {
+  const [dropOpen, setDropOpenMenu] = useState(false);
+  const openMenu = () => {
     setDropOpenMenu(!dropOpen);
-}
-const closeMenu = () => {
+  };
+  const closeMenu = () => {
     setDropOpenMenu(false);
-}
+  };
 
-// const clickOutside = (event) => {
-//     if (navRef.current && !navRef.current.contains(event.target)) {
-//         closeMenu();
-//     }
-// }
+  useEffect(() => {
+    const clickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
 
-// useEffect(() => {
-//     if (dropOpen) {
-//         document.addEventListener("mousedown", clickOutside);
-//     } else {
-//         document.removeEventListener("mousedown", clickOutside);
-//     }
-//     return () => {
-//         document.removeEventListener("mousedown", clickOutside);
-//     };
-// }, [dropOpen]);
-    
+    if (dropOpen) {
+      document.addEventListener('mousedown', clickOutside);
+    } else {
+      document.removeEventListener('mousedown', clickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', clickOutside);
+    };
+  }, [dropOpen]);
 
+  return (
+    <div className="w-full bg-white py-[2.49rem] fixed top-0 left-0 right-0 z-50 border border-[#D8D8D8]">
+      <div className="w-11/12 container mx-auto flex items-center justify-between">
+        <Link href="/">
+          <Image
+            className="w-[8.893rem] h-[3.344rem]"
+            src={Logo}
+            alt="NRC-logo"
+            width={100}
+            height={100}
+            priority={true}
+          />
+        </Link>
 
-//The mousedown event is used to detect when a mouse button is pressed down. 
-// The return statement provides a cleanup function that removes the handleClickOutside event listener when the component unmounts or before the effect re-runs.
+        <div
+          className="lg:hidden text-2xl  px-4 cursor-pointer"
+          onClick={openMenubar}
+        >
+          {menuOpen ? (
+            <IoCloseOutline />
+          ) : (
+            <RxHamburgerMenu className="text-[#0C4C51]" />
+          )}
+        </div>
 
-    return (
-        <div className="w-full bg-white py-[2.49rem] fixed top-0 left-0 right-0 z-50 border border-[#D8D8D8]">
-            <div className="w-11/12 container mx-auto flex items-center justify-between">
+        <div
+          className={`lg:static container text-white text-[18.6px] flex flex-col gap-[3.375rem] top-24 rounded-sm lg:flex ${
+            menuOpen
+              ? 'w-full block opacity-100 bg-white right-0 p-8 '
+              : 'hidden opacity-0 top-[100%] py-1'
+          }  lg:block absolute lg:opacity-100 lg:flex-row lg:w-auto justify-between  font-semibold h-screen lg:h-full  z-50 lg:gap-[3rem]  xl:gap-[12rem] 2xl:gap-[20rem]`}
+        >
+          <div
+            className="flex flex-col lg:flex-row items-center gap-[1.625rem] xl:gap-[2.2rem] text-[18.6px] text-[#263238] lg:text-[#01320A] font-sans "
+            ref={navRef}
+          >
             <Link href="/">
-                <Image className="w-[8.893rem] h-[3.344rem]" src={Logo} alt="NRC-logo" width={100} height={100} priority={true} />
+              <h1 className="hover:text-[#006B14]">Home</h1>
+            </Link>
+            <Link href="/about">
+              <h1 className="hover:text-[#006B14]">About</h1>
+            </Link>
+            <Link href="/timetables">
+              <h1 className="hover:text-[#006B14]">Time Tables</h1>
+            </Link>
+            <Link href="/faq">
+              <h1 className="hover:text-[#006B14]">FAQs</h1>
+            </Link>
+            <Link href="/contact">
+              <h1 className="hover:text-[#006B14]">Contact Us</h1>
             </Link>
 
             <div className="lg:hidden text-2xl  px-4 cursor-pointer" onClick={openMenubar}>

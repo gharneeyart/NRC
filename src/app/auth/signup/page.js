@@ -180,15 +180,15 @@
 //     )
 // }
 
-"use client";
-import Image from "next/image";
-import { useState } from "react";
-import Train from "/public/images/train.png";
-import { BiHide } from "react-icons/bi";
-import { BiShow } from "react-icons/bi";
-import { useForm } from "react-hook-form";
-import Logo from "/public/images/Logo.png";
-import Link from "next/link";
+'use client';
+import Image from 'next/image';
+import { useState } from 'react';
+import Train from '/public/images/train.png';
+import { BiHide } from 'react-icons/bi';
+import { BiShow } from 'react-icons/bi';
+import { useForm } from 'react-hook-form';
+import Logo from '/public/images/Logo.png';
+import Link from 'next/link';
 
 export default function Register() {
   const {
@@ -200,7 +200,7 @@ export default function Register() {
   } = useForm();
 
   const onSubmit = (data) => {
-    alert("Signup successful!");
+    alert('Signup successful!');
     console.log(data);
     reset();
   };
@@ -210,8 +210,8 @@ export default function Register() {
   const [gender, showGender] = useState(false);
   const [identification, showIdentification] = useState(false);
   const [dob, showDOB] = useState(false);
-  const [selectedGender, setSelectedGender] = useState("");
-  const [selectedIdentification, setSelectedIdentification] = useState("");
+  const [selectedGender, setSelectedGender] = useState('');
+  const [selectedIdentification, setSelectedIdentification] = useState('');
 
   const togglePasswordVisibilityOne = () => {
     setShowPassword(!showPassword);
@@ -275,12 +275,12 @@ export default function Register() {
                   First Name
                 </label>
                 <input
-                  {...register("firstName", {
-                    required: "This Field is required",
+                  {...register('firstName', {
+                    required: 'This Field is required',
                     pattern: {
                       value:
                         /^[a-zA-Z]+(?:(?:|['_\. ])([a-zA-Z]*(\.\s)?[a-zA-Z])+)*$/,
-                      message: "Please enter a valid first name",
+                      message: 'Please enter a valid first name',
                     },
                   })}
                   type="text"
@@ -288,7 +288,11 @@ export default function Register() {
                   className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter first name"
                 />
-                 {errors.firstName && <span className="text-red-500 text-[12px]">{errors.firstName.message}</span>} 
+                {errors.firstName && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.firstName.message}
+                  </span>
+                )}
               </div>
 
               <div>
@@ -299,12 +303,12 @@ export default function Register() {
                   Last Name
                 </label>
                 <input
-                  {...register("lastName", {
-                    required: "This Field is required",
+                  {...register('lastName', {
+                    required: 'This Field is required',
                     pattern: {
                       value:
                         /^[a-zA-Z]+(?:(?:|['_\. ])([a-zA-Z]*(\.\s)?[a-zA-Z])+)*$/,
-                      message: "Please enter a valid last name",
+                      message: 'Please enter a valid last name',
                     },
                   })}
                   type="text"
@@ -312,7 +316,11 @@ export default function Register() {
                   className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter last name"
                 />
-                 {errors.lastName && <span className="text-red-500 text-[12px]">{errors.lastName.message}</span>}
+                {errors.lastName && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.lastName.message}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -326,12 +334,12 @@ export default function Register() {
                   Phone Number
                 </label>
                 <input
-                  {...register("phonenumber", {
-                    required: "This field is required",
+                  {...register('phonenumber', {
+                    required: 'This field is required',
                     pattern: {
                       value:
                         /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
-                      message: "Please enter a valid phone number",
+                      message: 'Please enter a valid phone number',
                     },
                   })}
                   type="tel"
@@ -339,7 +347,11 @@ export default function Register() {
                   className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter phone number"
                 />
-                 {errors.phonenumber && <span className="text-red-500 text-[12px]">{errors.phonenumber.message}</span>}
+                {errors.phonenumber && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.phonenumber.message}
+                  </span>
+                )}
               </div>
 
               <div>
@@ -350,13 +362,17 @@ export default function Register() {
                   Date of Birth
                 </label>
                 <input
-                  {...register("dob", { required: "This field is required" })}
+                  {...register('dob', { required: 'This field is required' })}
                   type="date"
                   id="dob"
                   onClick={dobDropDown}
-                  className={`${dob ? 'text-black':'text-[#2632388F]'} w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500`}
+                  className={`${dob ? 'text-black' : 'text-[#2632388F]'} w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500`}
                 />
-                 {errors.dob && <span className="text-red-500 text-[12px]">{errors.dob.message}</span>}
+                {errors.dob && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.dob.message}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -370,20 +386,26 @@ export default function Register() {
                   Gender
                 </label>
                 <select
-                  {...register("gender", {
-                    required: "This field is required",
+                  {...register('gender', {
+                    required: 'This field is required',
                   })}
                   onClick={genderDropDown}
                   value={selectedGender}
                   onChange={(e) => setSelectedGender(e.target.value)}
                   id="gender"
-                  className={`${gender ? 'text-black':'text-[#2632388F]'} w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500`}
+                  className={`${gender ? 'text-black' : 'text-[#2632388F]'} w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500`}
                 >
-                  <option value="" disabled hidden>Select gender</option>
+                  <option value="" disabled hidden>
+                    Select gender
+                  </option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
-                {errors.gender && <span className="text-red-500 text-[12px]">{errors.gender.message}</span>}
+                {errors.gender && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.gender.message}
+                  </span>
+                )}
               </div>
 
               <div>
@@ -394,22 +416,28 @@ export default function Register() {
                   Identification Type
                 </label>
                 <select
-                  {...register("identification", {
-                    required: "This field is required",
+                  {...register('identification', {
+                    required: 'This field is required',
                   })}
                   onClick={idDropDown}
                   value={selectedIdentification}
                   onChange={(e) => setSelectedIdentification(e.target.value)}
                   id="idType"
-                  className={`${identification ? 'text-black':'text-[#2632388F]'} w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500`}
+                  className={`${identification ? 'text-black' : 'text-[#2632388F]'} w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500`}
                 >
-                  <option value="" disabled hidden>Select identification type</option>
+                  <option value="" disabled hidden>
+                    Select identification type
+                  </option>
                   <option value="nin">NIN</option>
                   <option value="national-id">National ID</option>
                   <option value="passport">International Passport</option>
-                  <option value="drivers-license">Driver's License</option>
+                  <option value="drivers-license">Driver&apos;s License</option>
                 </select>
-                {errors.identification && <span className="text-red-500 text-[12px]">{errors.identification.message}</span>}
+                {errors.identification && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.identification.message}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -423,15 +451,19 @@ export default function Register() {
                   ID Number
                 </label>
                 <input
-                  {...register("idnumber", {
-                    required: "This field is required",
+                  {...register('idnumber', {
+                    required: 'This field is required',
                   })}
                   type="text"
                   id="idNumber"
                   className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter ID number"
                 />
-                  {errors.idnumber && <span className="text-red-500 text-[12px]">{errors.idnumber.message}</span>}
+                {errors.idnumber && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.idnumber.message}
+                  </span>
+                )}
               </div>
 
               <div>
@@ -442,11 +474,11 @@ export default function Register() {
                   Email Address
                 </label>
                 <input
-                  {...register("email", {
-                    required: "This field is requird",
+                  {...register('email', {
+                    required: 'This field is requird',
                     pattern: {
                       value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: "Please enter a valid email address",
+                      message: 'Please enter a valid email address',
                     },
                   })}
                   type="email"
@@ -454,7 +486,11 @@ export default function Register() {
                   className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter email address"
                 />
-                  {errors.email && <span className="text-red-500 text-[12px]">{errors.email.message}</span>}
+                {errors.email && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.email.message}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -469,29 +505,41 @@ export default function Register() {
                 </label>
                 <div className="relative">
                   <input
-                    {...register("password", {
-                      required: "This field is required",
+                    {...register('password', {
+                      required: 'This field is required',
                       minLength: {
                         value: 8,
-                        message: "Password must be at least 8 characters long",
+                        message: 'Password must be at least 8 characters long',
                       },
                       pattern: {
                         value:
                           /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                         message:
-                          "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+                          'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character',
                       },
                     })}
-                    type={showPassword? 'text'  : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     id="password"
                     className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
                     placeholder="Enter password"
                   />
-                  <button type="button" className="absolute right-3 top-3"  onClick={togglePasswordVisibilityOne}>
-                  {showPassword? <BiShow className='text-black'/> : <BiHide className='text-black'/>}
+                  <button
+                    type="button"
+                    className="absolute right-3 top-3"
+                    onClick={togglePasswordVisibilityOne}
+                  >
+                    {showPassword ? (
+                      <BiShow className="text-black" />
+                    ) : (
+                      <BiHide className="text-black" />
+                    )}
                   </button>
                 </div>
-                {errors.password && <span className="text-red-500 text-[12px]">{errors.password.message}</span>}
+                {errors.password && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.password.message}
+                  </span>
+                )}
               </div>
 
               <div>
@@ -503,23 +551,34 @@ export default function Register() {
                 </label>
                 <div className="relative">
                   <input
-                    {...register("confirmPassword", {
-                      required: "This field is required",
+                    {...register('confirmPassword', {
+                      required: 'This field is required',
                       validate: (value) =>
-                        value === watch("password") || "Passwords do not match",
+                        value === watch('password') || 'Passwords do not match',
                     })}
-                    type={showConfirmPassword? 'text'  : "password"}
+                    type={showConfirmPassword ? 'text' : 'password'}
                     id="confirmPassword"
                     className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
                     placeholder="Enter password"
                   />
-                  <button type="button" className="absolute right-3 top-3"  onClick={togglePasswordVisibilityTwo}>
-                  {showConfirmPassword? <BiShow className='text-black'/> : <BiHide className='text-black'/>}
+                  <button
+                    type="button"
+                    className="absolute right-3 top-3"
+                    onClick={togglePasswordVisibilityTwo}
+                  >
+                    {showConfirmPassword ? (
+                      <BiShow className="text-black" />
+                    ) : (
+                      <BiHide className="text-black" />
+                    )}
                   </button>
                 </div>
-                {errors.confirmPassword && <span className="text-red-500 text-[12px]">{errors.confirmPassword.message}</span>}
+                {errors.confirmPassword && (
+                  <span className="text-red-500 text-[12px]">
+                    {errors.confirmPassword.message}
+                  </span>
+                )}
               </div>
-              
             </div>
 
             {/* Sign Up Button */}

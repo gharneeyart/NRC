@@ -1,10 +1,9 @@
-'use client'
-import { useState } from "react";
-import { FiPlusCircle, FiMinusCircle } from "react-icons/fi";
-import { Faq } from "@/db";
-import Answer from "./error";
-import Link from "next/link";
-
+'use client';
+import { useState } from 'react';
+import { FiPlusCircle, FiMinusCircle } from 'react-icons/fi';
+import { Faq } from '@/db';
+import Answer from './error';
+import Link from 'next/link';
 
 export default function FAQ({ searchTerm }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -22,7 +21,11 @@ export default function FAQ({ searchTerm }) {
     <div className="flex flex-col  w-11/12 container mx-auto ">
       {filteredFaq.length > 0 ? (
         filteredFaq.map((faq, index) => (
-          <div key={faq.id} onClick={() => toggleAccordion(index)} className="cursor-pointer p-6">
+          <div
+            key={faq.id}
+            onClick={() => toggleAccordion(index)}
+            className="cursor-pointer p-6"
+          >
             <div className="flex justify-between items-center">
               <h2 className="text-[15px] md:text-[20px] lg:text-[26px] font-semibold w-[260px] md:w-[600px]">
                 {faq.question}
@@ -39,16 +42,19 @@ export default function FAQ({ searchTerm }) {
                 className="mt-2 text-[#263238] text-[12px] md:text-[16px] lg:text-[20px] lg:pr-20"
               ></p>
             )}
-           
           </div>
         ))
       ) : (
         <Answer />
       )}
-       <span className="flex flex-col lg:flex-row lg:gap-2 text-[16px] lg:text-3xl  text-center mx-auto">
-         <h2 className="font-medium">Can’t find the answer you are looking for?</h2>
-         <Link className="text-[#006B14] font-semibold" href="/contact">Send us a message</Link>
-         </span>
+      <span className="flex flex-col lg:flex-row lg:gap-2 text-[16px] lg:text-3xl  text-center mx-auto">
+        <h2 className="font-medium">
+          Can’t find the answer you are looking for?
+        </h2>
+        <Link className="text-[#006B14] font-semibold" href="/contact">
+          Send us a message
+        </Link>
+      </span>
     </div>
   );
 }

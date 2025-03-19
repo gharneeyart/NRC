@@ -1,295 +1,420 @@
 {
-    "trains": [
+  "trains": [
+    {
+      "train_name": "Lagos-Ibadan Morning Train (LI1)",
+      "train_type": "120KM",
+      "total_time": "2 Hrs 33 Mins",
+      "total_distance": "180 KM",
+      "schedule": [
         {
-            "train_name": "Lagos-Ibadan Morning Train (LI1)",
-            "train_type": "120KM",
-            "total_time": "2 Hrs 33 Mins",
-            "total_distance": "180 KM",
-            "schedule": [
-              {"sequence": 1, "station_code": "MJS", "station_name": "Mobolaji Johnson Station Ebute Metta", "arrival_time": "07:57", "departure_time": "08:00", "distance_km": 20},
-              {"sequence": 2, "station_code": "BRF", "station_name": "Babatunde Raji Fashola Station Agege", "arrival_time": "08:21", "departure_time": "08:24", "distance_km": 20},
-              {"sequence": 3, "station_code": "LKJ", "station_name": "Lateef Kayode Jakande Station Agbado", "arrival_time": "08:36", "departure_time": "08:39", "distance_km": 20},
-              {"sequence": 4, "station_code": "PYO", "station_name": "Professor Yemi Oshinbajo Station Kajola", "arrival_time": "08:57", "departure_time": "09:00", "distance_km": 20},
-              {"sequence": 5, "station_code": "ORK", "station_name": "Olu Funmilayo Ransome Kuti Papalanto", "arrival_time": "09:07", "departure_time": "09:10", "distance_km": 20},
-              {"sequence": 6, "station_code": "PWS", "station_name": "Professor Wole Soyinka Station Abeokuta", "arrival_time": "09:31", "departure_time": "09:36", "distance_km": 20},
-              {"sequence": 7, "station_code": "AOO", "station_name": "Aremo Olusegun Osoba Olodo", "arrival_time": "09:55", "departure_time": "09:58", "distance_km": 20},
-              {"sequence": 8, "station_code": "LA", "station_name": "Ladoke Akintola Station Omi-Adio", "arrival_time": "10:12", "departure_time": "10:15", "distance_km": 20},
-              {"sequence": 9, "station_code": "OA", "station_name": "Obafemi Awolowo Station Moniya", "arrival_time": "10:33", "departure_time": "10:36", "distance_km": 20}
-            ]
-          },
-      {
-        "train_name": "Ibadan-Lagos Morning Train (IL2)",
-        "train_type": "100KM",
-        "total_time": "2 Hrs 33 Mins",
-        "total_distance": "180 KM",
-        "schedule": [
-          {"sequence": 1, "station_code": "OA", "station_name": "Obafemi Awolowo Station Moniya", "arrival_time": "07:57", "departure_time": "08:00", "distance_km": 20},
-          {"sequence": 2, "station_code": "LA", "station_name": "Ladoke Akintola Station Omi-Adio", "arrival_time": "08:17", "departure_time": "08:20", "distance_km": 20},
-          {"sequence": 3, "station_code": "AOO", "station_name": "Aremo Olusegun Osoba Olodo", "arrival_time": "08:35", "departure_time": "08:38", "distance_km": 20},
-          {"sequence": 4, "station_code": "PWS", "station_name": "Professor Wole Soyinka Station Abeokuta", "arrival_time": "08:57", "departure_time": "09:02", "distance_km": 20},
-          {"sequence": 5, "station_code": "ORK", "station_name": "Olu Funmilayo Ransome Kuti Papalanto", "arrival_time": "09:22", "departure_time": "09:25", "distance_km": 20},
-          {"sequence": 6, "station_code": "PYO", "station_name": "Professor Yemi Oshinbajo Station Kajola", "arrival_time": "09:33", "departure_time": "09:36", "distance_km": 20},
-          {"sequence": 7, "station_code": "LKJ", "station_name": "Lateef Kayode Jakande Station Agbado", "arrival_time": "09:54", "departure_time": "09:57", "distance_km": 20},
-          {"sequence": 8, "station_code": "BRF", "station_name": "Babatunde Raji Fashola Station Agege", "arrival_time": "10:09", "departure_time": "10:12", "distance_km": 20},
-          {"sequence": 9, "station_code": "MJS", "station_name": "Mobolaji Johnson Station Ebute Metta", "arrival_time": "10:33", "departure_time": "10:36", "distance_km": 20}
-        ]
-      },
-      {
-        "train_name": "Ibadan-Lagos Evening Train (IL4)",
-        "type": "100KM",
-        "total_time": "2 Hrs 33 Mins",
-        "total_distance_km": 180,
-        "schedule": [
-          {
-            "sequence": 1,
-            "station_code": "OA",
-            "station_name": "Obafemi Awolowo Station Moniya",
-            "arrival_time": "15:57",
-            "departure_time": "16:00",
-            "distance_km": 20
-          },
-          {
-            "sequence": 2,
-            "station_code": "LA",
-            "station_name": "Ladoke Akintola Station Omi-Adio",
-            "arrival_time": "16:17",
-            "departure_time": "16:20",
-            "distance_km": 20
-          },
-          {
-            "sequence": 3,
-            "station_code": "AOO",
-            "station_name": "Aremo Olusegun Osoba Olodo",
-            "arrival_time": "16:35",
-            "departure_time": "16:38",
-            "distance_km": 20
-          },
-          {
-            "sequence": 4,
-            "station_code": "PWS",
-            "station_name": "Professor Wole Soyinka Station Abeokuta",
-            "arrival_time": "16:57",
-            "departure_time": "17:02",
-            "distance_km": 20
-          },
-          {
-            "sequence": 5,
-            "station_code": "ORK",
-            "station_name": "Olu Funmilayo Ransome Kuti Papalanto",
-            "arrival_time": "17:22",
-            "departure_time": "17:25",
-            "distance_km": 20
-          },
-          {
-            "sequence": 6,
-            "station_code": "PYO",
-            "station_name": "Professor Yemi Oshinbajo Station Kajola",
-            "arrival_time": "17:33",
-            "departure_time": "17:36",
-            "distance_km": 20
-          },
-          {
-            "sequence": 7,
-            "station_code": "LKJ",
-            "station_name": "Lateef Kayode Jakande Station Agbado",
-            "arrival_time": "17:54",
-            "departure_time": "17:57",
-            "distance_km": 20
-          },
-          {
-            "sequence": 8,
-            "station_code": "BRF",
-            "station_name": "Babatunde Raji Fashola Station Agege",
-            "arrival_time": "18:09",
-            "departure_time": "18:12",
-            "distance_km": 20
-          },
-          {
-            "sequence": 9,
-            "station_code": "MJS",
-            "station_name": "Mobolaji Johnson Station Ebute Metta",
-            "arrival_time": "18:33",
-            "departure_time": "18:36",
-            "distance_km": 20
-          }
-        ]
-      },
-      {
-        "train_name": "Lagos-Ibadan Evening Train (LI5)",
-        "type": "120KM",
-        "total_time": "2 Hrs 33 Mins",
-        "total_distance_km": 180,
-        "schedule": [
-          {
-            "sequence": 1,
-            "station_code": "MJS",
-            "station_name": "Mobolaji Johnson Station Ebute Metta",
-            "arrival_time": "15:57",
-            "departure_time": "16:00",
-            "distance_km": 20
-          },
-          {
-            "sequence": 2,
-            "station_code": "BRF",
-            "station_name": "Babatunde Raji Fashola Station Agege",
-            "arrival_time": "16:21",
-            "departure_time": "16:24",
-            "distance_km": 20
-          },
-          {
-            "sequence": 3,
-            "station_code": "LKJ",
-            "station_name": "Lateef Kayode Jakande Station Agbado",
-            "arrival_time": "16:36",
-            "departure_time": "16:39",
-            "distance_km": 20
-          },
-          {
-            "sequence": 4,
-            "station_code": "PYO",
-            "station_name": "Professor Yemi Oshinbajo Station Kajola",
-            "arrival_time": "16:57",
-            "departure_time": "17:00",
-            "distance_km": 20
-          },
-          {
-            "sequence": 5,
-            "station_code": "ORK",
-            "station_name": "Olu Funmilayo Ransome Kuti Papalanto",
-            "arrival_time": "17:07",
-            "departure_time": "17:10",
-            "distance_km": 20
-          },
-          {
-            "sequence": 6,
-            "station_code": "PWS",
-            "station_name": "Professor Wole Soyinka Station Abeokuta",
-            "arrival_time": "17:31",
-            "departure_time": "17:36",
-            "distance_km": 20
-          },
-          {
-            "sequence": 7,
-            "station_code": "AOO",
-            "station_name": "Aremo Olusegun Osoba Olodo",
-            "arrival_time": "17:55",
-            "departure_time": "17:58",
-            "distance_km": 20
-          },
-          {
-            "sequence": 8,
-            "station_code": "LA",
-            "station_name": "Ladoke Akintola Station Omi-Adio",
-            "arrival_time": "18:12",
-            "departure_time": "18:15",
-            "distance_km": 20
-          },
-          {
-            "sequence": 9,
-            "station_code": "OA",
-            "station_name": "Obafemi Awolowo Station Moniya",
-            "arrival_time": "18:33",
-            "departure_time": "18:36",
-            "distance_km": 20
-          }
-        ]
+          "sequence": 1,
+          "station_code": "MJS",
+          "station_name": "Mobolaji Johnson Station Ebute Metta",
+          "arrival_time": "07:57",
+          "departure_time": "08:00",
+          "distance_km": 20
+        },
+        {
+          "sequence": 2,
+          "station_code": "BRF",
+          "station_name": "Babatunde Raji Fashola Station Agege",
+          "arrival_time": "08:21",
+          "departure_time": "08:24",
+          "distance_km": 20
+        },
+        {
+          "sequence": 3,
+          "station_code": "LKJ",
+          "station_name": "Lateef Kayode Jakande Station Agbado",
+          "arrival_time": "08:36",
+          "departure_time": "08:39",
+          "distance_km": 20
+        },
+        {
+          "sequence": 4,
+          "station_code": "PYO",
+          "station_name": "Professor Yemi Oshinbajo Station Kajola",
+          "arrival_time": "08:57",
+          "departure_time": "09:00",
+          "distance_km": 20
+        },
+        {
+          "sequence": 5,
+          "station_code": "ORK",
+          "station_name": "Olu Funmilayo Ransome Kuti Papalanto",
+          "arrival_time": "09:07",
+          "departure_time": "09:10",
+          "distance_km": 20
+        },
+        {
+          "sequence": 6,
+          "station_code": "PWS",
+          "station_name": "Professor Wole Soyinka Station Abeokuta",
+          "arrival_time": "09:31",
+          "departure_time": "09:36",
+          "distance_km": 20
+        },
+        {
+          "sequence": 7,
+          "station_code": "AOO",
+          "station_name": "Aremo Olusegun Osoba Olodo",
+          "arrival_time": "09:55",
+          "departure_time": "09:58",
+          "distance_km": 20
+        },
+        {
+          "sequence": 8,
+          "station_code": "LA",
+          "station_name": "Ladoke Akintola Station Omi-Adio",
+          "arrival_time": "10:12",
+          "departure_time": "10:15",
+          "distance_km": 20
+        },
+        {
+          "sequence": 9,
+          "station_code": "OA",
+          "station_name": "Obafemi Awolowo Station Moniya",
+          "arrival_time": "10:33",
+          "departure_time": "10:36",
+          "distance_km": 20
+        }
+      ]
     },
     {
-        "train_name": "Lagos-Ibadan Afternoon Train (LI3)",
-        "type": "120KM",
-        "total_time": "2 Hrs 21 Mins",
-        "total_distance_km": 120,
-        "schedule": [
-          {
-            "sequence": 1,
-            "station_code": "MJS",
-            "station_name": "Mobolaji Johnson Station Ebute Metta",
-            "arrival_time": "13:37",
-            "departure_time": "13:40",
-            "distance_km": 20
-          },
-          {
-            "sequence": 2,
-            "station_code": "BRF",
-            "station_name": "Babatunde Raji Fashola Station Agege",
-            "arrival_time": "14:01",
-            "departure_time": "14:04",
-            "distance_km": 20
-          },
-          {
-            "sequence": 3,
-            "station_code": "PWS",
-            "station_name": "Professor Wole Soyinka Station Abeokuta",
-            "arrival_time": "15:02",
-            "departure_time": "15:07",
-            "distance_km": 40
-          },
-          {
-            "sequence": 4,
-            "station_code": "LA",
-            "station_name": "Ladoke Akintola Station Omi-Adio",
-            "arrival_time": "15:40",
-            "departure_time": "15:43",
-            "distance_km": 20
-          },
-          {
-            "sequence": 5,
-            "station_code": "OA",
-            "station_name": "Obafemi Awolowo Station Moniya",
-            "arrival_time": "16:01",
-            "departure_time": "16:04",
-            "distance_km": 20
-          }
-        ]
-      },
-      {
-        "train_name": "Ibadan-Lagos Afternoon Train (IL4)",
-        "type": "100KM",
-        "total_time": "2 Hrs 21 Mins",
-        "total_distance_km": 120,
-        "schedule": [
-          {
-            "sequence": 1,
-            "station_code": "OA",
-            "station_name": "Obafemi Awolowo Station Moniya",
-            "arrival_time": "10:47",
-            "departure_time": "10:50",
-            "distance_km": 20
-          },
-          {
-            "sequence": 2,
-            "station_code": "LA",
-            "station_name": "Ladoke Akintola Station Omi-Adio",
-            "arrival_time": "11:07",
-            "departure_time": "11:10",
-            "distance_km": 20
-          },
-          {
-            "sequence": 3,
-            "station_code": "PWS",
-            "station_name": "Professor Wole Soyinka Station Abeokuta",
-            "arrival_time": "11:44",
-            "departure_time": "11:49",
-            "distance_km": 40
-          },
-          {
-            "sequence": 4,
-            "station_code": "BRF",
-            "station_name": "Babatunde Raji Fashola Station Agege",
-            "arrival_time": "12:47",
-            "departure_time": "12:50",
-            "distance_km": 20
-          },
-          {
-            "sequence": 5,
-            "station_code": "MJS",
-            "station_name": "Mobolaji Johnson Station Ebute Metta",
-            "arrival_time": "13:11",
-            "departure_time": "13:14",
-            "distance_km": 20
-          }
-        ]
-      }
-    ]
-  }
-  
+      "train_name": "Ibadan-Lagos Morning Train (IL2)",
+      "train_type": "100KM",
+      "total_time": "2 Hrs 33 Mins",
+      "total_distance": "180 KM",
+      "schedule": [
+        {
+          "sequence": 1,
+          "station_code": "OA",
+          "station_name": "Obafemi Awolowo Station Moniya",
+          "arrival_time": "07:57",
+          "departure_time": "08:00",
+          "distance_km": 20
+        },
+        {
+          "sequence": 2,
+          "station_code": "LA",
+          "station_name": "Ladoke Akintola Station Omi-Adio",
+          "arrival_time": "08:17",
+          "departure_time": "08:20",
+          "distance_km": 20
+        },
+        {
+          "sequence": 3,
+          "station_code": "AOO",
+          "station_name": "Aremo Olusegun Osoba Olodo",
+          "arrival_time": "08:35",
+          "departure_time": "08:38",
+          "distance_km": 20
+        },
+        {
+          "sequence": 4,
+          "station_code": "PWS",
+          "station_name": "Professor Wole Soyinka Station Abeokuta",
+          "arrival_time": "08:57",
+          "departure_time": "09:02",
+          "distance_km": 20
+        },
+        {
+          "sequence": 5,
+          "station_code": "ORK",
+          "station_name": "Olu Funmilayo Ransome Kuti Papalanto",
+          "arrival_time": "09:22",
+          "departure_time": "09:25",
+          "distance_km": 20
+        },
+        {
+          "sequence": 6,
+          "station_code": "PYO",
+          "station_name": "Professor Yemi Oshinbajo Station Kajola",
+          "arrival_time": "09:33",
+          "departure_time": "09:36",
+          "distance_km": 20
+        },
+        {
+          "sequence": 7,
+          "station_code": "LKJ",
+          "station_name": "Lateef Kayode Jakande Station Agbado",
+          "arrival_time": "09:54",
+          "departure_time": "09:57",
+          "distance_km": 20
+        },
+        {
+          "sequence": 8,
+          "station_code": "BRF",
+          "station_name": "Babatunde Raji Fashola Station Agege",
+          "arrival_time": "10:09",
+          "departure_time": "10:12",
+          "distance_km": 20
+        },
+        {
+          "sequence": 9,
+          "station_code": "MJS",
+          "station_name": "Mobolaji Johnson Station Ebute Metta",
+          "arrival_time": "10:33",
+          "departure_time": "10:36",
+          "distance_km": 20
+        }
+      ]
+    },
+    {
+      "train_name": "Ibadan-Lagos Evening Train (IL4)",
+      "type": "100KM",
+      "total_time": "2 Hrs 33 Mins",
+      "total_distance_km": 180,
+      "schedule": [
+        {
+          "sequence": 1,
+          "station_code": "OA",
+          "station_name": "Obafemi Awolowo Station Moniya",
+          "arrival_time": "15:57",
+          "departure_time": "16:00",
+          "distance_km": 20
+        },
+        {
+          "sequence": 2,
+          "station_code": "LA",
+          "station_name": "Ladoke Akintola Station Omi-Adio",
+          "arrival_time": "16:17",
+          "departure_time": "16:20",
+          "distance_km": 20
+        },
+        {
+          "sequence": 3,
+          "station_code": "AOO",
+          "station_name": "Aremo Olusegun Osoba Olodo",
+          "arrival_time": "16:35",
+          "departure_time": "16:38",
+          "distance_km": 20
+        },
+        {
+          "sequence": 4,
+          "station_code": "PWS",
+          "station_name": "Professor Wole Soyinka Station Abeokuta",
+          "arrival_time": "16:57",
+          "departure_time": "17:02",
+          "distance_km": 20
+        },
+        {
+          "sequence": 5,
+          "station_code": "ORK",
+          "station_name": "Olu Funmilayo Ransome Kuti Papalanto",
+          "arrival_time": "17:22",
+          "departure_time": "17:25",
+          "distance_km": 20
+        },
+        {
+          "sequence": 6,
+          "station_code": "PYO",
+          "station_name": "Professor Yemi Oshinbajo Station Kajola",
+          "arrival_time": "17:33",
+          "departure_time": "17:36",
+          "distance_km": 20
+        },
+        {
+          "sequence": 7,
+          "station_code": "LKJ",
+          "station_name": "Lateef Kayode Jakande Station Agbado",
+          "arrival_time": "17:54",
+          "departure_time": "17:57",
+          "distance_km": 20
+        },
+        {
+          "sequence": 8,
+          "station_code": "BRF",
+          "station_name": "Babatunde Raji Fashola Station Agege",
+          "arrival_time": "18:09",
+          "departure_time": "18:12",
+          "distance_km": 20
+        },
+        {
+          "sequence": 9,
+          "station_code": "MJS",
+          "station_name": "Mobolaji Johnson Station Ebute Metta",
+          "arrival_time": "18:33",
+          "departure_time": "18:36",
+          "distance_km": 20
+        }
+      ]
+    },
+    {
+      "train_name": "Lagos-Ibadan Evening Train (LI5)",
+      "type": "120KM",
+      "total_time": "2 Hrs 33 Mins",
+      "total_distance_km": 180,
+      "schedule": [
+        {
+          "sequence": 1,
+          "station_code": "MJS",
+          "station_name": "Mobolaji Johnson Station Ebute Metta",
+          "arrival_time": "15:57",
+          "departure_time": "16:00",
+          "distance_km": 20
+        },
+        {
+          "sequence": 2,
+          "station_code": "BRF",
+          "station_name": "Babatunde Raji Fashola Station Agege",
+          "arrival_time": "16:21",
+          "departure_time": "16:24",
+          "distance_km": 20
+        },
+        {
+          "sequence": 3,
+          "station_code": "LKJ",
+          "station_name": "Lateef Kayode Jakande Station Agbado",
+          "arrival_time": "16:36",
+          "departure_time": "16:39",
+          "distance_km": 20
+        },
+        {
+          "sequence": 4,
+          "station_code": "PYO",
+          "station_name": "Professor Yemi Oshinbajo Station Kajola",
+          "arrival_time": "16:57",
+          "departure_time": "17:00",
+          "distance_km": 20
+        },
+        {
+          "sequence": 5,
+          "station_code": "ORK",
+          "station_name": "Olu Funmilayo Ransome Kuti Papalanto",
+          "arrival_time": "17:07",
+          "departure_time": "17:10",
+          "distance_km": 20
+        },
+        {
+          "sequence": 6,
+          "station_code": "PWS",
+          "station_name": "Professor Wole Soyinka Station Abeokuta",
+          "arrival_time": "17:31",
+          "departure_time": "17:36",
+          "distance_km": 20
+        },
+        {
+          "sequence": 7,
+          "station_code": "AOO",
+          "station_name": "Aremo Olusegun Osoba Olodo",
+          "arrival_time": "17:55",
+          "departure_time": "17:58",
+          "distance_km": 20
+        },
+        {
+          "sequence": 8,
+          "station_code": "LA",
+          "station_name": "Ladoke Akintola Station Omi-Adio",
+          "arrival_time": "18:12",
+          "departure_time": "18:15",
+          "distance_km": 20
+        },
+        {
+          "sequence": 9,
+          "station_code": "OA",
+          "station_name": "Obafemi Awolowo Station Moniya",
+          "arrival_time": "18:33",
+          "departure_time": "18:36",
+          "distance_km": 20
+        }
+      ]
+    },
+    {
+      "train_name": "Lagos-Ibadan Afternoon Train (LI3)",
+      "type": "120KM",
+      "total_time": "2 Hrs 21 Mins",
+      "total_distance_km": 120,
+      "schedule": [
+        {
+          "sequence": 1,
+          "station_code": "MJS",
+          "station_name": "Mobolaji Johnson Station Ebute Metta",
+          "arrival_time": "13:37",
+          "departure_time": "13:40",
+          "distance_km": 20
+        },
+        {
+          "sequence": 2,
+          "station_code": "BRF",
+          "station_name": "Babatunde Raji Fashola Station Agege",
+          "arrival_time": "14:01",
+          "departure_time": "14:04",
+          "distance_km": 20
+        },
+        {
+          "sequence": 3,
+          "station_code": "PWS",
+          "station_name": "Professor Wole Soyinka Station Abeokuta",
+          "arrival_time": "15:02",
+          "departure_time": "15:07",
+          "distance_km": 40
+        },
+        {
+          "sequence": 4,
+          "station_code": "LA",
+          "station_name": "Ladoke Akintola Station Omi-Adio",
+          "arrival_time": "15:40",
+          "departure_time": "15:43",
+          "distance_km": 20
+        },
+        {
+          "sequence": 5,
+          "station_code": "OA",
+          "station_name": "Obafemi Awolowo Station Moniya",
+          "arrival_time": "16:01",
+          "departure_time": "16:04",
+          "distance_km": 20
+        }
+      ]
+    },
+    {
+      "train_name": "Ibadan-Lagos Afternoon Train (IL4)",
+      "type": "100KM",
+      "total_time": "2 Hrs 21 Mins",
+      "total_distance_km": 120,
+      "schedule": [
+        {
+          "sequence": 1,
+          "station_code": "OA",
+          "station_name": "Obafemi Awolowo Station Moniya",
+          "arrival_time": "10:47",
+          "departure_time": "10:50",
+          "distance_km": 20
+        },
+        {
+          "sequence": 2,
+          "station_code": "LA",
+          "station_name": "Ladoke Akintola Station Omi-Adio",
+          "arrival_time": "11:07",
+          "departure_time": "11:10",
+          "distance_km": 20
+        },
+        {
+          "sequence": 3,
+          "station_code": "PWS",
+          "station_name": "Professor Wole Soyinka Station Abeokuta",
+          "arrival_time": "11:44",
+          "departure_time": "11:49",
+          "distance_km": 40
+        },
+        {
+          "sequence": 4,
+          "station_code": "BRF",
+          "station_name": "Babatunde Raji Fashola Station Agege",
+          "arrival_time": "12:47",
+          "departure_time": "12:50",
+          "distance_km": 20
+        },
+        {
+          "sequence": 5,
+          "station_code": "MJS",
+          "station_name": "Mobolaji Johnson Station Ebute Metta",
+          "arrival_time": "13:11",
+          "departure_time": "13:14",
+          "distance_km": 20
+        }
+      ]
+    }
+  ]
+}

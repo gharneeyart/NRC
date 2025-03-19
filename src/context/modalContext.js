@@ -1,5 +1,5 @@
-'use client'
-import { createContext, useState, useContext } from "react";
+'use client';
+import { createContext, useState, useContext } from 'react';
 
 const ModalContext = createContext();
 
@@ -11,9 +11,15 @@ export const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider value={{ isModalOpen, openModal, closeModal }}>
-        <div className= {isModalOpen ? " bg-black w-full bg-opacity-50 -z-30 h-full transition-opacity duration-300" : "bg-opacity-100"}>
-            {children}
-        </div>
+      <div
+        className={
+          isModalOpen
+            ? ' bg-black w-full bg-opacity-50 -z-30 h-full transition-opacity duration-300'
+            : 'bg-opacity-100'
+        }
+      >
+        {children}
+      </div>
     </ModalContext.Provider>
   );
 };

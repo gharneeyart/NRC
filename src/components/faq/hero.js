@@ -1,6 +1,5 @@
-
-'use client'
-import { BsSearch } from "react-icons/bs";
+'use client';
+import { BsSearch } from 'react-icons/bs';
 
 export default function Hero({ searchTerm, setSearchTerm }) {
   return (

@@ -1,5 +1,5 @@
 import News from "@/components/home/news";
-import Updates from "@/components/home/news";
+
 import Hero from "@/components/home/hero";
 import Changes from "@/components/home/changes";
 import Companion from "@/components/reusables/railCompanion";

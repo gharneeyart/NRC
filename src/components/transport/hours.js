@@ -130,10 +130,10 @@ export default function Hours({schedule, bg, text}) {
   // Find station details for the searched departure and arrival stations
   const departureStation = schedule.find(
     (station) => station.station_name === from
-  );
+  ) || {};
   const arrivalStation = schedule.find(
     (station) => station.station_name === to
-  );
+  ) || {};
   
   if(selectedClass === 'First Class'){
     bg= 'bg-[#E8FFED]', text='text-[#18A532]' 

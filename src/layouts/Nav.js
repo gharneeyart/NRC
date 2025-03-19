@@ -88,11 +88,11 @@ const closeMenu = () => {
                     <Link href="/faq"><h1 className="hover:text-[#006B14]">FAQs</h1></Link>
                     <Link href="/contact"><h1 className="hover:text-[#006B14]">Contact Us</h1></Link>
 
-                    <div className="w-[198px] bg-whitej mx-auto items-center justify-center relative block lg:hidden">
+                    <div className="w-[198px] bg-whitej mx-auto items-center justify-center relative block lg:hidden active:bg-[#f0f4f1] rounded-full  cursor-pointer"onClick={openMenu}>
                     <div className="flex gap-[8px] items-center">
                         <div className="h-[51px] w-[51px] flex items-center justify-center text-lg text-[#006B14] text-center rounded-full bg-[#F0F7F6]"><h1>M.K</h1></div>
                         <div className="text-base text-[#3C3C3C]"><h3>Michael Kay</h3></div>
-                        <div className="text-[#4F4F4F] text-4xl cursor-pointer " onClick={openMenu}>
+                        <div className="text-[#4F4F4F] text-4xl cursor-pointer ">
                             <RiArrowDropDownLine/>
                         </div>
                     </div>
@@ -116,11 +116,11 @@ const closeMenu = () => {
                     <Link href="/auth/login"><button className="w-full text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
                 </div> */}
                 
-                <div className="w-[198px] bg-white  gap-[23px] mx-auto items-center justify-center relative  hidden lg:block">
+                <div className="w-[198px] bg-white  gap-[23px] mx-auto items-center justify-center relative  hidden lg:block active:bg-[#f0f4f1] rounded-full  cursor-pointer" onClick={openMenu}>
                     <div className="flex gap-[8px] items-center">
                         <div className="h-[51px] w-[51px] flex items-center justify-center text-lg text-[#006B14] text-center rounded-full bg-[#F0F7F6]"><h1>M.K</h1></div>
                         <div className="text-base text-[#3C3C3C]"><h3>Michael Kay</h3></div>
-                        <div className="text-[#4F4F4F] text-4xl cursor-pointer " onClick={openMenu}>
+                        <div className="text-[#4F4F4F] text-4xl cursor-pointer ">
                             <RiArrowDropDownLine/>
                         </div>
                     </div>

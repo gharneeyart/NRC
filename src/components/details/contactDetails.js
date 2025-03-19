@@ -1,6 +1,6 @@
 export default function ContactDetail() {
   return (
-    <div className="container w-full lg:w-[520px] xl:w-[664px] ">
+    <div className="container w-full lg:w-[65%]">
       <div className="space-y-[0.526rem] mt-[2.098rem] lg:mt-[4.125rem]">
         <div className="space-y-[1rem]">
           <h1 className="text-lg lg:text-[1.5rem] xl:text-[1.819rem] font-bold ">Contact Details</h1>

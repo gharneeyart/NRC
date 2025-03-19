@@ -24,7 +24,7 @@ export default function ApplyVoucher() {
   const numChildren = passengers.filter(p => p.passenger === 'child').length;
 
   return (
-    <div className="container border-[0.82px] lg:border-[1px] border-[#E2E2E2] w-full lg:w-[508px] xl:w-[408px] mx-auto  lg:rounded-[0.975rem] px-[1.333rem] xl:px-[18.33px] py-[29.3px] lg:py-[35.6px]">
+    <div className="container border-[0.82px] lg:border-[1px] border-[#E2E2E2] w-full lg:w-[35%] mx-auto  lg:rounded-[0.975rem] px-[1.333rem] xl:px-[18.33px] py-[29.3px] lg:py-[35.6px]">
       <div className="">
         <div className="flex flex-col gap-[1.283rem] lg:gap-[25px] ">
           <div>

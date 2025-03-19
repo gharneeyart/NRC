@@ -52,8 +52,8 @@
 //   );
 // }
 import Image from 'next/image';
-import star from '/public/icons/Vector (7).svg';
-import triple from '/public/images/Frame 1618869461.svg';
+import star from '../../icons/Vector (7).svg';
+import triple from '../../images/Frame 1618869461.svg';
 
 export default function Mission() {
   return (
@@ -66,7 +66,7 @@ export default function Mission() {
         />
       </div>
 
-      <div className="lg:text-xl 2xl:text-2xl lg:gap-3 2xl:gap-10 4xl:gap-3 flex flex-col md:ml-4  w-full lg:w-[50%]    px-7 lg:p-0 xl:p-0">
+      <div className="lg:text-xl 2xl:text-2xl lg:gap-3 2xl:gap-10 4xl:gap-3 flex flex-col md:ml-4  w-full lg:w-[50%]    px-3 lg:p-0 xl:p-0">
         <div>
           <h1 className="font-bold text-3xl lg:mb-3 xl:mb-9 mb-6  lg:text-4xl 2xl:text-5xl">
             Our Mission

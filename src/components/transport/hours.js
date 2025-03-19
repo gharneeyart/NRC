@@ -96,20 +96,20 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useSearchStore } from '@/store/useSearchStore';
 // import trainData from "@/train.json"; // Import the JSON data
-import img from '/public/images/Frame 1000003438.svg';
-import img1 from '/public/images/Frame 1000003439.svg';
+import img from '../../images/Frame 1000003438.svg';
+import img1 from '../../images/Frame 1000003439.svg';
 // import { useEffect, useState } from "react";
 // import { Classes } from "@/db";
 
 // Helper to compute time difference between two times in "HH:mm" format
-function computeTimeDifference(dept, arr) {
-  const [deptHour, deptMin] = dept.split(':').map(Number);
-  const [arrHour, arrMin] = arr.split(':').map(Number);
-  let diff = arrHour * 60 + arrMin - (deptHour * 60 + deptMin);
-  const hours = Math.floor(diff / 60);
-  const minutes = diff % 60;
-  return `${hours} hrs ${minutes} mins`;
-}
+// function computeTimeDifference(dept, arr) {
+//   const [deptHour, deptMin] = dept.split(':').map(Number);
+//   const [arrHour, arrMin] = arr.split(':').map(Number);
+//   let diff = arrHour * 60 + arrMin - (deptHour * 60 + deptMin);
+//   const hours = Math.floor(diff / 60);
+//   const minutes = diff % 60;
+//   return `${hours} hrs ${minutes} mins`;
+// }
 
 // Helper to format date from "YYYY-MM-DD" to "DD - MMM - YYYY"
 function formatDate(dateStr) {
@@ -127,13 +127,9 @@ export default function Hours({ schedule, bg, text }) {
   // Read persisted search values from the store
   const { from, to, date, selectedClass } = useSearchStore();
 
-  // Find station details for the searched departure and arrival stations
-  const departureStation = schedule.find(
-    (station) => station.station_name === from
-  );
-  const arrivalStation = schedule.find(
-    (station) => station.station_name === to
-  );
+   // Use departure and arrival details from the schedule object
+   const departureStation = schedule?.departure;
+   const arrivalStation = schedule?.arrival;
 
   if (selectedClass === 'First Class') {
     (bg = 'bg-[#E8FFED]'), (text = 'text-[#18A532]');
@@ -145,9 +141,11 @@ export default function Hours({ schedule, bg, text }) {
 
   // Use departureTime from the "from" station and arrivalTime from the "to" station.
   // Fallback to default times if a station isn’t found.
-  const departureTime = departureStation.departure_time;
-  const arrivalTime = arrivalStation.arrival_time;
-  const timeDiff = computeTimeDifference(departureTime, arrivalTime);
+  const departureTime = departureStation?.time;
+  const arrivalTime = arrivalStation?.time;
+  const timeDiff = schedule?.duration;
+  console.log(timeDiff);
+  
 
   return (
     <div className="mb-[46px] mt-[19px] ">

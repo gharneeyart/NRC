@@ -183,14 +183,16 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import Train from '/public/images/train.png';
+import Train from '../../../images/train.png';
 import { BiHide } from 'react-icons/bi';
 import { BiShow } from 'react-icons/bi';
 import { useForm } from 'react-hook-form';
-import Logo from '/public/images/Logo.png';
+import Logo from '../../../images/Logo.png';
 import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Register() {
+  const { signup } = useAuth();
   const {
     register,
     handleSubmit,
@@ -198,12 +200,6 @@ export default function Register() {
     watch,
     formState: { errors },
   } = useForm();
-
-  const onSubmit = (data) => {
-    alert('Signup successful!');
-    console.log(data);
-    reset();
-  };
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -230,6 +226,17 @@ export default function Register() {
   };
   const dobDropDown = () => {
     showDOB(true);
+  };
+
+  const onSubmit = async (data) => {
+    try {
+      await signup(data);
+      alert('Signup successful!');
+      reset();
+    } catch (error) {
+      console.error('Failed to register user', error);
+      alert('Signup failed. Please try again.');
+    }
   };
   return (
     <div className="min-h-screen flex flex-col lg:flex-row-reverse relative register pb-10 lg:pb-0 items-center justify-center">
@@ -328,13 +335,13 @@ export default function Register() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label
-                  htmlFor="phone"
+                  htmlFor="phoneNumber"
                   className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   Phone Number
                 </label>
                 <input
-                  {...register('phonenumber', {
+                  {...register('phoneNumber', {
                     required: 'This field is required',
                     pattern: {
                       value:
@@ -342,35 +349,35 @@ export default function Register() {
                       message: 'Please enter a valid phone number',
                     },
                   })}
-                  type="tel"
-                  id="phone"
+                  type="text"
+                  id="phoneNumber"
                   className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter phone number"
                 />
-                {errors.phonenumber && (
+                {errors.phoneNumber && (
                   <span className="text-red-500 text-[12px]">
-                    {errors.phonenumber.message}
+                    {errors.phoneNumber.message}
                   </span>
                 )}
               </div>
 
               <div>
                 <label
-                  htmlFor="dob"
+                  htmlFor="dateOfBirth"
                   className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   Date of Birth
                 </label>
                 <input
-                  {...register('dob', { required: 'This field is required' })}
+                  {...register('dateOfBirth', { required: 'This field is required' })}
                   type="date"
-                  id="dob"
+                  id="dateOfBirth"
                   onClick={dobDropDown}
                   className={`${dob ? 'text-black' : 'text-[#2632388F]'} w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500`}
                 />
-                {errors.dob && (
+                {errors.dateOfBirth && (
                   <span className="text-red-500 text-[12px]">
-                    {errors.dob.message}
+                    {errors.dateOfBirth.message}
                   </span>
                 )}
               </div>
@@ -398,8 +405,8 @@ export default function Register() {
                   <option value="" disabled hidden>
                     Select gender
                   </option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
                 </select>
                 {errors.gender && (
                   <span className="text-red-500 text-[12px]">
@@ -410,32 +417,32 @@ export default function Register() {
 
               <div>
                 <label
-                  htmlFor="idType"
+                  htmlFor="identificationType"
                   className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   Identification Type
                 </label>
                 <select
-                  {...register('identification', {
+                  {...register('identificationType', {
                     required: 'This field is required',
                   })}
                   onClick={idDropDown}
                   value={selectedIdentification}
                   onChange={(e) => setSelectedIdentification(e.target.value)}
-                  id="idType"
+                  id="identificationType"
                   className={`${identification ? 'text-black' : 'text-[#2632388F]'} w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500`}
                 >
                   <option value="" disabled hidden>
                     Select identification type
                   </option>
-                  <option value="nin">NIN</option>
-                  <option value="national-id">National ID</option>
-                  <option value="passport">International Passport</option>
-                  <option value="drivers-license">Driver&apos;s License</option>
+                  <option value="NIN">NIN</option>
+                  <option value="National ID">National ID</option>
+                  <option value="International Passport">International Passport</option>
+                  <option value="Driver's License">Driver&apos;s License</option>
                 </select>
-                {errors.identification && (
+                {errors.identificationType && (
                   <span className="text-red-500 text-[12px]">
-                    {errors.identification.message}
+                    {errors.identificationType.message}
                   </span>
                 )}
               </div>
@@ -451,7 +458,7 @@ export default function Register() {
                   ID Number
                 </label>
                 <input
-                  {...register('idnumber', {
+                  {...register('idNumber', {
                     required: 'This field is required',
                   })}
                   type="text"
@@ -459,9 +466,9 @@ export default function Register() {
                   className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter ID number"
                 />
-                {errors.idnumber && (
+                {errors.idNumber && (
                   <span className="text-red-500 text-[12px]">
-                    {errors.idnumber.message}
+                    {errors.idNumber.message}
                   </span>
                 )}
               </div>

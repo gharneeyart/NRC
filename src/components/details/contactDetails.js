@@ -1,4 +1,6 @@
+import { useAuth } from "@/context/AuthContext";
 export default function ContactDetail() {
+  const { auth } = useAuth()
   return (
     <div className="container w-full lg:w-[520px] xl:w-[664px] ">
       <div className="space-y-[0.526rem] mt-[2.098rem] lg:mt-[4.125rem]">
@@ -17,10 +19,10 @@ export default function ContactDetail() {
             <tbody className="">
               <tr className="font-semibold text-sm lg:text-[1rem] xl:text-[1.375rem]  ">
                 <td className="pt-[8.42px] lg:pt-[12.47px] px-[0.703rem] lg:px-[1.878rem]">
-                  koredex@gmail.com
+                  {auth?.user?.email}
                 </td>
                 <td className="pt-[8.42px] lg:pb-[8px] lg:pt-[12.47px]">
-                  08162458760
+                  {auth?.user?.phoneNumber}
                 </td>
               </tr>
             </tbody>

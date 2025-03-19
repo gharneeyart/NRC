@@ -147,7 +147,7 @@ const Passenger = ({
   errors, // Receive errors as props
 }) => {
   const [formData, setFormData] = useState({
-    passenger: passengerData.passenger || '',
+    type: passengerData.type || '',
     name: passengerData.name || '',
     nin: passengerData.nin || '',
     email: passengerData.email || '',
@@ -156,7 +156,7 @@ const Passenger = ({
 
   useEffect(() => {
     setFormData({
-      passenger: passengerData.passenger || '',
+      type: passengerData.type || '',
       name: passengerData.name || '',
       nin: passengerData.nin || '',
       email: passengerData.email || '',
@@ -172,7 +172,7 @@ const Passenger = ({
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const updatedPassenger = { ...formData, [name]: value, coach, seat }; // Include coach and seat
+    const updatedPassenger = { ...formData, [name]: value }; // Include coach and seat
     setFormData(updatedPassenger);
     onUpdatePassenger(updatedPassenger); // Pass the updated passenger with coach and seat
   };
@@ -187,15 +187,13 @@ const Passenger = ({
       return updatedSeats;
     });
     onUpdatePassenger({
-      passenger: '',
+      type: '',
       name: '',
       nin: '',
       email: '',
       phone: '',
-      coach,
-      seat,
     });
-    setFormData({ passenger: '', name: '', nin: '', email: '', phone: '' });
+    setFormData({ type: '', name: '', nin: '', email: '', phone: '' });
   };
 
   return (
@@ -221,8 +219,8 @@ const Passenger = ({
             Passenger Type
           </label>
           <select
-            name="passenger"
-            value={formData.passenger}
+            name="type"
+            value={formData.type}
             onChange={handleChange}
             className="border px-5 py-3 outline-none rounded-lg mt-3 mb-3 lg:mb-0 w-full h-12"
           >
@@ -232,8 +230,8 @@ const Passenger = ({
             <option value="adult">Adult</option>
             <option value="child">Child</option>
           </select>
-          {errors.passenger && (
-            <span className="text-red-500 text-sm">{errors.passenger}</span>
+          {errors.type && (
+            <span className="text-red-500 text-sm">{errors.type}</span>
           )}
         </div>
 

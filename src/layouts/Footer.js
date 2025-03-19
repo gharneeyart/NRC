@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '/public/icons/image 3.svg';
-import Facebook from '/public/icons/Facebook (1).svg';
-import Instagram from '/public/icons/Frame 1000003414.svg';
-import Twitter from '/public/icons/Frame 1000003415.svg';
+import Logo from '../icons/image 3.svg';
+import Facebook from '../icons/Facebook (1).svg';
+import Instagram from '../icons/Frame 1000003414.svg';
+import Twitter from '../icons/Frame 1000003415.svg';
 
 export default function Footer() {
   return (

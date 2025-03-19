@@ -1,20 +1,20 @@
-import Image from "next/image";
-import Phone from "/public/images/Frame 1171280031.svg";
-import Email from "/public/images/Frame 1171280033.png";
-import Insta from "/public/images/Frame 1171280032.png";
-import Address from "/public/images/Frame 1171280034.png";
-import Twitter from "/public/images/Vector (1).svg";
-import Gram from "/public/images/Vector (2).svg";
-import In from "/public/images/Frame 1171275662.svg";
-import Facebook from "/public/images/Vector (3).svg";
+import Image from 'next/image';
+import Phone from '../../images/Frame 1171280031.svg';
+import Email from '../../images/Frame 1171280033.png';
+import Insta from '../../images/Frame 1171280032.png';
+import Address from '../../images/Frame 1171280034.png';
+import Twitter from '../../images/Vector (1).svg';
+import Gram from '../../images/Vector (2).svg';
+import In from '../../images/Frame 1171275662.svg';
+import Facebook from '../../images/Vector (3).svg';
 
 export default function Get() {
   return (
-    <div className="bg-[#F2FAF4]  rounded-md px-2 md:px-6 py-4  ">
+    <div className="bg-[#F2FAF4]  rounded-xl px-2 md:px-6 py-4  ">
       <div className=" flex flex-col mt-[16px]  lg:p-0 ">
         <div className="flex flex-col gap-[40px] p-2 w-full">
           <div className="w-full">
-            <h1 className="text-3xl font-bold">Get In Touch</h1>
+            <h1 className="text-3xl lg:text-4xl font-bold">Get In Touch</h1>
             <p className="text-[14px] font-normal">
               Fill up the form and our team will get back to you within 24
               hours.

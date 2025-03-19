@@ -1,10 +1,10 @@
-"use client";
-import { useState } from "react";
-import { IoIosClose } from "react-icons/io";
-import Image from "next/image";
-import payTimer from "/public/icons/timer payment.svg";
-import Dot from "/public/icons/paystackDot.svg";
-import paystackLogo from "/public/icons/paystackLogo.svg";
+'use client';
+import { useState } from 'react';
+import { IoIosClose } from 'react-icons/io';
+import Image from 'next/image';
+import payTimer from '../../icons/timer payment.svg';
+import Dot from '../../icons/paystackDot.svg';
+import paystackLogo from '../../icons/paystackLogo.svg';
 
 export default function ModalDemo() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,20 +20,24 @@ export default function ModalDemo() {
 
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full relative">
+          <div className="relative w-[90%] lg:w-[45%] xl:w-[35%] h-[200px] lg:h-[250px] xl:h-[280px] bg-white rounded-lg shadow-lg flex flex-col items-center justify-center gap-4 mx-auto inset-0 ">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
               onClick={() => setIsOpen(false)}
             >
               <IoIosClose size={20} />
             </button>
-            <Image src={payTimer} className="w-[80px]" />
+            <Image src={payTimer} className="w-[80px]" alt="pay" />
             <div className="flex flex-col items-center justify-center gap-2">
               <p>Your seat(s) has been reserved for 10 mins</p>
               <div className="flex items-center justify-center gap-1">
-                <Image src={Dot} className="w-[10px]" />
+                <Image src={Dot} className="w-[10px]" alt="dot" />
                 <div className="flex items-end gap-1 justify-center">
-                  <Image src={paystackLogo} className="w-[20px]" />
+                  <Image
+                    src={paystackLogo}
+                    className="w-[20px]"
+                    alt="paystack"
+                  />
                   <h3 className="font-bold text-xl">paystack</h3>
                 </div>
               </div>

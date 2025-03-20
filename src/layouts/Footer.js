@@ -10,18 +10,18 @@ export default function Footer() {
           <Link href="/"><Image className="w-[8.893rem] h-[3.344rem]" src="/icons/image 3.svg" width={100} height={100} priority={true} alt="NRC-logo"/></Link>
           <p className="">E-Ticketing App : Lagos - Ibadan</p>
           <div className="flex flex-row pt-[13px] gap-[0.875rem]">
-          <Image className='w-[1.875rem] h-[1.875rem]' src="/icons/Facebook (1).svg" width={100} height={100} alt="Facebook-logo"/>
-          <Image className='w-[1.875rem] h-[1.875rem]' src="/icons/Frame 1000003414.svg" width={100} height={100} alt="Instagram-logo"/>
-          <Image className='w-[1.875rem] h-[1.875rem]' src="/icons/Frame 1000003415.svg" width={100} height={100} alt="Twitter-logo"/>
+          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src="/icons/Facebook (1).svg" width={100} height={100} alt="Facebook-logo"/>
+          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src="/icons/Frame 1000003414.svg" width={100} height={100} alt="Instagram-logo"/>
+          <Image className='disabled:opacity-50 w-[1.875rem] h-[1.875rem]' src="/icons/Frame 1000003415.svg" width={100} height={100} alt="Twitter-logo"/>
           </div>
         </div>
 
         <div className="text-[#263238] space-y-[0.8rem]  ">
           <h1 className="font-bold text-[1.174rem]">Company</h1>
           <ul className="space-y-3 text-[1.067rem]">
-            <li>About</li>
-            <li>FAQs</li>
-            <li>Contact</li>
+            <Link href="/about"><li className="space-y-3">About</li></Link>
+            <li className="space-y-3">FAQs</li>
+            <Link href="/contact"><li className="space-y-3">Contact</li></Link>
             <li>Terms & Condition</li>
             <li>Privacy Policy</li>
           </ul>
@@ -30,8 +30,7 @@ export default function Footer() {
         <div className="text-[#263238] space-y-[0.8rem]">
           <h1 className="font-bold text-[1.174rem]">Tickets and timetables</h1>
           <ul className="space-y-3 text-[1.067rem]">
-            <li>Train timetables</li>
-            <li>Train timetables</li>
+            <Link href="/timetables"><li>Train timetables</li></Link>
             <li>Live Departures & Arrivals</li>
           </ul>
         </div>

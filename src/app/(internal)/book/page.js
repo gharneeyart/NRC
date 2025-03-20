@@ -6,6 +6,7 @@ import ResetPassword from "@/components/modal/resetPasswordModal";
 import SearchTrain from "@/components/reusables/search";
 import Success from "@/components/modal/successModal";
 import Logout from "@/components/modal/logOutModal";
+import SeatSelectorModal from "@/components/modal/coachModal";
 
 
 export default function Book() {
@@ -32,6 +33,7 @@ export default function Book() {
      <ResetPassword/>
      <Success/>
      <Logout/>
+     <SeatSelectorModal/>
     </div>
   );
 }

@@ -13,10 +13,10 @@ export default function About() {
             <ResuableHero title='About NRC' desc='Safe, comfortable, and reliable train services across the nation. Experience the future of Nigerian transportation, today.'/>
             </div> 
           </div>
+          <Mission />
             <Count/>
             <Services/>
             <Testimonial/>
-            <Mission />
             <Companion/>
         </div>
          

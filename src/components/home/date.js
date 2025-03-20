@@ -1,11 +1,24 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay } from "date-fns";
-import { CiCalendarDate } from "react-icons/ci";
+import { useState } from 'react';
+import { Popover, Transition } from '@headlessui/react';
+import {
+  format,
+  startOfMonth,
+  endOfMonth,
+  eachDayOfInterval,
+  isSameDay,
+} from 'date-fns';
+import { CiCalendarDate } from 'react-icons/ci';
 
-export default function CustomDatePicker({ onChange, paddingY, textwrap, backgroundCol, text, focusColor }) {
+export default function CustomDatePicker({
+  onChange,
+  paddingY,
+  textwrap,
+  backgroundCol,
+  text,
+  focusColor,
+}) {
   const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateSelection = (date) => {
@@ -15,8 +28,10 @@ export default function CustomDatePicker({ onChange, paddingY, textwrap, backgro
 
   return (
     <Popover className="relative">
-      <Popover.Button className={`flex items-center ${text} gap-3 px-4 ${paddingY} border rounded-lg shadow-sm ${backgroundCol} focus:outline-none focus:ring-1 ${focusColor}`}>
-        {selectedDate ? format(selectedDate, "yyyy-MM-dd") : "Select a date"}
+      <Popover.Button
+        className={`flex items-center ${text} gap-3 px-4 ${paddingY} border rounded-lg shadow-sm ${backgroundCol} focus:outline-none focus:ring-1 ${focusColor}`}
+      >
+        {selectedDate ? format(selectedDate, 'yyyy-MM-dd') : 'Select a date'}
         <CiCalendarDate className={`w-5 h-5 ${textwrap} ml-2`} />
       </Popover.Button>
 
@@ -29,7 +44,10 @@ export default function CustomDatePicker({ onChange, paddingY, textwrap, backgro
         leaveTo="opacity-0 translate-y-1"
       >
         <Popover.Panel className="absolute z-10 mt-2 bg-white border rounded-lg shadow-lg p-4 w-64 min-w-[200px]">
-          <Calendar onSelect={handleDateSelection} selectedDate={selectedDate} />
+          <Calendar
+            onSelect={handleDateSelection}
+            selectedDate={selectedDate}
+          />
         </Popover.Panel>
       </Transition>
     </Popover>
@@ -51,22 +69,42 @@ const Calendar = ({ onSelect, selectedDate }) => {
   return (
     <div>
       <div className="flex justify-between mb-2">
-        <button onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() - 1)))}>&lt;</button>
-        <span className="font-semibold">{format(currentMonth, "MMMM yyyy")}</span>
-        <button onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() + 1)))}>&gt;</button>
+        <button
+          onClick={() =>
+            setCurrentMonth(
+              new Date(currentMonth.setMonth(currentMonth.getMonth() - 1))
+            )
+          }
+        >
+          &lt;
+        </button>
+        <span className="font-semibold">
+          {format(currentMonth, 'MMMM yyyy')}
+        </span>
+        <button
+          onClick={() =>
+            setCurrentMonth(
+              new Date(currentMonth.setMonth(currentMonth.getMonth() + 1))
+            )
+          }
+        >
+          &gt;
+        </button>
       </div>
 
       <div className="grid grid-cols-7 gap-1 text-center">
-        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-          <div key={day} className="text-gray-600 font-semibold">{day}</div>
+        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+          <div key={day} className="text-gray-600 font-semibold">
+            {day}
+          </div>
         ))}
         {daysInMonth.map((day) => (
           <button
             key={day}
-            className={`p-2 rounded ${isSameDay(day, selectedDate) ? "bg-blue-500 text-white" : "hover:bg-blue-100"}`}
+            className={`p-2 rounded ${isSameDay(day, selectedDate) ? 'bg-blue-500 text-white' : 'hover:bg-blue-100'}`}
             onClick={() => handleDayClick(day)}
           >
-            {format(day, "d")}
+            {format(day, 'd')}
           </button>
         ))}
       </div>

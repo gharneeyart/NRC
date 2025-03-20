@@ -132,11 +132,9 @@
 //   );
 // }
 
-
-'use client';
 'use client';
 import { useState, useEffect } from 'react';
-import { useSearchStore } from '@/store/useSearchStore';
+// import { useSearchStore } from '@/store/useSearchStore';
 
 const Passenger = ({
   index,
@@ -149,7 +147,7 @@ const Passenger = ({
   errors, // Receive errors as props
 }) => {
   const [formData, setFormData] = useState({
-    passenger: passengerData.passenger || '',
+    type: passengerData.type || '',
     name: passengerData.name || '',
     nin: passengerData.nin || '',
     email: passengerData.email || '',
@@ -158,7 +156,7 @@ const Passenger = ({
 
   useEffect(() => {
     setFormData({
-      passenger: passengerData.passenger || '',
+      type: passengerData.type || '',
       name: passengerData.name || '',
       nin: passengerData.nin || '',
       email: passengerData.email || '',
@@ -174,20 +172,28 @@ const Passenger = ({
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const updatedPassenger = { ...formData, [name]: value, coach, seat }; // Include coach and seat
+    const updatedPassenger = { ...formData, [name]: value }; // Include coach and seat
     setFormData(updatedPassenger);
     onUpdatePassenger(updatedPassenger); // Pass the updated passenger with coach and seat
   };
 
   const clearPassenger = () => {
-    console.log("Clearing passenger for seat:", seat);
+    console.log('Clearing passenger for seat:', seat);
     setSelectedSeats((prevSelectedSeats) => {
-      const updatedSeats = prevSelectedSeats.filter((selectedSeat) => selectedSeat !== seat);
-      console.log("Updated selected seats:", updatedSeats);
+      const updatedSeats = prevSelectedSeats.filter(
+        (selectedSeat) => selectedSeat !== seat
+      );
+      console.log('Updated selected seats:', updatedSeats);
       return updatedSeats;
     });
-    onUpdatePassenger({ passenger: '', name: '', nin: '', email: '', phone: '', coach, seat });
-    setFormData({ passenger: '', name: '', nin: '', email: '', phone: '' });
+    onUpdatePassenger({
+      type: '',
+      name: '',
+      nin: '',
+      email: '',
+      phone: '',
+    });
+    setFormData({ type: '', name: '', nin: '', email: '', phone: '' });
   };
 
   return (
@@ -209,10 +215,12 @@ const Passenger = ({
       <form className="lg:flex gap-12 w-full lg:mb-7">
         {/* Passenger Type */}
         <div className="w-full">
-          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Passenger Type</label>
+          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
+            Passenger Type
+          </label>
           <select
-            name="passenger"
-            value={formData.passenger}
+            name="type"
+            value={formData.type}
             onChange={handleChange}
             className="border px-5 py-3 outline-none rounded-lg mt-3 mb-3 lg:mb-0 w-full h-12"
           >
@@ -222,12 +230,16 @@ const Passenger = ({
             <option value="adult">Adult</option>
             <option value="child">Child</option>
           </select>
-          {errors.passenger && <span className="text-red-500 text-sm">{errors.passenger}</span>}
+          {errors.type && (
+            <span className="text-red-500 text-sm">{errors.type}</span>
+          )}
         </div>
 
         {/* Passenger Name */}
         <div className="w-full">
-          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Passenger Name</label>
+          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
+            Passenger Name
+          </label>
           <input
             name="name"
             value={formData.name}
@@ -236,12 +248,16 @@ const Passenger = ({
             className="border px-5 py-3 rounded-lg mt-3 mb-3 lg:mb-0 w-full h-12 outline-none placeholder-[#848484]"
             placeholder="Enter passenger name"
           />
-          {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
+          {errors.name && (
+            <span className="text-red-500 text-sm">{errors.name}</span>
+          )}
         </div>
 
         {/* NIN Number */}
         <div className="w-full">
-          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">NIN Number</label>
+          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
+            NIN Number
+          </label>
           <input
             name="nin"
             value={formData.nin}
@@ -250,14 +266,18 @@ const Passenger = ({
             className="border px-5 py-3 rounded-lg mt-3 mb-3 lg:mb-0 w-full h-12 outline-none placeholder-[#848484]"
             placeholder="Enter NIN"
           />
-          {errors.nin && <span className="text-red-500 text-sm">{errors.nin}</span>}
+          {errors.nin && (
+            <span className="text-red-500 text-sm">{errors.nin}</span>
+          )}
         </div>
       </form>
 
       <div className="lg:flex gap-12 w-full">
         {/* Email Address */}
         <div className="lg:w-[30%] w-full">
-          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Email Address</label>
+          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
+            Email Address
+          </label>
           <input
             name="email"
             value={formData.email}
@@ -266,12 +286,16 @@ const Passenger = ({
             className="border px-5 py-3 rounded-lg mt-3 mb-3 lg:mb-0 w-full h-12 outline-none placeholder-[#848484]"
             placeholder="Enter email address"
           />
-          {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
+          {errors.email && (
+            <span className="text-red-500 text-sm">{errors.email}</span>
+          )}
         </div>
 
         {/* Phone Number */}
         <div className="lg:w-[30%] w-full">
-          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">Phone Number</label>
+          <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
+            Phone Number
+          </label>
           <input
             name="phone"
             value={formData.phone}
@@ -280,7 +304,9 @@ const Passenger = ({
             className="border px-5 py-3 rounded-lg mt-3 mb-3 lg:mb-0 w-full h-12 outline-none placeholder-[#848484]"
             placeholder="Enter phone number"
           />
-          {errors.phone && <span className="text-red-500 text-sm">{errors.phone}</span>}
+          {errors.phone && (
+            <span className="text-red-500 text-sm">{errors.phone}</span>
+          )}
         </div>
         <h3
           className="text-[#FF3B30] cursor-pointer block lg:hidden"

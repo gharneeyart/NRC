@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .slick-slide > div {
   margin: 0 12px; /* Half of 24px to apply spacing on both sides */
 }
@@ -11,104 +10,91 @@
   margin: 0 -12px; /* Negative margin to offset the spacing */
 }
 
-.about-hero{
-  background-image: url("/images/Old\ western\ train\ tracks.png");
+.about-hero {
+  background-image: url('../images/Old\ western\ train\ tracks.png');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 3.5rem 1rem;
 }
-.contact-hero{
-  background-image: url("/images/Motion\ blur\ of\ automatic\ train\ moving\ inside\ tunnel\ in\ tokyo\,\ japan..png");
+.contact-hero {
+  background-image: url('../images/Motion\ blur\ of\ automatic\ train\ moving\ inside\ tunnel\ in\ tokyo\,\ japan..png');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 3.5rem;
 }
 
-.body-password{
-  background-image: url('/images/138-1.svg'); 
+.body-password {
+  background-image: url('../images/138-1.svg');
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.home-hero{
-  background-image: url('/images/Moving\ Train.png');
+.home-hero {
+  background-image: url('../images/Moving\ Train.png');
   /* background-image: url('/images/138\ 1\ \(2\).png'); */
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 2rem;
   padding-bottom: 2rem;
-
-  
 }
-.faq-hero{
-  background-image: url('/images/View\ of\ train\ at\ night.svg');
-  
+.faq-hero {
+  background-image: url('../images/View\ of\ train\ at\ night.svg');
+
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 2rem;
   padding-bottom: 2rem;
-
-  
 }
-
 
 @media (width > 970px) {
-.backg{
-  background-image: url('/images/138\ 1\ \(2\).png');
-  background-size: cover;
-  background-repeat: no-repeat;
- 
-}
-}
-
-.backgd{
-  background-image: url('/images/train.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-
-}
-.backg{
-    background-image: url('/images/138\ 1\ \(2\).png');
+  .backg {
+    background-image: url('../images/138\ 1\ \(2\).png');
     background-size: cover;
     background-repeat: no-repeat;
   }
-
-  
-
-
-@media (width > 768px) {
-  .about-hero{
-    padding: 10rem;
-  }
-  contact-hero{
-    padding: 10rem;
-  }
-
-  
 }
 
- .backgd{
+.backgd {
+  background-image: url('../images/train.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.backg {
+  background-image: url('../images/138\ 1\ \(2\).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (width > 768px) {
+  .about-hero {
+    padding: 10rem;
+  }
+  contact-hero {
+    padding: 10rem;
+  }
+}
+
+.backgd {
+  background-image: none;
+}
+
+@media (width > 1023px) {
+  .backg {
     background-image: none;
   }
 
-@media (width > 1023px){
-  .backg{
-    background-image: none;
-  }
-
-  .home-hero{
+  .home-hero {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
   }
-  .faq-hero{
+  .faq-hero {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
   }
 }
 
 .register {
-  background: url("/images/138\ 1\ \(1\).png") center center / cover
-    no-repeat;
+  background: url('../images/138\ 1\ \(1\).png') center center / cover no-repeat;
 }
 
 @media (min-width: 1024px) {

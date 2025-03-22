@@ -50,7 +50,7 @@ export default function Count() {
     let routeCount = 0;
 
     const customerInterval = setInterval(() => {
-      customerCount += 10; // Fixed increment instead of Math.random()
+      customerCount += 2; // Fixed increment instead of Math.random()
       if (customerCount >= customerTarget) {
         customerCount = customerTarget;
         clearInterval(customerInterval);

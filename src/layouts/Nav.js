@@ -78,7 +78,7 @@ export default function Nav() {
    
       <div className='fixed left-0 right-0 z-50'>
         <Marquee/>
-        <div className="w-full bg-white py-[2.49rem]  border border-[#D8D8D8]">
+        <div className="w-full bg-white py-[1.8rem]  border border-[#D8D8D8]">
       <div className="w-11/12 container mx-auto flex items-center justify-between">
         <Link href="/">
           <Image

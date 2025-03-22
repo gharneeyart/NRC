@@ -157,15 +157,25 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    Cookies.remove('auth');
+    console.log('Logging out...'); // Debugging
+    // Debugging: Log the cookie before removal
+    console.log('Auth cookie before removal:', Cookies.get('auth'));
+    // Remove the cookie
+    Cookies.remove('auth', { path: '/' });
+    // Debugging: Log the cookie after removal
+    console.log('Auth cookie after removal:', Cookies.get('auth'));
+    // Reset auth state
     setAuth({
       user: null,
       token: '',
       success: false,
       message: ''
     });
+    console.log('Auth state after logout:', auth); // Debugging
+    // Redirect to login page
     router.push('/auth/login');
   };
+  
 
   return (
     <AuthContext.Provider value={{ auth, setAuth, login, signup, logout }}>

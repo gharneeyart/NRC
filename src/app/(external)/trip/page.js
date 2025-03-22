@@ -854,6 +854,7 @@ import { useState, useEffect, Suspense } from 'react';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 function TripContent() {
   // Retrieve the persisted search state
@@ -865,12 +866,14 @@ function TripContent() {
   const [trains, setTrains] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const router = useRouter(); 
 
   useEffect(() => {
     const fetchTrains = async () => {
       if (!auth.user || !auth.token) {
         setError('Unauthorized, no token provided');
         setLoading(false);
+        router.push('/auth/login')
         return;
       }
 
@@ -904,8 +907,9 @@ function TripContent() {
   const afternoonTrains = filterTrainsByTimeOfDay('Afternoon Train');
   const eveningTrains = filterTrainsByTimeOfDay('Evening Train');
 
+
   return (
-    <div className="space-y-11 mt-6">
+    <div className="space-y-11 pt-">
       <SearchTrain
         w="w-11/12"
         bg="bg-[#006B14]"

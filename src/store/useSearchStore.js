@@ -76,6 +76,62 @@ import { persist } from 'zustand/middleware';
 //   )
 // );
 
+// export const useSearchStore = create(
+//   persist(
+//     (set) => ({
+//       from: '',
+//       to: '',
+//       date: '',
+//       selectedClass: '',
+//       selectedCoach:'',
+//       selectedSeats: [],
+//       selectedTrain: null,
+//       timeOfDay: '',
+//       passengers: [],
+//       contactDetails: { email: '', phone: '' }, // Add contactDetails
+//       setFrom: (from) => set({ from }),
+//       setTo: (to) => set({ to }),
+//       setDate: (date) => set({ date }),
+//       setSelectedTrain: (selectedTrain) => set({ selectedTrain }),
+//       setSelectedSeats: (selectedSeats) => set({ selectedSeats }),
+//       setTimeOfDay: (timeOfDay) => set({ timeOfDay }),
+//       setSelectedCoach: (selectedCoach) => set({ selectedCoach }), // Add setSelectedCoach
+//       setSelectedClass: (cls) =>
+//         set((state) => {
+//           if (state.selectedClass !== cls) {
+//             return {
+//               selectedClass: cls,
+//               passengers: [],
+//             };
+//           }
+//           return { selectedClass: cls };
+//         }),
+//       setPassengers: (passengers) => set({ passengers }),
+//       setContactDetails: (contactDetails) => set({ contactDetails }), // Add setContactDetails
+//       resetAll: () =>
+//         set({
+//           from: '',
+//           to: '',
+//           date: '',
+//           selectedClass: '',
+//           selectedCoach: '',
+//           selectedSeats: [],
+//           passengers: [],
+//           selectedTrain: null,
+//           timeOfDay: '',
+//           contactDetails: { email: '', phone: '' }, // Reset contactDetails
+//         }),
+//     }),
+//     {
+//       name: 'search-storage',
+//       getStorage: () => localStorage,
+//       onRehydrateStorage: () => (state) => {
+//         console.log('Hydrating state:', state);
+//       },
+//     }
+//   )
+// );
+
 export const useSearchStore = create(
   persist(
     (set) => ({
@@ -83,19 +139,22 @@ export const useSearchStore = create(
       to: '',
       date: '',
       selectedClass: '',
-      selectedCoach:'',
+      selectedCoach: '',
       selectedSeats: [],
       selectedTrain: null,
       timeOfDay: '',
       passengers: [],
-      contactDetails: { email: '', phone: '' }, // Add contactDetails
+      contactDetails: { email: '', phone: '' },
       setFrom: (from) => set({ from }),
       setTo: (to) => set({ to }),
       setDate: (date) => set({ date }),
       setSelectedTrain: (selectedTrain) => set({ selectedTrain }),
-      setSelectedSeats: (selectedSeats) => set({ selectedSeats }),
+      setSelectedSeats: (selectedSeats) => {
+        console.log('Updating selected seats:', selectedSeats); // Debugging line
+        set({ selectedSeats });
+      },
       setTimeOfDay: (timeOfDay) => set({ timeOfDay }),
-      setSelectedCoach: (selectedCoach) => set({ selectedCoach }), // Add setSelectedCoach
+      setSelectedCoach: (selectedCoach) => set({ selectedCoach }),
       setSelectedClass: (cls) =>
         set((state) => {
           if (state.selectedClass !== cls) {
@@ -106,25 +165,30 @@ export const useSearchStore = create(
           }
           return { selectedClass: cls };
         }),
-      setPassengers: (passengers) => set({ passengers }),
-      setContactDetails: (contactDetails) => set({ contactDetails }), // Add setContactDetails
+      setPassengers: (passengers) => {
+        console.log('Updating passengers in store:', passengers); // Debugging line
+        set({ passengers });
+      },
+      setContactDetails: (contactDetails) => set({ contactDetails }),
       resetAll: () =>
         set({
           from: '',
           to: '',
           date: '',
           selectedClass: '',
+          selectedCoach: '',
+          selectedSeats: [],
           passengers: [],
           selectedTrain: null,
           timeOfDay: '',
-          contactDetails: { email: '', phone: '' }, // Reset contactDetails
+          contactDetails: { email: '', phone: '' },
         }),
     }),
     {
       name: 'search-storage',
       getStorage: () => localStorage,
       onRehydrateStorage: () => (state) => {
-        console.log('Hydrating state:', state);
+        console.log('Hydrating state:', state); // Debugging line
       },
     }
   )

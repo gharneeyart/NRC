@@ -16,7 +16,7 @@ export default function Home() {
       <div className="lg:relative">
         <Hero />
 
-        <div className="-mt-8 lg:-mt-0 w-full lg:absolute lg:-bottom-20 lg:z-50">
+        <div className="-mt-8 lg:-mt-0 w-full lg:absolute lg:-bottom-20 lg:z-20">
           <SearchTrain
             w="w-[90%]"
             bg="bg-[#ffffff]"

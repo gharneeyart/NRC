@@ -1,9 +1,10 @@
 import Image from "next/image"
-import Img1 from '/public/icons/Frame 1000003430 (1).svg'
-import img from '/public/icons/Frame 1000003455 (1).svg'
-import scan from '/public/images/Group.svg'
-import Img from '/public/images/Frame 1000003438.svg'
-import img1 from '/public/images/Frame 1000003439.svg'
+import Img1 from '../../../icons/Frame 1000003430 (1).svg'
+import img from '../../../icons/Frame 1000003455 (1).svg'
+import scan from '../../../images/Group.svg'
+import Img from '../../../images/Frame 1000003438.svg'
+import img1 from '../../../images/Frame 1000003439.svg'
+
 export default function Ticket() {
     return(
         <div>

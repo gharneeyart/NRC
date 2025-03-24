@@ -19,18 +19,27 @@ const Marker = dynamic(
 const Popup = dynamic(() => import('react-leaflet').then((mod) => mod.Popup), {
   ssr: false,
 });
-const L = dynamic(() => import('leaflet'), { ssr: false });
 
 export default function Map() {
   const [position, setPosition] = useState([9.082, 8.6753]);
+  const [L, setL] = useState(null); // State to hold the Leaflet library
+  const [customIcon, setCustomIcon] = useState(null); // State to hold the custom icon
 
-  const customIcon = new L.Icon({
-    iconUrl: '/icons/location-icon.png',
-    iconSize: [20, 20],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32],
-  });
+  // Dynamically import Leaflet and initialize the custom icon
+  useEffect(() => {
+    import('leaflet').then((leaflet) => {
+      setL(leaflet.default); // Set the Leaflet library
+      const icon = new leaflet.default.Icon({
+        iconUrl: '/icons/location-icon.png',
+        iconSize: [20, 20],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+      });
+      setCustomIcon(icon); // Set the custom icon
+    });
+  }, []);
 
+  // Watch the user's geolocation
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(
@@ -43,12 +52,17 @@ export default function Map() {
     }
   }, []);
 
+  // Render the map only when Leaflet and the custom icon are loaded
+  if (!L || !customIcon) {
+    return <div>Loading map...</div>; // Fallback UI while loading
+  }
+
   return (
     <MapContainer
       center={position}
       zoom={5}
       style={{ height: '400px', width: '100%' }}
-      className="h-[100px] md:h-[150px] lg:[400px] "
+      className="h-[100px] md:h-[150px] lg:[400px]"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={position} icon={customIcon}>

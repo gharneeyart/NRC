@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import eTicket from '../../../images/Frame 40990 (1).svg'
 export default function Ticket() {
   return (
     <div className="w-full relative">
       <Image
         className="w-full h-full rounded-[0.432rem] lg:rounded-[0.77rem]"
-        src="/images/Frame 40990 (1).svg"
+        src={eTicket}
         width={100}
         height={100}
         alt="E-ticketing"

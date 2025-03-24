@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import fram1 from '/public/images/Frame 41010 (1).svg';
-import fram2 from '/public/images/qr-code-svgrepo-com (2) 1.svg';
-import fram3 from '/public/icons/ic_baseline-apple.svg';
-import fram4 from '/public/icons/mage_playstore.svg';
+import fram1 from '../../images/Frame 41010 (1).svg';
+import fram2 from '../../images/qr-code-svgrepo-com (2) 1.svg';
+import fram3 from '../../icons/ic_baseline-apple.svg';
+import fram4 from '../../icons/mage_playstore.svg';
 
 export default function Companion() {
   return (
@@ -20,9 +20,14 @@ export default function Companion() {
             Your Railway Companion, Anytime, Anywhere
           </h1>
           <div className="w-[14.829rem] md:w-3/5 lg:w-[28.5rem] xl:w-[29.563rem] mx-auto lg:mx-0 rounded-[0.533rem] lg:rounded-[1.063rem] border-[0.031rem] lg:border-[0.063rem] lg:py-[1.081rem] py-[0.543rem] px-[0.659rem] md:px-[1.5rem] lg:px-[1.313rem] gap-[0.87rem] lg:gap-[1.734rem] flex">
-            <Image className="w-[2.584rem] h-[2.584rem] md:w-auto md:h-auto lg:w-[5.151rem] lg:h-[5.151rem]" src={fram2} width={100} height={100} alt="scan-code"/>
+            <Image
+              className="w-[2.584rem] h-[2.584rem] md:w-auto md:h-auto lg:w-[5.151rem] lg:h-[5.151rem]"
+              src={fram2}
+              width={100}
+              height={100}
+              alt="scan-code"
+            />
 
-     
             <div className="flex flex-col text-[0.56rem] md:text-[14px] gap-[0.172rem] lg:gap-[0.332rem] justify-center lg:text-[1.125rem] ">
               <div className="">
                 <h1>Scan to download the NRC app now.</h1>

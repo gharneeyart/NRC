@@ -1,7 +1,7 @@
-import { trainSchedule } from '@/db';
+import { Lagos } from "@/db"
 
 
-export default function Lagos(){
+export default function Lagos2(){
     return(
         <div className="w-11/12 container mx-auto mt-20">
             
@@ -26,18 +26,20 @@ export default function Lagos(){
                 </tr>
             </thead>
             <tbody>
-                {trainSchedule.map((schedule, index) => (
-                    <tr key={schedule.id} className="border border-gray-300 text-start text-[#263238] font-medium  text-sm lg:text-[18px] ">
+                {Lagos.map((lagos, index) => (
+                    <tr key={lagos.id} className="border border-gray-300 text-start text-[#263238] font-medium  text-sm lg:text-[18px] ">
                         <td className="pb-6 pt-2 pl-6">{index + 1}</td>
-                        <td className="pb-6 pt-2 px-4 ">{schedule?.code}</td>
-                        <td className="pb-6 pt-2 px-4 ">{schedule?.name}</td>
-                        <td className="pb-6 pt-2 px-4">{schedule?.arrivalTime}</td>
-                        <td className="pb-6 pt-2 px-4">{schedule?.departureTime}</td>
-                        <td className="pb-6 pt-2 px-4">{schedule?.distance}</td>
+                        <td className="pb-6 pt-2 px-4 ">{lagos?.code}</td>
+                        <td className="pb-6 pt-2 px-4 ">{lagos?.name}</td>
+                        <td className="pb-6 pt-2 px-4">{lagos?.arrivalTime}</td>
+                        <td className="pb-6 pt-2 px-4">{lagos?.departureTime}</td>
+                        <td className="pb-6 pt-2 px-4">{lagos?.distance}</td>
                     </tr>
                 ))}
             </tbody>
         </table>
     </div>
-  );
+    
+    
+    )
 }

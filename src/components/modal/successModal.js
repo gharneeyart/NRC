@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import SuccessLogo from '/public/images/Success Icon.png';
+import SuccessLogo from '../../images/Success Icon.png';
 import { IoIosClose } from 'react-icons/io';
 export default function Success() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import notFound from '/public/images/13315300_5203298 1.svg';
-import arrow from '/public/icons/Arrow-28.svg';
+import notFound from '../images/13315300_5203298 1.svg';
+import arrow from '../icons/Arrow-28.svg';
 import Link from 'next/link';
 
 export default function NotFound() {

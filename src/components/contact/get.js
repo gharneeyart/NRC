@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import Phone from '/public/images/Frame 1171280031.svg';
-import Email from '/public/images/Frame 1171280033.png';
-import Insta from '/public/images/Frame 1171280032.png';
-import Address from '/public/images/Frame 1171280034.png';
-import Twitter from '/public/images/Vector (1).svg';
-import Gram from '/public/images/Vector (2).svg';
-import In from '/public/images/Frame 1171275662.svg';
-import Facebook from '/public/images/Vector (3).svg';
+import Phone from '../../images/Frame 1171280031.svg';
+import Email from '../../images/Frame 1171280033.png';
+import Insta from '../../images/Frame 1171280032.png';
+import Address from '../../images/Frame 1171280034.png';
+import Twitter from '../../images/Vector (1).svg';
+import Gram from '../../images/Vector (2).svg';
+import In from '../../images/Frame 1171275662.svg';
+import Facebook from '../../images/Vector (3).svg';
 
 export default function Get() {
   return (

@@ -4,9 +4,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 // import { Pagination, Navigation } from 'swiper/modules'
-import Eclipse from '/public/images/Ellipse 2021.svg';
-import Eclipse2 from '/public/images/Ellipse 2021 (1).svg';
-import Eclipse3 from '/public/images/Ellipse 2021 (2).svg';
+import Eclipse from '../../../images/Ellipse 2021.svg';
+import Eclipse2 from '../../../images/Ellipse 2021 (1).svg';
+import Eclipse3 from '../../../images/Ellipse 2021 (2).svg';
 
 const Testimonials = [
   {

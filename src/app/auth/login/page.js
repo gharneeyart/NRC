@@ -1,27 +1,36 @@
 'use client';
 import Image from 'next/image';
-import Train from '/public/images/138 1 (1).png';
-import Logo from '/public/icons/image 3.png';
+import Train from '../../../images/138 1 (1).png';
+import Logo from '../../../icons/image 3.png';
 import { MdOutlineRemoveRedEye } from 'react-icons/md';
 import { FaRegEyeSlash } from 'react-icons/fa6';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Login() {
+  const {login: loginUser}= useAuth();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    reset();
-    console.log(data);
-  };
+  
   const [showPassword, setShowPassword] = useState(false);
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
+  };
+  const onSubmit = async (data) => {
+    try {
+      await loginUser(data);
+      alert('Login successful!');
+      reset();
+    } catch (error) {
+      console.error('Failed to login user', error);
+      alert('Login failed. Please try again.');
+    }
   };
   return (
     <div className="w-full flex  lg:p-0 backg px-3 lg:px-0 items-center justify-center h-screen lg:h-full">

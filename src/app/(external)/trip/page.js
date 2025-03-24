@@ -854,6 +854,7 @@ import { useState, useEffect, Suspense } from 'react';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
+import NoTrains from '@/components/transport/noTrains';
 
 function TripContent() {
   // Retrieve the persisted search state
@@ -886,6 +887,7 @@ function TripContent() {
         setTrains(response.data);
       } catch (error) {
         setError(error.response?.data?.message || 'Something went wrong. Please try again.');
+
       } finally {
         setLoading(false);
       }
@@ -905,7 +907,7 @@ function TripContent() {
   const eveningTrains = filterTrainsByTimeOfDay('Evening Train');
 
   return (
-    <div className="space-y-11 mt-6">
+    <div className="space-y-11 pt-32">
       <SearchTrain
         w="w-11/12"
         bg="bg-[#006B14]"
@@ -920,11 +922,11 @@ function TripContent() {
         btnText="text-[#006B14]"
         inputW="w-full lg:w-[25%] xl:w-[25%]"
         btnWidth="w-full lg:w-[25%] xl:w-[20%]"
-        py="pt-6 pb-6 lg:pt-8 lg:pb-12 xl:pt-10 xl:pb-14"
+        py="pt-6 pb-6 lg:pt-6 lg:pb-7 xl:pt-6 xl:pb-7 lg:mt-1"
       />
 
       {loading && <p>Loading trains...</p>}
-      {error && <p className="text-red-600">{error}</p>}
+      {error && <NoTrains/>}
 
       {!loading && !error && (
         <>

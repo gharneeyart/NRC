@@ -22,7 +22,7 @@ export default function Companion() {
           <div className="w-[14.829rem] md:w-3/5 lg:w-[28.5rem] xl:w-[29.563rem] mx-auto lg:mx-0 rounded-[0.533rem] lg:rounded-[1.063rem] border-[0.031rem] lg:border-[0.063rem] lg:py-[1.081rem] py-[0.543rem] px-[0.659rem] md:px-[1.5rem] lg:px-[1.313rem] gap-[0.87rem] lg:gap-[1.734rem] flex">
             <Image
               className="w-[2.584rem] h-[2.584rem] md:w-auto md:h-auto lg:w-[5.151rem] lg:h-[5.151rem]"
-              src="/images/qr-code-svgrepo-com (2) 1.svg"
+              src={fram2}
               width={100}
               height={100}
               alt="scan-code"

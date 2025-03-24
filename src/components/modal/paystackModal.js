@@ -6,16 +6,16 @@ import payTimer from '../../icons/timer payment.svg';
 import Dot from '../../icons/paystackDot.svg';
 import paystackLogo from '../../icons/paystackLogo.svg';
 
-export default function ModalDemo() {
+export default function Paystack() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="flex justify-center items-center">
       <button
         onClick={() => setIsOpen(true)}
-        className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-600 transition"
+        className="bg-[#18A532] w-full lg:text-lg text-white px-4 py-2 rounded-md hover:bg-green-800 transition"
       >
-        Open Modal
+        Make Payment
       </button>
 
       {isOpen && (

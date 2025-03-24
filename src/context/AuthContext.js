@@ -156,16 +156,13 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+
   const logout = () => {
     Cookies.remove('auth');
-    setAuth({
-      user: null,
-      token: '',
-      success: false,
-      message: ''
-    });
+    setAuth('');
     router.push('/auth/login');
   };
+  
 
   return (
     <AuthContext.Provider value={{ auth, setAuth, login, signup, logout }}>

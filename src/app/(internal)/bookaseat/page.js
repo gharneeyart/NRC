@@ -9,14 +9,33 @@ import { useRouter } from 'next/navigation';
 import { useSearchStore } from '@/store/useSearchStore';
 import axios from 'axios';
 
+
 export default function Book() {
-  const { passengers, setPassengers, selectedTrain, contactDetails, selectedClass, selectedCoach, selectedSeats, setSelectedSeats } = useSearchStore();
+  const {
+    passengers,
+    setPassengers,
+    selectedTrain,
+    contactDetails,
+    selectedClass,
+    selectedCoach,
+    selectedSeats,
+    setSelectedSeats
+  } = useSearchStore();
   const [errors, setErrors] = useState([]);
   const router = useRouter();
 
-  useEffect(() => {
-    console.log('Passengers array:', passengers);
-  }, [passengers]);
+  const { addPassenger, removePassenger, updatePassenger } = useSearchStore();
+
+ // Add a unique ID to each passenger
+ useEffect(() => {
+  if (passengers.length > 0 && !passengers[0].id) {
+    const updatedPassengers = passengers.map((passenger, index) => ({
+      ...passenger,
+      id: index + 1, // Assign a unique ID
+    }));
+    setPassengers(updatedPassengers);
+  }
+}, [passengers, setPassengers]);
 
   const validatePassenger = (passenger) => {
     const errors = {};
@@ -103,54 +122,20 @@ export default function Book() {
     }
   };
 
-  const handleUpdatePassenger = (index, updatedPassenger) => {
-    const updatedPassengers = [...passengers];
-    updatedPassengers[index] = updatedPassenger;
-    setPassengers(updatedPassengers);
+  const handleUpdatePassenger = (id, updatedPassenger) => {
+    updatePassenger(id, updatedPassenger);
   };
 
-  // const handleRemovePassenger = (index) => {
-  //   console.log('Removing passenger at index:', index); 
-  //   setPassengers((prevPassengers) => prevPassengers.filter((_, i) => i !== index));
-  //   setSelectedSeats((prevSeats) => prevSeats.filter((_, i) => i !== index));
-  // };
-
-  // const handleRemovePassenger = (index) => {
-  //   console.log('Removing passenger at index:', index);
-  //   setPassengers((prevPassengers) => {
-  //     const updatedPassengers = prevPassengers.filter((_, i) => i !== index);
-  //     console.log('Updated passengers:', updatedPassengers); // Debugging line
-  //     return updatedPassengers;
-  //   });
-  //   setSelectedSeats((prevSeats) => {
-  //     const updatedSeats = prevSeats.filter((_, i) => i !== index);
-  //     console.log('Updated selected seats:', updatedSeats); // Debugging line
-  //     return updatedSeats;
-  //   });
-  // };
-
-  const handleRemovePassenger = (index) => {
-    console.log('Removing passenger at index:', index); // Debugging line
-    setPassengers((prevPassengers) => {
-      const updatedPassengers = prevPassengers.filter((_, i) => i !== index);
-      console.log('Updated passengers:', updatedPassengers); // Debugging line
-      return updatedPassengers;
-    });
-    setSelectedSeats((prevSeats) => {
-      const updatedSeats = prevSeats.filter((_, i) => i !== index);
-      console.log('Updated selected seats:', updatedSeats); // Debugging line
-      return updatedSeats;
-    });
+  const handleRemovePassenger = (id) => {
+    removePassenger(id);
   };
 
-  
   const handleNavigateHome = () => {
-    resetAll(); // Reset all states in the Zustand store
     router.push('/');
   };
 
   return (
-    <div className='pt-56'>
+    <div className="pt-56">
       <SearchTrain
         w="w-11/12"
         bg="bg-[#006B14]"
@@ -192,21 +177,22 @@ export default function Book() {
             </div>
             <hr className="mb-7" />
             <div className="text-[#263238]">
-            {passengers.map((passenger, index) => (
-              <Passenger
-                key={`${selectedSeats[index]}-${index}`} // Use seat and index as the key
-                index={index}
-                coach={selectedCoach}
-                seat={selectedSeats[index]}
-                selectedSeats={selectedSeats}
-                setSelectedSeats={setSelectedSeats}
-                passengerData={passenger}
-                onUpdatePassenger={(updatedPassenger) =>
-                  handleUpdatePassenger(index, updatedPassenger)
-                }
-                onRemovePassenger={() => handleRemovePassenger(index)}
-                errors={errors[index] || {}}
-              />
+              {passengers.map((passenger) => (
+                <Passenger
+                  key={passenger.id}
+                  id={passenger.id}
+                  index={passengers.indexOf(passenger)}
+                  coach={selectedCoach}
+                  seat={selectedSeats[passengers.indexOf(passenger)]}
+                  selectedSeats={selectedSeats}
+                  setSelectedSeats={setSelectedSeats}
+                  passengerData={passenger}
+                  onUpdatePassenger={(updatedPassenger) =>
+                    handleUpdatePassenger(passenger.id, updatedPassenger)
+                  }
+                  onRemovePassenger={() => handleRemovePassenger(passenger.id)}
+                  errors={errors[passengers.indexOf(passenger)] || {}}
+                />
               ))}
               <hr className="mb-7 bg-[#D5D4D4]" />
             </div>
@@ -214,7 +200,7 @@ export default function Book() {
               <ContactDetails />
             </div>
             <hr className="mb-8 bg-[#D5D4D4]" />
-            <div className="lg:flex gap-12 w-full ">
+            <div className="lg:flex gap-12 w-full">
               <button
                 onClick={handleProceed}
                 className="bg-[#18A532] text-white lg:w-[30%] w-full rounded-lg py-3 mb-5 lg:mb-0 placeholder-[#263238] text-center"

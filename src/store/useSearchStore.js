@@ -1,140 +1,11 @@
-// import { create } from 'zustand';
-// import { persist } from 'zustand/middleware';
-
-// export const useSearchStore = create(
-//   persist(
-//     (set) => ({
-//       from: '',
-//       to: '',
-//       date: '',
-//       selectedClass: '',
-//       passengers: [], // Initialize passengers with default values
-//       setFrom: (from) => set({ from }),
-//       setTo: (to) => set({ to }),
-//       setDate: (date) => set({ date }),
-//       setSelectedClass: (cls) => set({ selectedClass: cls }),
-//       setPassengers: (passengers) => set({ passengers }), // Add setPassengers function
-//     }),
-//     {
-//       name: 'search-storage',
-//       getStorage: () => localStorage,
-//       onRehydrateStorage: () => (state) => {
-//         console.log("Hydrating state:", state);
-//       },
-//     }
-//   )
-// );
-
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-// export const useSearchStore = create(
-//   persist(
-//     (set) => ({
-//       from: '',
-//       to: '',
-//       date: '',
-//       selectedClass: '', // Store class name
-//       selectedTrain: null,
-//       timeOfDay: '',
-//       passengers: [], // Initialize passengers with default values
-//       setFrom: (from) => set({ from }),
-//       setTo: (to) => set({ to }),
-//       setDate: (date) => set({ date }),
-//       setSelectedTrain: (selectedTrain) => set({ selectedTrain }),
-//       setTimeOfDay: (timeOfDay) => set({ timeOfDay }),
-//       setSelectedClass: (cls) =>
-//         set((state) => {
-//           // Clear passenger details, coach, and seat when a new class is selected
-//           if (state.selectedClass !== cls) {
-//             return {
-//               selectedClass: cls,
-//               passengers: [],
-//             };
-//           }
-//           return { selectedClass: cls };
-//         }),
-//       setPassengers: (passengers) => set({ passengers }), // Add setPassengers function
-//       resetAll: () =>
-//         set({
-//           from: '',
-//           to: '',
-//           date: '',
-//           selectedClass: '',
-//           passengers: [],
-//           selectedTrain: null,
-//           timeOfDay: '',
-//         }), // Add resetAll function to reset all states
-//     }),
-//     {
-//       name: 'search-storage',
-//       getStorage: () => localStorage,
-//       onRehydrateStorage: () => (state) => {
-//         console.log('Hydrating state:', state);
-//       },
-//     }
-//   )
-// );
-
-// export const useSearchStore = create(
-//   persist(
-//     (set) => ({
-//       from: '',
-//       to: '',
-//       date: '',
-//       selectedClass: '',
-//       selectedCoach:'',
-//       selectedSeats: [],
-//       selectedTrain: null,
-//       timeOfDay: '',
-//       passengers: [],
-//       contactDetails: { email: '', phone: '' }, // Add contactDetails
-//       setFrom: (from) => set({ from }),
-//       setTo: (to) => set({ to }),
-//       setDate: (date) => set({ date }),
-//       setSelectedTrain: (selectedTrain) => set({ selectedTrain }),
-//       setSelectedSeats: (selectedSeats) => set({ selectedSeats }),
-//       setTimeOfDay: (timeOfDay) => set({ timeOfDay }),
-//       setSelectedCoach: (selectedCoach) => set({ selectedCoach }), // Add setSelectedCoach
-//       setSelectedClass: (cls) =>
-//         set((state) => {
-//           if (state.selectedClass !== cls) {
-//             return {
-//               selectedClass: cls,
-//               passengers: [],
-//             };
-//           }
-//           return { selectedClass: cls };
-//         }),
-//       setPassengers: (passengers) => set({ passengers }),
-//       setContactDetails: (contactDetails) => set({ contactDetails }), // Add setContactDetails
-//       resetAll: () =>
-//         set({
-//           from: '',
-//           to: '',
-//           date: '',
-//           selectedClass: '',
-//           selectedCoach: '',
-//           selectedSeats: [],
-//           passengers: [],
-//           selectedTrain: null,
-//           timeOfDay: '',
-//           contactDetails: { email: '', phone: '' }, // Reset contactDetails
-//         }),
-//     }),
-//     {
-//       name: 'search-storage',
-//       getStorage: () => localStorage,
-//       onRehydrateStorage: () => (state) => {
-//         console.log('Hydrating state:', state);
-//       },
-//     }
-//   )
-// );
-
-export const useSearchStore = create(
+// Define the store
+const useSearchStore = create(
   persist(
     (set) => ({
+      // State variables
       from: '',
       to: '',
       date: '',
@@ -145,31 +16,49 @@ export const useSearchStore = create(
       timeOfDay: '',
       passengers: [],
       contactDetails: { email: '', phone: '' },
+
+      // Actions to update state
       setFrom: (from) => set({ from }),
       setTo: (to) => set({ to }),
       setDate: (date) => set({ date }),
       setSelectedTrain: (selectedTrain) => set({ selectedTrain }),
-      setSelectedSeats: (selectedSeats) => {
-        console.log('Updating selected seats:', selectedSeats); // Debugging line
-        set({ selectedSeats });
-      },
+      setSelectedSeats: (selectedSeats) => set({ selectedSeats }),
       setTimeOfDay: (timeOfDay) => set({ timeOfDay }),
       setSelectedCoach: (selectedCoach) => set({ selectedCoach }),
-      setSelectedClass: (cls) =>
+      setSelectedClass: (selectedClass) =>
         set((state) => {
-          if (state.selectedClass !== cls) {
+          if (state.selectedClass !== selectedClass) {
             return {
-              selectedClass: cls,
-              passengers: [],
+              selectedClass,
+              passengers: [], // Reset passengers when class changes
             };
           }
-          return { selectedClass: cls };
+          return { selectedClass };
         }),
-      setPassengers: (passengers) => {
-        console.log('Updating passengers in store:', passengers); // Debugging line
-        set({ passengers });
-      },
+      setPassengers: (passengers) => set({ passengers }),
       setContactDetails: (contactDetails) => set({ contactDetails }),
+
+      // Add a new passenger
+      addPassenger: (passenger) =>
+        set((state) => ({
+          passengers: [...state.passengers, passenger],
+        })),
+
+      // Update a passenger by ID
+      updatePassenger: (id, updatedPassenger) =>
+        set((state) => ({
+          passengers: state.passengers.map((passenger) =>
+            passenger.id === id ? { ...passenger, ...updatedPassenger } : passenger
+          ),
+        })),
+
+      // Remove a passenger by ID
+      removePassenger: (id) =>
+        set((state) => ({
+          passengers: state.passengers.filter((passenger) => passenger.id !== id),
+        })),
+
+      // Reset all state variables
       resetAll: () =>
         set({
           from: '',
@@ -178,18 +67,20 @@ export const useSearchStore = create(
           selectedClass: '',
           selectedCoach: '',
           selectedSeats: [],
-          passengers: [],
           selectedTrain: null,
           timeOfDay: '',
+          passengers: [],
           contactDetails: { email: '', phone: '' },
         }),
     }),
     {
-      name: 'search-storage',
-      getStorage: () => localStorage,
+      name: 'search-storage', // Name for localStorage
+      getStorage: () => localStorage, // Use localStorage for persistence
       onRehydrateStorage: () => (state) => {
-        console.log('Hydrating state:', state); // Debugging line
+        console.log('Hydrating state:', state); // Debugging: Log state after hydration
       },
     }
   )
 );
+
+export { useSearchStore };

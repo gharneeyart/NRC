@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react';
 import { useSearchStore } from '@/store/useSearchStore';
 
 const Passenger = ({
+  id,
   index,
   coach,
   seat,
   passengerData,
   onUpdatePassenger,
   errors,
-  onRemovePassenger
+  onRemovePassenger,
 }) => {
   const [formData, setFormData] = useState({
     type: passengerData.type || '',
@@ -19,7 +20,7 @@ const Passenger = ({
     phone: passengerData.phone || '',
   });
 
-  const { selectedSeats, setSelectedSeats, passengers, setPassengers, setSelectedCoach } = useSearchStore();
+  const { selectedSeats, setSelectedSeats, setSelectedCoach, passengers } = useSearchStore();
 
   useEffect(() => {
     setFormData({
@@ -39,15 +40,15 @@ const Passenger = ({
   };
 
   const clearPassenger = () => {
-    // Notify the parent component to remove this passenger
-    onRemovePassenger();
-  
-    // Clear the seat and coach (if applicable)
+    onRemovePassenger(id); // Remove the passenger by ID
     const updatedSeats = selectedSeats.filter((selectedSeat) => selectedSeat !== seat);
     setSelectedSeats(updatedSeats);
-    setSelectedCoach('');
   
-    // Clear the passenger details
+    // Only clear selectedCoach if there are no passengers left
+    if (passengers.length === 1) {
+      setSelectedCoach('');
+    }
+  
     onUpdatePassenger({
       type: '',
       name: '',
@@ -56,12 +57,7 @@ const Passenger = ({
       phone: '',
     });
     setFormData({ type: '', name: '', nin: '', email: '', phone: '' });
-  
-    console.log('Cleared passenger for seat:', seat);
   };
-
-  console.log(selectedSeats);
-  console.log(passengerData);
 
   return (
     <div className="mb-11">
@@ -80,7 +76,6 @@ const Passenger = ({
         </h3>
       </div>
       <form className="lg:flex gap-12 w-full lg:mb-7">
-        {/* Passenger Type */}
         <div className="w-full">
           <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
             Passenger Type
@@ -102,7 +97,6 @@ const Passenger = ({
           )}
         </div>
 
-        {/* Passenger Name */}
         <div className="w-full">
           <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
             Passenger Name
@@ -120,7 +114,6 @@ const Passenger = ({
           )}
         </div>
 
-        {/* NIN Number */}
         <div className="w-full">
           <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
             NIN Number
@@ -140,7 +133,6 @@ const Passenger = ({
       </form>
 
       <div className="lg:flex gap-12 w-full">
-        {/* Email Address */}
         <div className="lg:w-[30%] w-full">
           <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
             Email Address
@@ -158,7 +150,6 @@ const Passenger = ({
           )}
         </div>
 
-        {/* Phone Number */}
         <div className="lg:w-[30%] w-full">
           <label className="font-medium md:text-lg text-base 2xl:text-lg lg:text-lg">
             Phone Number

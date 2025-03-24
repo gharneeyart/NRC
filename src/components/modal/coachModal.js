@@ -5,18 +5,30 @@ import Image from 'next/image';
 import White from '../../images/White Dot.png';
 import Oxblod from '../../images/oxblod Dot.png';
 import Red from '../../images/red dot.png';
-import { useSearchStore } from '@/store/useSearchStore';
 
 export default function CoachModal({
   selectedCoach,
   totalSeats,
+  selectedSeats,
+  setSelectedSeats,
+  passengers,
+  setPassengers,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [error, setError] = useState('');
-  const { selectedSeats, setSelectedSeats, passengers, setPassengers } = useSearchStore();
 
   // Generate seat layout based on totalSeats
   const seatLayout = Array.from({ length: totalSeats }, (_, i) => i + 1);
+
+  // Function to group seats into rows with a gap (aisle) in the middle
+  const groupSeatsIntoRows = (seats, seatsPerRow = 4) => {
+    const rows = [];
+    for (let i = 0; i < seats.length; i += seatsPerRow) {
+      const row = seats.slice(i, i + seatsPerRow);
+      rows.push(row);
+    }
+    return rows;
+  };
 
   const toggleSeatSelection = (seatNumber) => {
     if (selectedSeats.includes(seatNumber)) {
@@ -59,66 +71,100 @@ export default function CoachModal({
     }
   };
 
+  // Group seats into rows with 4 seats per row (2 on the left, 2 on the right)
+  const seatRows = groupSeatsIntoRows(seatLayout, 4);
+
   return (
     <div>
       <button
         onClick={handleOpenModal}
-        className="text-[#848484] px-5 w-full py-3 rounded-lg text-start transition border"
+        className="text-[#848484] px-5 w-full py-3 rounded-lg text-start transition border hover:bg-gray-100"
       >
         Select Seat
       </button>
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl p-6 w-[20%] relative">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 z-50">
+          <div className="bg-white rounded-lg shadow-xl p-4 w-full max-w-xs sm:max-w-sm md:max-w-md relative">
+            {/* Close Button */}
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
               <IoIosClose size={20} />
             </button>
-            <div className="flex flex-col gap-6 mb-5">
-              <div className="flex flex-col gap-2">
-                <h1 className="font-bold text-base">Please Select Seat(s)</h1>
-                <div className="w-[90%] grid grid-cols-3">
-                  <div className="flex items-center gap-1">
-                    <Image src={White} alt="White" className="w-[10px]" />
-                    <p className="text-[10px]">Available</p>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Image src={Oxblod} alt="Oxblod" className="w-[10px]" />
-                    <p className="text-[10px]">Selected</p>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Image src={Red} alt="Red" className="w-[10px]" />
-                    <p className="text-[10px]">Unavailable</p>
-                  </div>
+
+            {/* Modal Header */}
+            <div className="flex flex-col gap-3">
+              <h1 className="font-bold text-lg text-center">Please Select Seat(s)</h1>
+
+              {/* Seat Status Indicators */}
+              <div className="flex justify-center gap-4">
+                <div className="flex items-center gap-1">
+                  <Image src={White} alt="Available" className="w-3 h-3" />
+                  <p className="text-xs sm:text-sm">Available</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Image src={Oxblod} alt="Selected" className="w-3 h-3" />
+                  <p className="text-xs sm:text-sm">Selected</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Image src={Red} alt="Unavailable" className="w-3 h-3" />
+                  <p className="text-xs sm:text-sm">Unavailable</p>
                 </div>
               </div>
-              <div className="grid grid-cols-8 gap-2">
-                {seatLayout.map((seatNumber) => (
-                  <button
-                    key={seatNumber}
-                    className={`${
-                      selectedSeats.includes(seatNumber)
-                        ? 'bg-[#006B14] text-white'
-                        : 'bg-[#E8EAEE] text-black'
-                    } rounded-sm text-center text-[14px] cursor-pointer p-2`}
-                    onClick={() => toggleSeatSelection(seatNumber)}
-                    aria-label={`Select seat ${seatNumber}`}
-                  >
-                    {seatNumber}
-                  </button>
+
+              {/* Seat Grid */}
+              <div className="flex flex-col gap-2 mt-2">
+                {seatRows.map((row, rowIndex) => (
+                  <div key={rowIndex} className="grid grid-cols-5 gap-1">
+                    {/* Left Side Seats */}
+                    {row.slice(0, 2).map((seatNumber) => (
+                      <button
+                        key={seatNumber}
+                        className={`${
+                          selectedSeats.includes(seatNumber)
+                            ? 'bg-[#006B14] text-white' // Selected seat
+                            : 'bg-[#E8EAEE] text-black' // Available seat
+                        } rounded-sm text-center text-xs sm:text-sm cursor-pointer p-1 sm:p-2 hover:bg-[#006B14] hover:text-white transition-colors`}
+                        onClick={() => toggleSeatSelection(seatNumber)}
+                        aria-label={`Select seat ${seatNumber}`}
+                      >
+                        {seatNumber}
+                      </button>
+                    ))}
+
+                    {/* Aisle Gap */}
+                    <div className="col-span-1" /> {/* Empty space for the aisle */}
+
+                    {/* Right Side Seats */}
+                    {row.slice(2, 4).map((seatNumber) => (
+                      <button
+                        key={seatNumber}
+                        className={`${
+                          selectedSeats.includes(seatNumber)
+                            ? 'bg-[#006B14] text-white' // Selected seat
+                            : 'bg-[#E8EAEE] text-black' // Available seat
+                        } rounded-sm text-center text-xs sm:text-sm cursor-pointer p-1 sm:p-2 hover:bg-[#006B14] hover:text-white transition-colors`}
+                        onClick={() => toggleSeatSelection(seatNumber)}
+                        aria-label={`Select seat ${seatNumber}`}
+                      >
+                        {seatNumber}
+                      </button>
+                    ))}
+                  </div>
                 ))}
               </div>
-            </div>
-            <div className="mt-4 flex justify-end">
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="bg-[#18A532] w-full text-white py-1 rounded-sm hover:bg-gray-400 transition"
-              >
-                Proceed
-              </button>
+
+              {/* Proceed Button */}
+              <div className="mt-4">
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="bg-[#18A532] w-full text-white py-1 sm:py-2 rounded-lg hover:bg-[#148C2A] transition-colors text-sm sm:text-base"
+                >
+                  Proceed
+                </button>
+              </div>
             </div>
           </div>
         </div>

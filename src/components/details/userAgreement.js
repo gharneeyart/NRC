@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import ModalDemo from '../modal/paystackModal'; // Import the ModalDemo component
+import Paystack from '../modal/paystackModal';
 
 export default function UserAgreement() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function UserAgreement() {
       </div>
 
       {/* Modal */}
-      <ModalDemo
+      <Paystack
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

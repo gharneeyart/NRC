@@ -8,6 +8,7 @@ import Services from '@/components/reusables/services';
 import SearchTrain from '@/components/reusables/search';
 import Nav from '@/layouts/Nav';
 import Footer from '@/layouts/Footer';
+import { useAuth } from "@/context/AuthContext";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <div className="lg:relative">
         <Hero />
 
-        <div className="-mt-8 lg:-mt-0 w-full lg:absolute lg:-bottom-20 lg:z-20">
+        <div className="-mt-8 lg:-mt-0 w-full lg:absolute lg:-bottom-20 lg:z-10">
           <SearchTrain
             w="w-[90%]"
             bg="bg-[#ffffff]"

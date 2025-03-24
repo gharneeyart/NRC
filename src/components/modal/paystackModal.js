@@ -6,7 +6,7 @@ import payTimer from '../../icons/timer payment.svg';
 import Dot from '../../icons/paystackDot.svg';
 import paystackLogo from '../../icons/paystackLogo.svg';
 
-export default function ModalDemo({ isOpen, onClose }) {
+export default function Paystack({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (

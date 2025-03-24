@@ -6,8 +6,6 @@ export default function Marquee() {
     <marquee behavior="scroll" direction="right">
     <Image src={Train} className="h-6" width={300} alt="moving-train" />
     </marquee>
-     
-      
     </div>
   );
 }

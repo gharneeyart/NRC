@@ -2,7 +2,7 @@
 
 import CustomDatePicker from "@/components/home/date";
 import ModalButton from "@/components/modal/paystackModal";
-import ResetPassword from "@/components/modal/resetPasswordModal";
+import ResetPassword from "@/components/modal/changePasswordModal";
 import SearchTrain from "@/components/reusables/search";
 import Success from "@/components/modal/successModal";
 import Logout from "@/components/modal/logOutModal";

@@ -13,7 +13,6 @@ export default function ResetPassword() {
     register,
     handleSubmit,
     reset,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -35,17 +34,22 @@ export default function ResetPassword() {
   };
 
   const [isOpen, setIsOpen] = useState(false);
+  
+  const handleOpener = () =>{
+    setIsOpen(true);
+  }
+
   return (
     <div className="flex justify-center items-center">
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={handleOpener}
         className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-600 transition"
       >
         Open Modal
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
+        <div className="z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
           <div className="relative w-[90%] lg:w-[45%] xl:w-[40%]  bg-white rounded-lg shadow-lg flex flex-col px-10 py-7 gap-4 mx-auto inset-0 ">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
@@ -66,11 +70,11 @@ export default function ResetPassword() {
                   htmlFor="password"
                   className="block text-sm font-medium text-gray-700 mb-1"
                 >
-                  New Password
+                  Current Password
                 </label>
                 <div className="relative">
                   <input
-                    {...register('password', {
+                    {...register('currentPassword', {
                       required: 'This field is required',
                       minLength: {
                         value: 8,
@@ -84,7 +88,7 @@ export default function ResetPassword() {
                       },
                     })}
                     type={showPassword ? 'text' : 'password'}
-                    id="password"
+                    id="currentPassword"
                     className="w-full border rounded-md p-2 outline-none focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
                     placeholder="Enter password"
                   />
@@ -112,17 +116,25 @@ export default function ResetPassword() {
                   htmlFor="confirmPassword"
                   className="block text-sm font-medium text-gray-700 mb-1"
                 >
-                  Confirm Password
+                  New Password
                 </label>
                 <div className="relative">
                   <input
-                    {...register('confirmPassword', {
+                    {...register('newPassword', {
                       required: 'This field is required',
-                      validate: (value) =>
-                        value === watch('password') || 'Passwords do not match',
+                      minLength: {
+                        value: 8,
+                        message: 'Password must be at least 8 characters long',
+                      },
+                      pattern: {
+                        value:
+                          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                        message:
+                          'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character',
+                      },
                     })}
                     type={showConfirmPassword ? 'text' : 'password'}
-                    id="confirmPassword"
+                    id="newPassword"
                     className="w-full border rounded-md p-2  outline-none focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
                     placeholder="Enter password"
                   />

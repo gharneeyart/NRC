@@ -1,5 +1,5 @@
 // pages/payment/success.js
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const PaymentSuccess = () => {
   const router = useRouter();

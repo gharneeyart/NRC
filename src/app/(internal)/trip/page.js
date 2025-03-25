@@ -1,5 +1,4 @@
 'use client';
-// import { useSearchStore } from '@/store/useSearchStore';
 import SearchTrain from '@/components/reusables/search';
 import Class from '@/components/transport/class';
 import Hours from '@/components/transport/hours';

@@ -25,11 +25,8 @@ export default function Login() {
   const onSubmit = async (data) => {
     try {
       await loginUser(data);
-      alert('Login successful!');
       reset();
     } catch (error) {
-      console.error('Failed to login user', error);
-      alert('Login failed. Please try again.');
     }
   };
   return (

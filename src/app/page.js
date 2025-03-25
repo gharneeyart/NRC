@@ -8,7 +8,6 @@ import Services from '@/components/reusables/services';
 import SearchTrain from '@/components/reusables/search';
 import Nav from '@/layouts/Nav';
 import Footer from '@/layouts/Footer';
-import { useAuth } from "@/context/AuthContext";
 
 export default function Home() {
   return (
@@ -39,13 +38,11 @@ export default function Home() {
           />
         </div>
       </div>
-
       <Explore />
       <Services />
       <Changes />
       <News />
       <Companion />
-      {/* w-full absolute -bottom-[22.5rem] md:-bottom-[22rem] lg:-bottom-20 z-50 */}
       <Footer />
     </div>
   );

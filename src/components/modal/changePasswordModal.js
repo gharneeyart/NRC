@@ -171,7 +171,7 @@ import axios from "axios";
 import { useAuth } from "@/context/AuthContext";
 import Image from "next/image";
 import SuccessLogo from "../../images/Success Icon.png";
-import { IoIosClose } from "react-icons/io";
+// import { IoIosClose } from "react-icons/io";
 
 export default function ChangePasswordModal({ isOpen, onClose }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -215,9 +215,9 @@ export default function ChangePasswordModal({ isOpen, onClose }) {
         setSuccess(true);
         reset();
         const timer = setTimeout(() => {
-                logout();
                 onClose();
-                router.push('/auth/login');
+                logout();
+                // router.push('/auth/login');
               }, 5000);
               return () => clearTimeout(timer);
       }
@@ -249,14 +249,14 @@ export default function ChangePasswordModal({ isOpen, onClose }) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="w-[90%] lg:w-[45%] xl:w-[40%] rounded-lg px-10 py-7">
-        <button
+        {/* <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
           onClick={handleClose}
         >
           <IoIosClose size={20} />
-        </button>
+        </button> */}
 
-        {success = true ? (
+        {success ? (
           /* Success Content */
           <div className="flex flex-col items-center justify-center gap-4 py-4">
             <Image 

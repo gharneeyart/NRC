@@ -1,4 +1,5 @@
 // pages/payment/success.js
+'use client'
 import { useRouter } from 'next/navigation';
 
 const PaymentSuccess = () => {

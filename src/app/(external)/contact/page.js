@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <div>
       <div className="contact-hero ">
-        <div className="container mx-auto">
+        <div className="container mx-auto ">
           <ResuableHero
             title="Contact Us"
             desc="Safe, comfortable, and reliable train services across the nation. Experience the future of Nigerian transportation, today."

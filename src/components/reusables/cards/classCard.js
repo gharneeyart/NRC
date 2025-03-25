@@ -97,7 +97,7 @@ export default function ClassCard({ myBookings, train, timeOfDay }) {
 
   return (
     <div className="xl:w-[360px] w-[260px] md:w-[260px] mx-auto">
-      <div className="text-center flex flex-col gap-[16px] rounded-xl shadow border px-6 py-8">
+      <div className="text-center flex flex-col gap-[16px] rounded-xl shadow border px-3 py-8">
         <div className="flex flex-col items-center">
           <Image src={myBookings?.image} alt={myBookings?.class} width={100}/>
         </div>

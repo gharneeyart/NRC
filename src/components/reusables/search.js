@@ -122,7 +122,7 @@ export default function SearchTrain({
             value={date}
             min={today} // Set the min attribute to today's date
             onClick={handleDate}
-            className={`${showDate ? `${inputText2}` : `${inputText}`} ${inputBg} ${inputBorder}  ${inputPadding} outline-none rounded-md px-2`}
+            className={`${showDate ? `${inputText2}` : `${inputText}`} ${inputBg} ${inputBorder}  ${inputPadding} outline-none rounded-md px-2 w-full`}
             placeholder="Select Date"
             onChange={(e) => setDate(e.target.value)}
           />

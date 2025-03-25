@@ -97,9 +97,9 @@ export default function LogoutModal({isOpen, onClose, onLogout}){
         <div className="mt-4 flex justify-between gap-4 w-full">
           <button 
             onClick={onClose} 
-            className="bg-[#ffffff] text-[#18A532] py-2 w-full border border-[#18A532] rounded-md"
+            className="bg-[#ffffff] text-[#CC3F3F] py-2 w-full border border-[#CC3F3F] rounded-md"
           >
-            Cancel
+            Yo! I’m Kidding
           </button>
           <button 
             onClick={onLogout} 

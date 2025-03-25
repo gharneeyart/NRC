@@ -20,7 +20,6 @@ export default function Book() {
     selectedCoach,
     selectedSeats,
     setSelectedSeats,
-    bookingData,
     setBookingData,
     removePassenger,
     updatePassenger

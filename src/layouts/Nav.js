@@ -190,7 +190,7 @@ export default function Nav() {
   return (
     <div className='fixed left-0 right-0 z-50'>
       <Marquee />
-      <div className="w-full py-6 bg-white border border-[#D8D8D8]">
+      <div className="w-full  bg-white border border-[#D8D8D8]">
         <div className="w-11/12 container mx-auto flex items-center justify-between">
           <Link href="/"><Image className="w-[8.893rem] h-[3.344rem]" src={Logo} alt="NRC-logo" width={100} height={100} priority={true} /></Link>
           <div className="lg:hidden text-2xl px-4 cursor-pointer" onClick={openMenubar}>
@@ -228,8 +228,8 @@ export default function Nav() {
                   )}
                 </div>
               ) : (
-                <div className="flex flex-col text-center gap-[1.75rem] lg:hidden">
-                  <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
+                <div className="w-full flex flex-col text-center gap-[1.75rem] lg:hidden">
+                  <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md w-full">Register</Link>
                   <Link href="/auth/login"><button className="w-full text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
                 </div>
               )}
@@ -260,7 +260,7 @@ export default function Nav() {
                 )}
               </div>
             ) : (
-              <div className="flex flex-col lg:flex-row text-center gap-[1.75rem] border lg:gap-5 md:hidden lg:block">
+              <div className="flex flex-col lg:flex-row text-center gap-[1.75rem] border lg:gap-5 hidden lg:block space-x-5">
                 <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
                 <Link href="/auth/login"><button className="text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
               </div>

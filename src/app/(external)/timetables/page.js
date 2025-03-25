@@ -7,7 +7,7 @@ import Companion from "@/components/reusables/railCompanion";
 
 export default function Table(){
     return(
-       <div className=" space-y-10">
+       <div className=" pt-40">
         <Lagos/>
         <Ibadan/>
         <Lagos2/>

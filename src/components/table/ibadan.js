@@ -2,48 +2,51 @@ import { Schedule } from '@/db';
 
 export default function Ibadan() {
   return (
-    <div className="w-11/12 container mx-auto">
-      <div className="py-4   pr-10 ">
-        <h1 className="text-2xl font-semibold ">
-          Ibadan - Lagos Mornin Train (IL2)
-        </h1>
-        <div className="space-x-5">
-          <span className=" border-r-2 border-[#263238] pr-2">
-            Train Type - <b>100 KM</b>
-          </span>
-          <span className=" border-r-2 border-[#263238] pr-2">
-            Total Time - <b>2 hrs, 33 mins</b>
-          </span>
-          <span>
-            Total Distance - <b>180 KM</b>
-          </span>
+    <div className="px-4 pb-5 bg-[#FFFFFF]">
+      <div className="max-w-7xl lg:px-15 mx-auto">
+        <div className="mb-6 p-4 rounded-lg">
+          <h2 className="text-2xl font-bold">Ibadan - Lagos Morning Train (IL2)</h2>
+          <div className="flex flex-wrap gap-3">
+            <p>
+              Train Type - <strong>100 KM</strong> |
+            </p>
+            <p>
+              Duration - <strong>2 hrs, 33 mins</strong> |
+            </p>
+            <p>
+              Distance - <strong>180 KM</strong>
+            </p>
+          </div>
+
+          {/* Scrollable Table Container */}
+          <div className="overflow-x-auto mt-4">
+            <table className="w-full min-w-max border-collapse border">
+              <thead>
+                <tr className="bg-[#F2FAF4]">
+                  <th className="border p-2 text-start">No</th>
+                  <th className="border p-2 text-start">Code</th>
+                  <th className="border p-2 text-start">Station</th>
+                  <th className="border p-2 text-start">Arrival</th>
+                  <th className="border p-2 text-start">Departure</th>
+                  <th className="border p-2 text-start">Distance</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Schedule.map((item, index) => (
+                  <tr key={item.id} className="border border-gray-300">
+                    <td className="border p-2 text-start">{index + 1}</td>
+                    <td className="border p-2 text-start">{item.code}</td>
+                    <td className="border p-2 text-start">{item.name}</td>
+                    <td className="border p-2 text-start">{item.arrivalTime}</td>
+                    <td className="border p-2 text-start">{item.departureTime}</td>
+                    <td className="border p-2 text-start">{item.distance}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-            
-        <table className=" px-6 lg:px-0 w-full">
-            <thead className="bg-[#F2FAF4] ">
-                <tr>
-                    <th className=" py-3 font-semibold pl-6 text-left">NO</th>
-                    <th className=" py-3 px-3 font-semibold text-left">Code</th>
-                    <th className=" py-3 px-3 text-left font-semibold w-[171px] lg:w-[270px]">Station Name</th>
-                    <th className=" py-3 px-3 font-semibold text-left">Arrival Time</th>
-                    <th className=" py-3 px-3 font-semibold text-left">Departure Time</th>
-                    <th className=" py-3 px-3 font-semibold text-left">Distance</th>
-                </tr>
-            </thead>
-            <tbody>
-                {Schedule.map((item, index) => (
-                    <tr key={item.id} className="border border-gray-300 text-start font-medium text-sm  text-[#263238] lg:text-[18px]  ">
-                        <td className="pb-6 pt-2 pl-6">{index + 1}</td>
-                        <td className="pb-6 pt-2 px-4">{item.code}</td>
-                        <td className="pb-6 pt-2 px-4 ">{item.name}</td>
-                        <td className="pb-6 pt-2 px-4">{item.arrivalTime}</td>
-                        <td className="pb-6 pt-2 px-4">{item.departureTime}</td>
-                        <td className="pb-6 pt-2 px-4">{item.distance}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
     </div>
   );
 }

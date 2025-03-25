@@ -1,7 +1,7 @@
 import Nav from '@/layouts/Nav';
 import Footer from '@/layouts/Footer';
 
-export default function ExternalLayout({ children }) {
+export default function InternalLayout({ children }) {
   return (
     <>
       <Nav />

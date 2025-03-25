@@ -139,8 +139,7 @@ import { useAuth } from '@/context/AuthContext';
 import Marquee from '@/components/home/marquee';
 import { useRouter } from 'next/navigation';
 import LogoutModal from '@/components/modal/logOutModal';
-import ResetPasswordModal from '@/components/modal/changePasswordModal';
-import { useModal } from '@/context/modalContext';
+import ChangePasswordModal from '@/components/modal/changePasswordModal';
 
 
 export default function Nav() {
@@ -151,26 +150,37 @@ export default function Nav() {
   const [isResetPasswordModalOpen, setIsResetPasswordModalOpen] = useState(false);
   const navRef = useRef(null);
   const router = useRouter();
-  const { openModal } = useModal();
 
   const closeMenubar = () => setMenuOpen(false);
   const openMenubar = () => window.innerWidth <= 1024 && setMenuOpen(!menuOpen);
   const openMenu = () => setDropOpenMenu(!dropOpen);
-  const closeMenu = () => setDropOpenMenu(false);
+  const closeMenu = () => setDropOpenMenu(dropOpen);
 
   const handleClickOutside = (event) => {
     if (navRef.current && !navRef.current.contains(event.target)) {
       closeMenubar();
-      closeMenu();
+    
     }
   };
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [menuOpen, dropOpen]);
+  }, [menuOpen]);
 
   const getInitials = (firstName, lastName) => (!firstName || !lastName ? '' : `${firstName.charAt(0)}${lastName.charAt(0)}`);
+
+  const handleLogoutClicked = ()=>{
+    setIsLogoutModalOpen(true);
+    setDropOpenMenu(false);
+  }
+  const handleChangeClicked=()=>{
+    setIsResetPasswordModalOpen(true);
+    setDropOpenMenu(false);
+  }
+  
+
+  
 
   const handleLogout = () => {
     logout();
@@ -180,7 +190,7 @@ export default function Nav() {
   return (
     <div className='fixed left-0 right-0 z-50'>
       <Marquee />
-      <div className="w-full py-6 bg-white border border-[#D8D8D8]">
+      <div className="w-full  bg-white border border-[#D8D8D8]">
         <div className="w-11/12 container mx-auto flex items-center justify-between">
           <Link href="/"><Image className="w-[8.893rem] h-[3.344rem]" src={Logo} alt="NRC-logo" width={100} height={100} priority={true} /></Link>
           <div className="lg:hidden text-2xl px-4 cursor-pointer" onClick={openMenubar}>
@@ -204,21 +214,22 @@ export default function Nav() {
                   </div>
                   {dropOpen && (
                     <div className="w-[166px] py-[4px] absolute top-14 right-0 bg-white rounded-[10px] text-[#111014] text-[16px] drop-shadow shadow-[#00000026] cursor-pointer">
-                      <div><ul className="px-[10px] py-[10px] grid gap-[10px]">
-                        <li className="hover:text-[#006B14]">My Tickets</li>
-                        <li className="hover:text-[#006B14]" onClick={() => openModal('resetPassword')}>
-                          Reset Password
-                        </li>
-                        <li className="text-[#DB3E3E] hover:text-[#006B14]" onClick={() => openModal('logout', { onLogout: handleLogout })}>
-                          Log Out
-                        </li>
-                      </ul></div>
+                      <div> <div className="px-[10px] py-[10px] grid gap-[10px]">
+                      <Link href="/ticket" className="hover:text-[#006B14]">My Tickets</Link>
+                      
+                    <button className="hover:text-[#006B14]" onClick={handleChangeClicked}>
+                      Change Password
+                    </button>
+                    <button onClick={handleLogoutClicked} className="text-[#DB3E3E]">
+                      Log Out
+                    </button>
+                    </div></div>
                     </div>
                   )}
                 </div>
               ) : (
-                <div className="flex flex-col text-center gap-[1.75rem] lg:hidden">
-                  <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
+                <div className="w-full flex flex-col text-center gap-[1.75rem] lg:hidden">
+                  <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md w-full">Register</Link>
                   <Link href="/auth/login"><button className="w-full text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
                 </div>
               )}
@@ -234,21 +245,22 @@ export default function Nav() {
                 </div>
                 {dropOpen && (
                   <div className="w-[166px] py-[4px] absolute top-14 right-0 bg-white rounded-[10px] text-[#111014] text-[16px] drop-shadow shadow-[#00000026] cursor-pointer">
-                    <div><ul className="px-[10px] py-[10px] grid gap-[10px]">
-                      <li className="hover:text-[#006B14]">My Tickets</li>
+                    <div>
+                      <div className="px-[10px] py-[10px] grid gap-[10px]">
+                      <Link href="/ticket" className="hover:text-[#006B14]">My Tickets</Link>
                       
-                    <li className="hover:text-[#006B14]" onClick={() => openModal('resetPassword')}>
-                      Reset Password
-                    </li>
-                    <li className="text-[#DB3E3E] hover:text-[#006B14]" onClick={() => openModal('logout', { onLogout: handleLogout })}>
+                    <button className="hover:text-[#006B14] text-start" onClick={handleChangeClicked}>
+                      Change Password
+                    </button>
+                    <button onClick={handleLogoutClicked} className="text-[#DB3E3E]  text-start">
                       Log Out
-                    </li>
-                    </ul></div>
+                    </button>
+                    </div></div>
                   </div>
                 )}
               </div>
             ) : (
-              <div className="flex flex-col lg:flex-row text-center gap-[1.75rem] border lg:gap-5 md:hidden lg:block">
+              <div className="flex flex-col lg:flex-row text-center gap-[1.75rem] border lg:gap-5 hidden lg:block space-x-5">
                 <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
                 <Link href="/auth/login"><button className="text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
               </div>
@@ -268,7 +280,7 @@ export default function Nav() {
 
       {/* Reset Password Modal */}
       {isResetPasswordModalOpen && (
-        <ResetPasswordModal
+        <ChangePasswordModal
           isOpen={isResetPasswordModalOpen}
           onClose={() => setIsResetPasswordModalOpen(false)}
         />

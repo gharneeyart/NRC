@@ -155,8 +155,25 @@ const AuthProvider = ({ children }) => {
       throw new Error(error?.response?.data?.message || 'An error occurred while signing up');
     }
   };
+  // const forgotPassword = async (email) => {
+  //   try {
+  //     const { data } = await axios.post('/auth/forgotpassword', { email });
+  //     return data;
+  //   } catch (error) {
+  //     console.log('Forgot Password Error:', error);
+  //     throw new Error(error?.response?.data?.message || 'An error occurred while sending reset email');
+  //   }
+  // };
 
-
+  const resetPassword = async (resetToken, passwords) => {
+    try {
+      const { data } = await axios.put(`/auth/reset-password/${resetToken}`, passwords);
+      return data;
+    } catch (error) {
+      console.log('Reset Password Error:', error);
+      throw new Error(error?.response?.data?.message || 'An error occurred while resetting password');
+    }
+  };
   const logout = () => {
     Cookies.remove('auth');
     setAuth('');
@@ -165,7 +182,7 @@ const AuthProvider = ({ children }) => {
   
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth, login, signup, logout }}>
+    <AuthContext.Provider value={{ auth, setAuth, login, signup,resetPassword, logout }}>
       {children}
     </AuthContext.Provider>
   );

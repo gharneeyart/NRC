@@ -42,7 +42,7 @@ export default function TestimonialCard() {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1024, // Adjust for tablets
+        breakpoint: 1280, // Adjust for tablets
         settings: {
           slidesToShow: 2,
         },

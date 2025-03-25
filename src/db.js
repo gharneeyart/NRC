@@ -93,7 +93,7 @@ export const NewsUpdates = [
   },
 ];
 
-import img from './images/Frame 40970.svg';
+import img from './images/Frame 40970.svg'
 import img1 from './images/Frame 40971.svg';
 import img2 from './images/Frame 40972.svg';
 

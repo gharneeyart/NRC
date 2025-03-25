@@ -24,7 +24,7 @@ export default function ForgotPassword() {
     setApiError('');
     setSuccessMessage('');
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/forgot-password`, data);
+      const response = await axios.post('/auth/forgot-password', data);
       setSuccessMessage(response.data.message);
       reset();
     } catch (error) {

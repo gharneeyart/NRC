@@ -2,7 +2,7 @@ import { Morning } from '@/db';
 
 export default function Ibadan2() {
   return (
-    <div className="px-4 pb-5 bg-[#FFFFFF]">
+    <div className=" pb-5 bg-[#FFFFFF]">
       <div className="max-w-7xl lg:px-15 mx-auto">
         <div className="mb-6 p-4 rounded-lg">
           <h2 className="text-2xl font-bold">Lagos - Ibadan Morning Train (LI4)</h2>

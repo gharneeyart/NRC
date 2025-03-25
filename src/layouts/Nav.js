@@ -190,7 +190,7 @@ export default function Nav() {
   return (
     <div className='fixed left-0 right-0 z-50'>
       <Marquee />
-      <div className="w-full  bg-white border border-[#D8D8D8]">
+      <div className="w-full py-6 bg-white border border-[#D8D8D8]">
         <div className="w-11/12 container mx-auto flex items-center justify-between">
           <Link href="/"><Image className="w-[8.893rem] h-[3.344rem]" src={Logo} alt="NRC-logo" width={100} height={100} priority={true} /></Link>
           <div className="lg:hidden text-2xl px-4 cursor-pointer" onClick={openMenubar}>

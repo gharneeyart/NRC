@@ -2,7 +2,7 @@ import { Schedule } from '@/db';
 
 export default function Ibadan() {
   return (
-    <div className="px-4 pb-5 bg-[#FFFFFF]">
+    <div className=" pb-5 bg-[#FFFFFF]">
       <div className="max-w-7xl lg:px-15 mx-auto">
         <div className="mb-6 p-4 rounded-lg">
           <h2 className="text-2xl font-bold">Ibadan - Lagos Morning Train (IL2)</h2>

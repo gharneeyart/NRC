@@ -3,7 +3,7 @@ import { trainSchedule } from '@/db';
 
 export default function Lagos(){
     return(
-        <div className="w-11/12 container mx-auto mt-20">
+        <div className="w-11/12 container mx-auto pt-20">
             
       <div className="py-4 pt-20   ">
       <h1 className="text-2xl font-semibold ">Lagos - Ibadan Mornin Train (LI1)</h1>

@@ -65,7 +65,7 @@ function TripContent() {
 
 
   return (
-    <div className="space-y-11 pt-32">
+    <div className="space-y-11 pt-44">
       <SearchTrain
         w="w-11/12"
         bg="bg-[#006B14]"

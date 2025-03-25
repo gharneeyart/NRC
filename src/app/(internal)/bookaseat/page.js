@@ -19,12 +19,14 @@ export default function Book() {
     selectedClass,
     selectedCoach,
     selectedSeats,
-    setSelectedSeats
+    setSelectedSeats,
+    bookingData,
+    setBookingData,
+    removePassenger,
+    updatePassenger
   } = useSearchStore();
   const [errors, setErrors] = useState([]);
   const router = useRouter();
-
-  const { addPassenger, removePassenger, updatePassenger } = useSearchStore();
 
  // Add a unique ID to each passenger
  useEffect(() => {
@@ -111,6 +113,8 @@ export default function Book() {
       const response = await axios.post('/bookings', bookingData);
       if (response.status === 201) {
         console.log('Booking created successfully:', response.data);
+          // Store the booking data in Zustand before navigation
+          setBookingData(response.data.booking);
         router.push('/payment');
       } else {
         console.error('Booking failed:', response.data.message);
@@ -135,7 +139,7 @@ export default function Book() {
   };
 
   return (
-    <div className="pt-56">
+    <div className="pt-44">
       <SearchTrain
         w="w-11/12"
         bg="bg-[#006B14]"

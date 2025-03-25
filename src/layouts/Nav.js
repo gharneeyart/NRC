@@ -139,8 +139,7 @@ import { useAuth } from '@/context/AuthContext';
 import Marquee from '@/components/home/marquee';
 import { useRouter } from 'next/navigation';
 import LogoutModal from '@/components/modal/logOutModal';
-import ResetPasswordModal from '@/components/modal/changePasswordModal';
-import { useModal } from '@/context/modalContext';
+import ChangePasswordModal from '@/components/modal/changePasswordModal';
 
 
 export default function Nav() {
@@ -151,26 +150,37 @@ export default function Nav() {
   const [isResetPasswordModalOpen, setIsResetPasswordModalOpen] = useState(false);
   const navRef = useRef(null);
   const router = useRouter();
-  const { openModal } = useModal();
 
   const closeMenubar = () => setMenuOpen(false);
   const openMenubar = () => window.innerWidth <= 1024 && setMenuOpen(!menuOpen);
   const openMenu = () => setDropOpenMenu(!dropOpen);
-  const closeMenu = () => setDropOpenMenu(false);
+  const closeMenu = () => setDropOpenMenu(dropOpen);
 
   const handleClickOutside = (event) => {
     if (navRef.current && !navRef.current.contains(event.target)) {
       closeMenubar();
-      closeMenu();
+    
     }
   };
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [menuOpen, dropOpen]);
+  }, [menuOpen]);
 
   const getInitials = (firstName, lastName) => (!firstName || !lastName ? '' : `${firstName.charAt(0)}${lastName.charAt(0)}`);
+
+  const handleLogoutClicked = ()=>{
+    setIsLogoutModalOpen(true);
+    setDropOpenMenu(false);
+  }
+  const handleChangeClicked=()=>{
+    setIsResetPasswordModalOpen(true);
+    setDropOpenMenu(false);
+  }
+  
+
+  
 
   const handleLogout = () => {
     logout();
@@ -204,15 +214,16 @@ export default function Nav() {
                   </div>
                   {dropOpen && (
                     <div className="w-[166px] py-[4px] absolute top-14 right-0 bg-white rounded-[10px] text-[#111014] text-[16px] drop-shadow shadow-[#00000026] cursor-pointer">
-                      <div><ul className="px-[10px] py-[10px] grid gap-[10px]">
-                        <li className="hover:text-[#006B14]">My Tickets</li>
-                        <li className="hover:text-[#006B14]" onClick={() => openModal('resetPassword')}>
-                          Reset Password
-                        </li>
-                        <li className="text-[#DB3E3E] hover:text-[#006B14]" onClick={() => openModal('logout', { onLogout: handleLogout })}>
-                          Log Out
-                        </li>
-                      </ul></div>
+                      <div> <div className="px-[10px] py-[10px] grid gap-[10px]">
+                      <Link href="/ticket" className="hover:text-[#006B14]">My Tickets</Link>
+                      
+                    <button className="hover:text-[#006B14]" onClick={handleChangeClicked}>
+                      Change Password
+                    </button>
+                    <button onClick={handleLogoutClicked} className="text-[#DB3E3E]">
+                      Log Out
+                    </button>
+                    </div></div>
                     </div>
                   )}
                 </div>
@@ -234,16 +245,17 @@ export default function Nav() {
                 </div>
                 {dropOpen && (
                   <div className="w-[166px] py-[4px] absolute top-14 right-0 bg-white rounded-[10px] text-[#111014] text-[16px] drop-shadow shadow-[#00000026] cursor-pointer">
-                    <div><ul className="px-[10px] py-[10px] grid gap-[10px]">
-                      <li className="hover:text-[#006B14]">My Tickets</li>
+                    <div>
+                      <div className="px-[10px] py-[10px] grid gap-[10px]">
+                      <Link href="/ticket" className="hover:text-[#006B14]">My Tickets</Link>
                       
-                    <li className="hover:text-[#006B14]" onClick={() => openModal('resetPassword')}>
-                      Reset Password
-                    </li>
-                    <li className="text-[#DB3E3E] hover:text-[#006B14]" onClick={() => openModal('logout', { onLogout: handleLogout })}>
+                    <button className="hover:text-[#006B14] text-start" onClick={handleChangeClicked}>
+                      Change Password
+                    </button>
+                    <button onClick={handleLogoutClicked} className="text-[#DB3E3E]  text-start">
                       Log Out
-                    </li>
-                    </ul></div>
+                    </button>
+                    </div></div>
                   </div>
                 )}
               </div>
@@ -268,7 +280,7 @@ export default function Nav() {
 
       {/* Reset Password Modal */}
       {isResetPasswordModalOpen && (
-        <ResetPasswordModal
+        <ChangePasswordModal
           isOpen={isResetPasswordModalOpen}
           onClose={() => setIsResetPasswordModalOpen(false)}
         />

@@ -84,7 +84,7 @@ export default function CoachModal({
       </button>
       {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 z-50 overflow-y-scroll">
           <div className="bg-white rounded-lg shadow-xl p-4 w-full max-w-xs sm:max-w-sm md:max-w-md relative">
             {/* Close Button */}
             <button

@@ -1,17 +1,16 @@
 'use client';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 import Image from 'next/image';
 import logo from '../../../images/image-3.svg';
 import image from '../../../images/138-1(2).svg';
 import Link from 'next/link';
-import { useAuth } from '@/context/AuthContext';
 
 export default function ForgotPassword() {
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const { forgotPassword } = useAuth();
 
   const {
     register,
@@ -25,21 +24,21 @@ export default function ForgotPassword() {
     setApiError('');
     setSuccessMessage('');
     try {
-      const response = await forgotPassword(data.email);
-      setSuccessMessage(response.message || 'Password reset email sent successfully');
+      const response = await axios.post('/auth/forgot-password', data);
+      setSuccessMessage(response.data.message);
       reset();
     } catch (error) {
-      setApiError(error.message || 'Something went wrong. Please try again.');
+      setApiError(error.response?.data?.message || 'Something went wrong. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="w-full flex px-3 lg:p-0 justify-center backg items-center h-screen lg:h-full">
-      <div className="w-full lg:w-1/2 bg-white rounded-lg shadow-lg p-3 md:px-10 md:py-14 lg:px-20 h-[500px] my-6 pt-6 flex flex-col lg:justify-center lg:shadow-none">
+    <div className="w-full flex  px-3 lg:p-0 justify-center backg items-center h-screen lg:h-full ">
+      <div className="w-full lg:w-1/2 bg-white rounded-lg shadow-lg p-3 md:px-10 md:py-14 lg:px-20 h-[500px] my-6 pt-6 flex flex-col lg:justify-center lg:shadow-none ">
         <div>
-          <h2 className="text-xl lg:text-3xl font-bold mb-2">
+          <h2 className="text-xl lg:text-3xl font-bold mb-2 ">
             Forgot Password
           </h2>
           <p className="text-gray-600 mb-4 text-sm lg:text-base">
@@ -49,7 +48,7 @@ export default function ForgotPassword() {
           <form
             onSubmit={handleSubmit(onSubmit)}
             noValidate
-            className="flex flex-col gap-4"
+            className="e flex flex-col gap-4"
           >
             <div>
               <label className="block text-gray-700 font-semibold mb-1 text-lg">
@@ -66,23 +65,24 @@ export default function ForgotPassword() {
                 })}
                 placeholder="Enter email address"
                 className="w-full px-3 py-2 border rounded-lg outline-none"
+                required
               />
             </div>
             {errors.email && (
-              <p className="text-red-600">{errors.email.message}</p>
+              <p className="text-red-600 mb-7">{errors.email.message}</p>
             )}
             {apiError && (
-              <p className="text-red-600">{apiError}</p>
+              <p className="text-red-600 mb-7">{apiError}</p>
             )}
             {successMessage && (
-              <p className="text-green-600">{successMessage}</p>
+              <p className="text-green-600 mb-7">{successMessage}</p>
             )}
             <button
               type="submit"
-              className="bg-[#18A532] text-white w-full py-2 rounded-md mb-2 disabled:opacity-50"
+              className="bg-[#18A532] text-white  w-full py-2 rounded-md mb-2 "
               disabled={loading}
             >
-              {loading ? 'Sending...' : 'Reset Password'}
+              {loading ? 'Sending...' : 'Reset'}
             </button>
           </form>
         </div>
@@ -94,7 +94,7 @@ export default function ForgotPassword() {
           </Link>
         </p>
       </div>
-      <div className="hidden lg:block object-cover relative lg:w-1/2 h-screen">
+      <div className="hidden lg:block object-cover  relative lg:w-1/2 h-screen">
         <Image src={image} alt="Train" className="w-full h-full object-cover" />
         <div className="absolute top-0 mt-5 ml-3">
           <Link href="/">

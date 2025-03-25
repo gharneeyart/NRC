@@ -16,8 +16,10 @@ const useSearchStore = create(
       timeOfDay: '',
       passengers: [],
       contactDetails: { email: '', phone: '' },
-
+      bookingData: null,
       // Actions to update state
+      setBookingData: (bookingData) => set({ bookingData }),
+      clearBookingData: () => set({ bookingData: null }),
       setFrom: (from) => set({ from }),
       setTo: (to) => set({ to }),
       setDate: (date) => set({ date }),

@@ -132,7 +132,6 @@ const AuthProvider = ({ children }) => {
         return false;
       }
     } catch (error) {
-      console.log('Login error:', error?.response?.data?.message);
       throw new Error(error?.response?.data?.message || 'An error occurred while logging in');
     }
   };
@@ -146,12 +145,11 @@ const AuthProvider = ({ children }) => {
         Cookies.set('auth', JSON.stringify(data), { expires: 7 }); // Cookie expires in 7 days
         router.push('/auth/login');
       } else {
-        console.log(data.error);
+       
       }
 
       return data;
     } catch (error) {
-      console.log('Signup Error:', error);
       throw new Error(error?.response?.data?.message || 'An error occurred while signing up');
     }
   };
@@ -170,7 +168,6 @@ const AuthProvider = ({ children }) => {
       const { data } = await axios.put(`/auth/reset-password/${resetToken}`, passwords);
       return data;
     } catch (error) {
-      console.log('Reset Password Error:', error);
       throw new Error(error?.response?.data?.message || 'An error occurred while resetting password');
     }
   };

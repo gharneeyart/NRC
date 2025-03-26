@@ -78,9 +78,9 @@ const useSearchStore = create(
     {
       name: 'search-storage', // Name for localStorage
       getStorage: () => localStorage, // Use localStorage for persistence
-      onRehydrateStorage: () => (state) => {
-        console.log('Hydrating state:', state); // Debugging: Log state after hydration
-      },
+      // onRehydrateStorage: () => (state) => {
+      //   console.log('Hydrating state:', state); // Debugging: Log state after hydration
+      // },
     }
   )
 );

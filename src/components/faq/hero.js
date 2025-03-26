@@ -4,7 +4,7 @@ import { BsSearch } from 'react-icons/bs';
 export default function Hero({ searchTerm, setSearchTerm }) {
   return (
     <div className="faq-hero ">
-      <div className="w-11/12 container mx-auto pt-44 pb-16">
+      <div className="w-11/12 container mx-auto pt-32 lg:pt-44 pb-12 lg:pb-16">
         <div className="flex flex-col gap-4 items-center">
           <div className="w-full text-center md:w-[70%] text-white">
             <h1 className="font-bold w-full text-[28px] md:text-[40px] lg:text-[44px] mb-4">

@@ -329,7 +329,7 @@ export default function ChangePasswordModal({ isOpen, onClose }) {
               <div className="relative">
                 <input
                   {...register('password', {
-                    required: 'This field is required',
+                    required: 'New Password field is required',
                     minLength: { value: 8, message: 'Password must be at least 8 characters long' },
                     pattern: {
                       value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,

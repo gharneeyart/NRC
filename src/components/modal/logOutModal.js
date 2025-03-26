@@ -67,12 +67,11 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+  DialogTitle
 } from "@/components/ui/dialog"
 
 export default function LogoutModal({isOpen, onClose, onLogout}){
-  console.log(isOpen);
+
   
   return(
     <Dialog open={isOpen} onOpenChange={onClose}>

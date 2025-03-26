@@ -416,6 +416,7 @@ const Search = ({
     setLocalClass(newClass);
     setSelectedClass(newClass);
     setSelectedCoach(''); // Reset coach selection when class changes
+    setSelectedSeats([])
   };
 
   return (

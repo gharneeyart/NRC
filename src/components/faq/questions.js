@@ -18,7 +18,7 @@ export default function FAQ({ searchTerm }) {
   );
 
   return (
-    <div className="flex flex-col  w-11/12 container mx-auto ">
+    <div className="flex flex-col  w-11/12 container mx-auto pt-10">
       {filteredFaq.length > 0 ? (
         filteredFaq.map((faq, index) => (
           <div
@@ -27,19 +27,19 @@ export default function FAQ({ searchTerm }) {
             className="cursor-pointer p-6"
           >
             <div className="flex justify-between items-center">
-              <h2 className="text-[15px] md:text-[20px] lg:text-[26px] font-semibold w-[260px] md:w-[600px]">
+              <h2 className="text-base md:text-xl lg:text-2xl font-medium w-[260px] md:w-[650px]">
                 {faq.question}
               </h2>
               {openIndex === index ? (
-                <FiMinusCircle className="lg:text-[26px] text-[20px]" />
+                <FiMinusCircle className="text-base md:text-xl lg:text-2xl" />
               ) : (
-                <FiPlusCircle className="lg:text-[26px] text-[20px]" />
+                <FiPlusCircle className="text-base md:text-xl lg:text-2xl" />
               )}
             </div>
             {openIndex === index && (
               <p
                 dangerouslySetInnerHTML={{ __html: faq.answer }}
-                className="mt-2 text-[#263238] text-[12px] md:text-[16px] lg:text-[20px] lg:pr-20"
+                className="mt-3 text-[#263238] text-sm md:text-lg lg:text-xl lg:pr-20"
               ></p>
             )}
           </div>

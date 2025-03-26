@@ -48,43 +48,68 @@ export default function Footer() {
 
         <div className="text-[#263238] space-y-[0.8rem]  ">
           <h1 className="font-bold text-[1.174rem]">Company</h1>
-          <ul className="space-y-3 text-[1.067rem]">
+          <ul className="flex flex-col gap-3 text-[1.067rem]">
             <Link href="/about">
-              <li className="space-y-3">About</li>
+              <li className="">About</li>
             </Link>
-            <li className="space-y-3">FAQs</li>
+            <Link href='/faq'>
+            <li className="">FAQs</li>
+            </Link>
             <Link href="/contact">
-              <li className="space-y-3">Contact</li>
+              <li className="">Contact</li>
             </Link>
+            <Link href='' className='cursor-not-allowed' disabled>
             <li>Terms & Condition</li>
+            </Link>
+            <Link href='' className='cursor-not-allowed' disabled>
             <li>Privacy Policy</li>
+            </Link>
+           
           </ul>
         </div>
 
         <div className="text-[#263238] space-y-[0.8rem]">
           <h1 className="font-bold text-[1.174rem]">Tickets and timetables</h1>
-          <ul className="space-y-3 text-[1.067rem]">
+          <ul className="flex flex-col gap-3 text-[1.067rem]">
             <Link href="/timetables">
               <li>Train timetables</li>
             </Link>
+            <Link href='' className='cursor-not-allowed' disabled>
             <li>Live Departures & Arrivals</li>
+            </Link>
+            
           </ul>
         </div>
 
         <div className="text-[#263238] space-y-[0.8rem]">
           <h1 className="font-bold text-[1.174rem]">Lagos</h1>
-          <ul className="space-y-3 text-[1.067rem]">
-            <li>Trains to Ebute Metta</li>
-            <li>Trains to Abeokuta</li>
+          <ul className="flex flex-col gap-3 text-[1.067rem]">
+          <Link href='' className='cursor-not-allowed' disabled>
+          <li>Trains to Ebute Metta</li>
+            </Link>
+          <Link href='' className='cursor-not-allowed ' disabled>
+          <li>Trains to Abeokuta</li>
+            </Link>
+            
+            
           </ul>
         </div>
 
         <div className="text-[#263238] space-y-[0.8rem]">
           <h1 className="font-bold text-[1.174rem]">Ibadan</h1>
-          <ul className="space-y-3 text-[1.067rem]">
-            <li>Trains to Agege</li>
-            <li>Trains to Agbado</li>
-            <li>Trains to Omi-Adio</li>
+          <ul className="flex flex-col gap-3 text-[1.067rem]">
+          <Link href='' className='cursor-not-allowed ' disabled>
+          <li>Trains to Agege</li>
+            </Link>
+          <Link href='' className='cursor-not-allowed ' disabled>
+          <li>Trains to Agbado</li>
+            </Link>
+          <Link href='' className='cursor-not-allowed ' disabled>
+          <li>Trains to Omi-Adio</li>
+            </Link>
+            
+            
+            
           </ul>
         </div>
       </div>

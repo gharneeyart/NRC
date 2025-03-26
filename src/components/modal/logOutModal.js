@@ -88,7 +88,7 @@ export default function LogoutModal({isOpen, onClose, onLogout}){
           <Image src={LogoutLogo} className="w-[80px]" alt="logout" />
           <div className="flex flex-col items-center justify-center gap-2">
             <DialogTitle className="font-bold text-xl">Log Out</DialogTitle>
-            <DialogDescription className="text-center font-thin">
+            <DialogDescription className="text-center ">
               Do you wish to log out from your account?
             </DialogDescription>
           </div>

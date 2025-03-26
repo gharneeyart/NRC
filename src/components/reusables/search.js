@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useSearchStore } from '@/store/useSearchStore';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 export default function SearchTrain({
   w,
@@ -30,6 +31,8 @@ export default function SearchTrain({
   const [showTo, setShowTo] = useState(false);
   const [showDate, setShowDate] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchStationNames = async () => {
@@ -67,12 +70,25 @@ export default function SearchTrain({
     setShowDate(true);
   };
 
+  const handleFindTrain = (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    
+    setIsLoading(true);
+    // Simulate a small delay for better UX
+    setTimeout(() => {
+      router.push(`/trip?from=${from}&to=${to}&date=${date}`);
+      setIsLoading(false);
+    }, 500);
+  };
+
   const today = new Date().toISOString().split('T')[0];
 
   return (
     <div>
       <form
         className={`${w} ${bg} flex flex-col lg:flex-row ${gap} items-end ${py} ${rounded} justify-between px-3 md:px-8 lg:px-10 mx-auto shadow-xl container`}
+        onSubmit={handleFindTrain}
       >
         <div className="flex flex-col gap-1 w-full lg:w-[25%] xl:w-[30%]">
           <label htmlFor="from">{content1}</label>
@@ -120,24 +136,32 @@ export default function SearchTrain({
             type="date"
             id="date"
             value={date}
-            min={today} // Set the min attribute to today's date
+            min={today}
             onClick={handleDate}
             className={`${showDate ? `${inputText2}` : `${inputText}`} ${inputBg} ${inputBorder}  ${inputPadding} outline-none rounded-md px-2 w-full`}
             placeholder="Select Date"
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-        {/* Conditionally render the button or link */}
+        
         {isFormValid ? (
-          <Link href={`/trip?from=${from}&to=${to}&date=${date}`}
-            // href={{
-            //   pathname: '/trip',
-            //   query: { from, to, date },
-            // }}
-            className={`${btnBg} ${btnText} py-2.5 rounded-sm text-[14px] ${btnWidth} font-medium text-center`}
+          <button
+            type="submit"
+            className={`${btnBg} ${btnText} py-2.5 rounded-sm text-[14px] ${btnWidth} font-medium text-center flex items-center justify-center gap-2`}
+            disabled={isLoading}
           >
-            Find my Train
-          </Link>
+            {isLoading ? (
+              <>
+                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Finding Trains...
+              </>
+            ) : (
+              'Find my Train'
+            )}
+          </button>
         ) : (
           <button
             disabled

@@ -35,8 +35,17 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="w-full flex  px-3 lg:p-0 justify-center backg items-center h-screen lg:h-full ">
-      <div className="w-full lg:w-1/2 bg-white rounded-lg shadow-lg p-3 md:px-10 md:py-14 lg:px-20 h-[500px] my-6 pt-6 flex flex-col lg:justify-center lg:shadow-none ">
+    <div className="w-full flex flex-col lg:flex-row  lg:p-0 justify-center backg items-center h-full lg:h-full ">
+      <div className='block lg:hidden bg-white w-full px-4 py-3'>
+            <Link href="/">
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  className="  "
+                />
+              </Link>
+            </div>
+      <div className="w-11/12 lg:w-1/2 bg-white rounded-lg shadow-lg p-3 md:px-10 md:py-14 lg:px-20 h-[500px] my-6 pt-10 flex flex-col lg:justify-center lg:shadow-none ">
         <div>
           <h2 className="text-xl lg:text-3xl font-bold mb-2 ">
             Forgot Password
@@ -79,7 +88,7 @@ export default function ForgotPassword() {
             )}
             <button
               type="submit"
-              className="bg-[#18A532] text-white  w-full py-2 rounded-md mb-2 "
+              className="bg-[#18A532] text-white  w-full py-2 rounded-md my-2 "
               disabled={loading}
             >
               {loading ? 'Sending...' : 'Reset'}

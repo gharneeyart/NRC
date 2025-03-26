@@ -2,7 +2,7 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import Image from "next/image";
 import SuccessLogo from "../../images/Success Icon.png";
-import { IoIosClose } from "react-icons/io";
+import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
 
 export function SuccessModal({ isOpen, onClose, message = "Thank you for your message! We'll get back to you soon." }) {
   return (
@@ -18,10 +18,10 @@ export function SuccessModal({ isOpen, onClose, message = "Thank you for your me
             height={80}
           />
           <div className="flex flex-col items-center justify-center gap-2">
-            <h2 className="font-bold text-xl">Success!</h2>
-            <p className="text-center font-thin">
+            <DialogTitle className="font-bold text-xl">Success!</DialogTitle>
+            <DialogDescription className="text-center ">
               {message}
-            </p>
+            </DialogDescription>
           </div>
         </div>
       </DialogContent>

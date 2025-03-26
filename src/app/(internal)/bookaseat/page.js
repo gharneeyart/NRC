@@ -107,6 +107,7 @@ export default function Book() {
       contact: contactDetails,
       totalPrice: totalPrice,
     };
+console.log(bookingData);
 
     try {
       const response = await axios.post('/bookings', bookingData);

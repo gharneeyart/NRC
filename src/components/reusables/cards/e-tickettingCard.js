@@ -1,6 +1,24 @@
+'use client'
 import Image from 'next/image';
 import eTicket from '../../../images/Frame 40990 (1).svg'
+import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 export default function Ticket() {
+  const { auth } = useAuth(); // Get auth status from your context
+  const router = useRouter();
+  const handleClick = ()=> {
+    if (!auth?.user) {
+      
+      router.push('/auth/login');
+      // Alternatively, you could use:
+      // router.push('/login?redirect=/ticket');
+      // to redirect back after login
+    }else{
+      router.push('/ticket')
+    }
+    // If authenticated, the Link will handle navigation normally
+  };
   return (
     <div className="w-full relative">
       <Image
@@ -22,7 +40,7 @@ export default function Ticket() {
         </div>
 
         <div className="">
-          <button className="py-2 px-4 rounded-[0.449rem] bg-white text-[#263238]">
+          <button className="py-2 px-4 rounded-[0.449rem] bg-white text-[#263238]" onClick={handleClick}>
             Know More
           </button>
         </div>

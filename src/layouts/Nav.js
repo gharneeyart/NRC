@@ -217,10 +217,10 @@ export default function Nav() {
                       <div> <div className="px-[10px] py-[10px] grid gap-[10px]">
                       <Link href="/ticket" className="hover:text-[#006B14]">My Tickets</Link>
                       
-                    <button className="hover:text-[#006B14]" onClick={handleChangeClicked}>
+                    <button className="hover:text-[#006B14] text-start" onClick={handleChangeClicked}>
                       Change Password
                     </button>
-                    <button onClick={handleLogoutClicked} className="text-[#DB3E3E]">
+                    <button onClick={handleLogoutClicked} className="text-[#DB3E3E] text-start">
                       Log Out
                     </button>
                     </div></div>
@@ -260,7 +260,7 @@ export default function Nav() {
                 )}
               </div>
             ) : (
-              <div className="flex flex-col lg:flex-row text-center gap-[1.75rem] border lg:gap-5 hidden lg:block space-x-5">
+              <div className="flex flex-col lg:flex-row text-center gap-[1.75rem] lg:gap-5 hidden lg:block space-x-5">
                 <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
                 <Link href="/auth/login"><button className="text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
               </div>

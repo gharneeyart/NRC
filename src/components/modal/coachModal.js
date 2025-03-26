@@ -52,7 +52,7 @@ export default function CoachModal({
       setPassengers([
         ...passengers,
         {
-          type: 'Adult', // Default type, can be changed later
+          type: '', // Default type, can be changed later
           name: '',
           nin: '',
           email: '',
@@ -78,44 +78,44 @@ export default function CoachModal({
     <div>
       <button
         onClick={handleOpenModal}
-        className="text-[#848484] px-5 w-full py-3 rounded-lg text-start transition border hover:bg-gray-100"
+        className="text-[#848484] px-4 py-2 w-full rounded-lg text-start transition border hover:bg-gray-100 text-sm"
       >
         Select Seat
       </button>
-      {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+      {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 z-50 overflow-y-scroll">
-          <div className="bg-white rounded-lg shadow-xl p-4 w-full max-w-xs sm:max-w-sm md:max-w-md relative">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-2 z-50">
+          <div className="bg-white rounded-lg shadow-xl p-4 w-full max-w-xs relative max-h-[80vh] overflow-y-auto">
             {/* Close Button */}
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
               onClick={() => setIsModalOpen(false)}
             >
-              <IoIosClose size={20} />
+              <IoIosClose size={24} />
             </button>
 
             {/* Modal Header */}
-            <div className="flex flex-col gap-3">
-              <h1 className="font-bold text-lg text-center">Please Select Seat(s)</h1>
+            <div className="flex flex-col gap-2">
+              <h1 className="font-bold text-md text-center mb-1">Select Seat(s)</h1>
 
               {/* Seat Status Indicators */}
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center gap-3 mb-2">
                 <div className="flex items-center gap-1">
-                  <Image src={White} alt="Available" className="w-3 h-3" />
-                  <p className="text-xs sm:text-sm">Available</p>
+                  <Image src={White} alt="Available" className="w-2 h-2" />
+                  <p className="text-xs">Available</p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Image src={Oxblod} alt="Selected" className="w-3 h-3" />
-                  <p className="text-xs sm:text-sm">Selected</p>
+                  <Image src={Oxblod} alt="Selected" className="w-2 h-2" />
+                  <p className="text-xs">Selected</p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Image src={Red} alt="Unavailable" className="w-3 h-3" />
-                  <p className="text-xs sm:text-sm">Unavailable</p>
+                  <Image src={Red} alt="Unavailable" className="w-2 h-2" />
+                  <p className="text-xs">Unavailable</p>
                 </div>
               </div>
 
               {/* Seat Grid */}
-              <div className="flex flex-col gap-2 mt-2">
+              <div className="flex flex-col gap-1">
                 {seatRows.map((row, rowIndex) => (
                   <div key={rowIndex} className="grid grid-cols-5 gap-1">
                     {/* Left Side Seats */}
@@ -126,7 +126,7 @@ export default function CoachModal({
                           selectedSeats.includes(seatNumber)
                             ? 'bg-[#006B14] text-white' // Selected seat
                             : 'bg-[#E8EAEE] text-black' // Available seat
-                        } rounded-sm text-center text-xs sm:text-sm cursor-pointer p-1 sm:p-2 hover:bg-[#006B14] hover:text-white transition-colors`}
+                        } rounded-sm text-center text-xs cursor-pointer p-1 hover:bg-[#006B14] hover:text-white transition-colors`}
                         onClick={() => toggleSeatSelection(seatNumber)}
                         aria-label={`Select seat ${seatNumber}`}
                       >
@@ -145,7 +145,7 @@ export default function CoachModal({
                           selectedSeats.includes(seatNumber)
                             ? 'bg-[#006B14] text-white' // Selected seat
                             : 'bg-[#E8EAEE] text-black' // Available seat
-                        } rounded-sm text-center text-xs sm:text-sm cursor-pointer p-1 sm:p-2 hover:bg-[#006B14] hover:text-white transition-colors`}
+                        } rounded-sm text-center text-xs cursor-pointer p-1 hover:bg-[#006B14] hover:text-white transition-colors`}
                         onClick={() => toggleSeatSelection(seatNumber)}
                         aria-label={`Select seat ${seatNumber}`}
                       >
@@ -156,11 +156,18 @@ export default function CoachModal({
                 ))}
               </div>
 
+              {/* Selected Seats Info */}
+              {selectedSeats.length > 0 && (
+                <div className="mt-2 text-center text-xs">
+                  Selected: {selectedSeats.join(', ')}
+                </div>
+              )}
+
               {/* Proceed Button */}
-              <div className="mt-4">
+              <div className="mt-3">
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="bg-[#18A532] w-full text-white py-1 sm:py-2 rounded-lg hover:bg-[#148C2A] transition-colors text-sm sm:text-base"
+                  className="bg-[#18A532] w-full text-white py-1 rounded-md hover:bg-[#148C2A] transition-colors text-sm"
                 >
                   Proceed
                 </button>
@@ -172,161 +179,3 @@ export default function CoachModal({
     </div>
   );
 }
-
-// import React, { useState, useEffect } from "react";
-// import "./selectseatModal.css"
-// import { SEAT_CONFIG } from "../seatConfig";
-
-// const SeatSelectorModal = ({
-//   isOpen,
-//   onClose,
-//   onSeatsSelected,
-//   selectedSeats,
-//   className,
-//   coachName,
-// }) => {
-//   const [currentSelectedSeats, setCurrentSelectedSeats] = useState(
-//     selectedSeats || []
-//   );
-//   const [errorMessage, setErrorMessage] = useState("");
-
-//   // Get seat configuration based on class and coach
-//   const getClassConfig = () => SEAT_CONFIG[className] || {};
-//   const getSeatsPerCoach = () => getClassConfig().seatsPerCoach || 48;
-
-//   // Generate seat layout dynamically
-//   const generateSeatLayout = (seatsPerCoach) => {
-//     const rows = [];
-//     for (let i = 0; i < seatsPerCoach; i += 4) {
-//       rows.push([
-//         [i + 1, i + 2],
-//         [i + 3, i + 4],
-//       ]);
-//     }
-//     return rows;
-//   };
-
-//   const seatLayout = generateSeatLayout(getSeatsPerCoach());
-
-//   useEffect(() => {
-//     setCurrentSelectedSeats(selectedSeats || []);
-//   }, [selectedSeats]);
-
-//   const handleSeatClick = (seatNumber) => {
-//     // Get maximum allowed seats per class
-//     const maxSeats =
-//       {
-//         "Standard Class": 4,
-//         "Business Class": 3,
-//         "First Class": 2,
-//       }[className] || 4;
-
-//     if (
-//       currentSelectedSeats.length >= maxSeats &&
-//       !currentSelectedSeats.includes(seatNumber)
-//     ) {
-//       setErrorMessage(`You can only select up to ${maxSeats} seats`);
-//       return;
-//     }
-
-//     if (currentSelectedSeats.includes(seatNumber)) {
-//       // Deselect seat
-//       setCurrentSelectedSeats(
-//         currentSelectedSeats.filter((seat) => seat !== seatNumber)
-//       );
-//       setErrorMessage("");
-//     } else {
-//       // Select seat
-//       setCurrentSelectedSeats([...currentSelectedSeats, seatNumber]);
-//       setErrorMessage("");
-//     }
-//   };
-
-//   const handleSubmit = () => {
-//     onSeatsSelected(currentSelectedSeats);
-//     onClose();
-//   };
-
-//   if (!isOpen) return null;
-
-//   return (
-//     <div className="modal-overlay">
-//       <div className="modal-content">
-//         {/* Header */}
-//         <div className="modal-header">
-//           <h2>
-//             Please Select Seat(s) for {className} - Coach {coachName}
-//           </h2>
-//           <button className="close-btn" onClick={onClose}>
-//             ×
-//           </button>
-//         </div>
-
-//         {/* Error Message */}
-//         {errorMessage && (
-//           <div className="error-message">
-//             <p>{errorMessage}</p>
-//           </div>
-//         )}
-
-//         {/* Legend */}
-//         <div className="legend">
-//           <div className="legend-item">
-//             <div className="legend-seat available"></div>
-//             <span>Available</span>
-//           </div>
-//           <div className="legend-item">
-//             <div className="legend-seat selected"></div>
-//             <span>Selected</span>
-//           </div>
-//           <div className="legend-item">
-//             <div className="legend-seat unavailable"></div>
-//             <span>Unavailable</span>
-//           </div>
-//         </div>
-
-//         {/* Single-column seat grid with 4 seats per row */}
-//         <div className="seat-grid">
-//           {seatLayout.map((row, rowIndex) => (
-//             <div key={rowIndex} className="seat-row">
-//               {row.map((seatPair, pairIndex) => (
-//                 <div key={pairIndex} className="seat-pair mx-auto">
-//                   {seatPair.map((seat) => (
-//                     <div
-//                       key={seat}
-//                       className={`seat ${
-//                         currentSelectedSeats.includes(seat) ? "selected" : ""
-//                       } ${className.toLowerCase().replace(" ", "-")}`}
-//                       onClick={() => handleSeatClick(seat)}
-//                     >
-//                       {seat}
-//                     </div>
-//                   ))}
-//                 </div>
-//               ))}
-//             </div>
-//           ))}
-//         </div>
-
-//         {/* Footer */}
-//         <div className="modal-footer">
-//           <p>
-//             Selected seats for Coach {coachName}:{" "}
-//             {currentSelectedSeats.join(", ") || "None"}
-//           </p>
-//           <div className="button-group">
-//             <button
-//               className="submit-btn"
-//               onClick={handleSubmit}
-//               disabled={currentSelectedSeats.length === 0}
-//             >
-//               Confirm Selection
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SeatSelectorModal;

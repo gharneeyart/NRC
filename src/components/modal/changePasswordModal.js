@@ -171,6 +171,7 @@ import axios from "axios";
 import { useAuth } from "@/context/AuthContext";
 import Image from "next/image";
 import SuccessLogo from "../../images/Success Icon.png";
+import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
 // import { IoIosClose } from "react-icons/io";
 
 export default function ChangePasswordModal({ isOpen, onClose }) {
@@ -267,11 +268,11 @@ export default function ChangePasswordModal({ isOpen, onClose }) {
               height={80}
             />
             <div className="flex flex-col items-center justify-center gap-2">
-              <h2 className="font-bold text-xl">Success!</h2>
-              <p className="text-center font-thin">
+              <DialogTitle className="font-bold text-xl">Success!</DialogTitle>
+              <DialogDescription className="text-center font-thin">
                 You have successfully updated your password! You will also be
                 logged out from any device you logged in with previously.
-              </p>
+              </DialogDescription>
             </div>
             <div className="animate-pulse text-sm text-gray-500 mt-2">
               Redirecting to login...
@@ -281,8 +282,8 @@ export default function ChangePasswordModal({ isOpen, onClose }) {
           /* Password Form Content */
           <>
             <div className="text-left flex flex-col gap-2">
-              <h2 className="font-bold text-xl lg:text-3xl">Change Password</h2>
-              <p className="font-thin">Enter your current and new password</p>
+              <DialogTitle className="font-bold text-xl lg:text-3xl">Change Password</DialogTitle>
+              <DialogDescription className="">Enter your current and new password</DialogDescription>
             </div>
 
             {error && (

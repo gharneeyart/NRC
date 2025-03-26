@@ -55,7 +55,7 @@ export default function Form() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 lg:mb-4">
           <div>
             <div className="flex flex-col">
-              <label className="py-1 text-[14px]" htmlFor="fullName">
+              <label className="py-1 text-base lg:text-lg font-medium" htmlFor="fullName">
                 Full Name
               </label>
               <input
@@ -71,8 +71,8 @@ export default function Form() {
           </div>
           <div>
             <div className="flex flex-col">
-              <label className="py-1 text-[14px]" htmlFor="email">
-                Enter Your Email
+              <label className="py-1 text-base lg:text-lg font-medium" htmlFor="email">
+                Email
               </label>
               <input
                 {...register('email', {
@@ -84,7 +84,7 @@ export default function Form() {
                 })}
                 className={`border p-2 rounded ${errors.email ? 'border-red-500' : 'border-[#CFD6D0]'} outline-none text-[14px]`}
                 type="email"
-                placeholder="Email"
+                placeholder="Enter your Email"
               />
             </div>
             {errors.email && (
@@ -94,7 +94,7 @@ export default function Form() {
         </div>
         <div className="lg:mb-4">
           <div className="flex flex-col">
-            <label className="py-1 text-[14px]" htmlFor="">
+            <label className="py-1 text-base lg:text-lg font-medium" htmlFor="">
               Phone Number
             </label>
             <input
@@ -116,7 +116,7 @@ export default function Form() {
         </div>
         <div className="lg:mb-3">
           <div className="flex flex-col">
-            <label className="py-1 text-[14px]" htmlFor="">
+            <label className="py-1 text-base lg:text-lg font-medium" htmlFor="">
               Message
             </label>
             <textarea
@@ -131,7 +131,7 @@ export default function Form() {
         </div>
         
         <button
-          className="bg-[#18A532] text-white w-full my-2 p-2 rounded-md hover:bg-green-700 transition disabled:opacity-50"
+          className="bg-[#18A532] text-white w-full my-2 p-2 rounded-md hover:bg-green-700 transition disabled:opacity-50 text-base lg:text-lg font-medium"
           type="submit"
           disabled={isSubmitting}
         >

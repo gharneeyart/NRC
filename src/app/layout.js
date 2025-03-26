@@ -8,11 +8,12 @@ export const metadata = {
   icons: {
     icon: 'https://res.cloudinary.com/dgde8cwjk/image/upload/v1742042071/TrainStation%20Pictures/image_3_v8pug9.png',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1.0,
-  },
   charset: 'UTF-8',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
 };
 
 export default function RootLayout({ children }) {

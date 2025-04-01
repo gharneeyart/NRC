@@ -6,6 +6,8 @@ import Instagram from '../icons/Frame 1000003414.svg';
 import Twitter from '../icons/Frame 1000003415.svg';
 
 export default function Footer() {
+  const isDisabled = true; // Set this dynamically if needed
+
   return (
     <div className="bg-[#F0F7F6]">
       <div className="w-11/12 container mx-auto flex flex-col lg:flex-row justify-items-center gap-[3.375rem] xl:gap-[4.313rem] justify-between items-center text-center lg:text-start lg:items-start py-[2.463rem]">
@@ -21,23 +23,23 @@ export default function Footer() {
             />
           </Link>
           <p className="">E-Ticketing App : Lagos - Ibadan</p>
-          <div className="flex flex-row pt-[13px] gap-[0.875rem]">
+          <div disabled={isDisabled} className="flex flex-row pt-[13px] gap-[0.875rem]">
             <Image
-              className="disabled:opacity-50 w-[1.875rem] h-[1.875rem]"
+              className={`w-[1.875rem] h-[1.875rem] ${isDisabled ? 'opacity-50' : ''}`}
               src={Facebook}
               width={100}
               height={100}
               alt="Facebook-logo"
             />
             <Image
-              className="disabled:opacity-50 w-[1.875rem] h-[1.875rem]"
+              className={`w-[1.875rem] h-[1.875rem] ${isDisabled ? 'opacity-50' : ''}`}
               src={Instagram}
               width={100}
               height={100}
               alt="Instagram-logo"
             />
             <Image
-              className="disabled:opacity-50 w-[1.875rem] h-[1.875rem]"
+              className={`w-[1.875rem] h-[1.875rem] ${isDisabled ? 'opacity-50' : ''}`}
               src={Twitter}
               width={100}
               height={100}

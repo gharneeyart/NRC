@@ -14,8 +14,8 @@ export default function Get() {
       <div className=" flex flex-col mt-[16px]  lg:p-0 ">
         <div className="flex flex-col gap-[40px] p-2 w-full">
           <div className="w-full">
-            <h1 className="text-3xl lg:text-4xl font-bold">Get In Touch</h1>
-            <p className="text-[14px] font-normal">
+            <h1 className="text-3xl lg:text-4xl font-bold mb-2">Get In Touch</h1>
+            <p className="text-base font-normal">
               Fill up the form and our team will get back to you within 24
               hours.
             </p>
@@ -26,7 +26,7 @@ export default function Get() {
                 <Image className="w-[30px]" src={Phone} alt="Phone" />
               </div>
               <div>
-                <h3 className="md:text-[14px] text-[10px]">Phone</h3>
+                <h3 className="text-base lg:text-lg font-medium">Phone</h3>
                 <p className="md:text-[14px] text-[10px]">07074964453</p>
               </div>
             </div>
@@ -35,7 +35,7 @@ export default function Get() {
                 <Image className="w-[30px]" src={Email} alt="Phone" />
               </div>
               <div className="flex flex-col">
-                <h3 className="md:text-[14px] text-[10px]">Email</h3>
+                <h3 className="text-base lg:text-lg font-medium">Email</h3>
                 <p className="md:text-[14px] text-[10px]">info@gsds.com.ng</p>
               </div>
             </div>
@@ -44,7 +44,7 @@ export default function Get() {
                 <Image className="w-[30px]" src={Insta} alt="Phone" />
               </div>
               <div>
-                <h3 className="md:text-[14px] text-[10px]">Instagram</h3>
+                <h3 className="text-base lg:text-lg font-medium">Instagram</h3>
                 <p className="md:text-[14px] text-[10px]">info_nrc</p>
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function Get() {
                 <Image className="w-[30px]" src={Address} alt="Phone" />
               </div>
               <div>
-                <h3 className="md:text-[14px] text-[10px] ">Address</h3>
+                <h3 className="text-base lg:text-lg font-medium ">Address</h3>
                 <p className="md:text-[14px] text-[10px] ">Lagos, Nigeria</p>
               </div>
             </div>

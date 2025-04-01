@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Cards from '../../../images/Frame 40989 (1).svg'
+import Link from 'next/link';
 export default function Card() {
   return (
     <div>
@@ -23,9 +24,9 @@ export default function Card() {
           </div>
 
           <div className="">
-            <button className="py-2 px-4 rounded-[0.449rem] bg-white">
+            <Link href='/timetables' className="py-2 px-4 rounded-[0.449rem] bg-white">
               Know More
-            </button>
+            </Link>
           </div>
         </div>
       </div>

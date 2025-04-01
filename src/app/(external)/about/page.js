@@ -1,4 +1,3 @@
-// import Count from "@/components/about/count";
 'use client';
 import Testimonial from '@/components/about/testimonials';
 import Mission from '@/components/about/mission';

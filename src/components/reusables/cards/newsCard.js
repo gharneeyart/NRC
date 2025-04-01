@@ -12,7 +12,7 @@ export default function NewsCard({ Updates }) {
         />
         <div className="pt-4 space-y-4">
           <p className="font-bold text-xl xl:text-2xl  ">{Updates?.name}</p>
-          <p className="text-sm text-[#4E4E4E]  xl:text-xl  font-medium">
+          <p className="text-sm text-[#4E4E4E]  h-[60px] xl:text-xl  font-medium">
             {Updates?.description}
           </p>
           <div className="flex gap-4 font-medium">

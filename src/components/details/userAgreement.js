@@ -1,9 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Paystack from '../modal/paystackModal';
+import { useSearchStore } from '@/store/useSearchStore';
+import { useRouter } from 'next/navigation';
 
 export default function UserAgreement() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { bookingData } = useSearchStore();
+  const router = useRouter();
+  useEffect(() => {
+    if (!bookingData?._id) { // Check for _id specifically
+      router.push('/bookaseat');
+    }
+  }, [bookingData, router]);
 
   return (
     <div className="container w-full flex flex-col gap-[45.43px] xl:gap-[52px] mt-[36.57px] lg:mt-[31px]">
@@ -36,11 +45,15 @@ export default function UserAgreement() {
         </button>
       </div>
 
+   
       {/* Modal */}
-      <Paystack
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {bookingData?._id && (
+        <Paystack
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          bookingId={bookingData?._id}
+        />
+      )}
     </div>
   );
 }

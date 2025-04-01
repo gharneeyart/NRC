@@ -18,28 +18,28 @@ export default function FAQ({ searchTerm }) {
   );
 
   return (
-    <div className="flex flex-col  w-11/12 container mx-auto ">
+    <div className="flex flex-col  w-11/12 container mx-auto pt-10">
       {filteredFaq.length > 0 ? (
         filteredFaq.map((faq, index) => (
           <div
             key={faq.id}
             onClick={() => toggleAccordion(index)}
-            className="cursor-pointer p-6"
+            className="cursor-pointer py-6"
           >
-            <div className="flex justify-between items-center">
-              <h2 className="text-[15px] md:text-[20px] lg:text-[26px] font-semibold w-[260px] md:w-[600px]">
+            <div className="flex justify-between">
+              <h2 className="text-base md:text-xl lg:text-2xl font-medium w-[290px] md:w-[650px]">
                 {faq.question}
               </h2>
               {openIndex === index ? (
-                <FiMinusCircle className="lg:text-[26px] text-[20px]" />
+                <FiMinusCircle className="text-xl lg:text-3xl" />
               ) : (
-                <FiPlusCircle className="lg:text-[26px] text-[20px]" />
+                <FiPlusCircle className="text-xl lg:text-3xl" />
               )}
             </div>
             {openIndex === index && (
               <p
                 dangerouslySetInnerHTML={{ __html: faq.answer }}
-                className="mt-2 text-[#263238] text-[12px] md:text-[16px] lg:text-[20px] lg:pr-20"
+                className="mt-3 text-[#263238] text-sm md:text-lg lg:text-xl lg:pr-20"
               ></p>
             )}
           </div>
@@ -47,8 +47,8 @@ export default function FAQ({ searchTerm }) {
       ) : (
         <Answer />
       )}
-      <span className="flex flex-col lg:flex-row lg:gap-2 text-[16px] lg:text-3xl  text-center mx-auto">
-        <h2 className="font-medium">
+      <span className="flex flex-col lg:flex-row lg:gap-2  text-center mx-auto">
+        <h2 className="font-medium text-lg">
           Can’t find the answer you are looking for?
         </h2>
         <Link className="text-[#006B14] font-semibold" href="/contact">

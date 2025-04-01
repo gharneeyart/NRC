@@ -16,8 +16,10 @@ const useSearchStore = create(
       timeOfDay: '',
       passengers: [],
       contactDetails: { email: '', phone: '' },
-
+      bookingData: null,
       // Actions to update state
+      setBookingData: (bookingData) => set({ bookingData }),
+      clearBookingData: () => set({ bookingData: null }),
       setFrom: (from) => set({ from }),
       setTo: (to) => set({ to }),
       setDate: (date) => set({ date }),
@@ -76,9 +78,9 @@ const useSearchStore = create(
     {
       name: 'search-storage', // Name for localStorage
       getStorage: () => localStorage, // Use localStorage for persistence
-      onRehydrateStorage: () => (state) => {
-        console.log('Hydrating state:', state); // Debugging: Log state after hydration
-      },
+      // onRehydrateStorage: () => (state) => {
+      //   console.log('Hydrating state:', state); // Debugging: Log state after hydration
+      // },
     }
   )
 );

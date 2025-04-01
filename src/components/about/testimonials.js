@@ -1,5 +1,4 @@
 'use client';
-// import { Testimonials } from '@/db'
 import TestimonialCard from '../reusables/cards/testimonialCard';
 
 export default function Testimonial() {

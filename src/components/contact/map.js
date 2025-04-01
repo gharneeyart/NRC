@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 
@@ -16,28 +16,14 @@ const Marker = dynamic(
   () => import('react-leaflet').then((mod) => mod.Marker),
   { ssr: false }
 );
-const Popup = dynamic(() => import('react-leaflet').then((mod) => mod.Popup), {
-  ssr: false,
-});
+const Popup = dynamic(
+  () => import('react-leaflet').then((mod) => mod.Popup),
+  { ssr: false }
+);
 
-export default function Map() {
-  const [position, setPosition] = useState([9.082, 8.6753]);
-  const [L, setL] = useState(null); // State to hold the Leaflet library
-  const [customIcon, setCustomIcon] = useState(null); // State to hold the custom icon
-
-  // Dynamically import Leaflet and initialize the custom icon
-  useEffect(() => {
-    import('leaflet').then((leaflet) => {
-      setL(leaflet.default); // Set the Leaflet library
-      const icon = new leaflet.default.Icon({
-        iconUrl: '/icons/location-icon.png',
-        iconSize: [20, 20],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, -32],
-      });
-      setCustomIcon(icon); // Set the custom icon
-    });
-  }, []);
+export default function LiveLocationMap() {
+  const [position, setPosition] = useState([9.082, 8.6753]); // Default to Nigeria coordinates
+  const [isLoading, setIsLoading] = useState(true);
 
   // Watch the user's geolocation
   useEffect(() => {
@@ -45,28 +31,36 @@ export default function Map() {
       navigator.geolocation.watchPosition(
         (pos) => {
           setPosition([pos.coords.latitude, pos.coords.longitude]);
+          setIsLoading(false);
         },
-        (err) => console.error(err),
+        (err) => {
+          console.error("Geolocation error:", err);
+          setIsLoading(false); // Continue with default position even if geolocation fails
+        },
         { enableHighAccuracy: true }
       );
+    } else {
+      setIsLoading(false); // Browser doesn't support geolocation
     }
   }, []);
 
-  // Render the map only when Leaflet and the custom icon are loaded
-  if (!L || !customIcon) {
-    return <div>Loading map...</div>; // Fallback UI while loading
+  if (isLoading) {
+    return <div className="h-[400px] flex items-center justify-center">Loading map...</div>;
   }
 
   return (
     <MapContainer
       center={position}
-      zoom={5}
+      zoom={13} // More appropriate zoom level for live location
       style={{ height: '400px', width: '100%' }}
-      className="h-[100px] md:h-[150px] lg:[400px]"
+      className="rounded-lg z-0"
     >
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <Marker position={position} icon={customIcon}>
-        <Popup>Your Live Location</Popup>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Marker position={position}>
+        <Popup>Your current location</Popup>
       </Marker>
     </MapContainer>
   );

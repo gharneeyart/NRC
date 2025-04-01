@@ -1,5 +1,4 @@
 'use client';
-// import { useSearchStore } from '@/store/useSearchStore';
 import SearchTrain from '@/components/reusables/search';
 import Class from '@/components/transport/class';
 import Hours from '@/components/transport/hours';
@@ -65,7 +64,7 @@ function TripContent() {
 
 
   return (
-    <div className="space-y-11 pt-32">
+    <div className="space-y-11 pt-44">
       <SearchTrain
         w="w-11/12"
         bg="bg-[#006B14]"

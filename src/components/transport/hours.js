@@ -144,7 +144,7 @@ export default function Hours({ schedule, bg, text }) {
   const departureTime = departureStation?.time;
   const arrivalTime = arrivalStation?.time;
   const timeDiff = schedule?.duration;
-  console.log(timeDiff);
+
   
 
   return (

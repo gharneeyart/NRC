@@ -132,7 +132,6 @@ const AuthProvider = ({ children }) => {
         return false;
       }
     } catch (error) {
-      console.log('Login error:', error?.response?.data?.message);
       throw new Error(error?.response?.data?.message || 'An error occurred while logging in');
     }
   };
@@ -146,31 +145,29 @@ const AuthProvider = ({ children }) => {
         Cookies.set('auth', JSON.stringify(data), { expires: 7 }); // Cookie expires in 7 days
         router.push('/auth/login');
       } else {
-        console.log(data.error);
+       
       }
 
       return data;
     } catch (error) {
-      console.log('Signup Error:', error);
       throw new Error(error?.response?.data?.message || 'An error occurred while signing up');
     }
   };
-  const forgotPassword = async (email) => {
-    try {
-      const { data } = await axios.post('/auth/forgotpassword', { email });
-      return data;
-    } catch (error) {
-      console.log('Forgot Password Error:', error);
-      throw new Error(error?.response?.data?.message || 'An error occurred while sending reset email');
-    }
-  };
+  // const forgotPassword = async (email) => {
+  //   try {
+  //     const { data } = await axios.post('/auth/forgotpassword', { email });
+  //     return data;
+  //   } catch (error) {
+  //     console.log('Forgot Password Error:', error);
+  //     throw new Error(error?.response?.data?.message || 'An error occurred while sending reset email');
+  //   }
+  // };
 
   const resetPassword = async (resetToken, passwords) => {
     try {
-      const { data } = await axios.put(`/auth/resetpassword/${resetToken}`, passwords);
+      const { data } = await axios.put(`/auth/reset-password/${resetToken}`, passwords);
       return data;
     } catch (error) {
-      console.log('Reset Password Error:', error);
       throw new Error(error?.response?.data?.message || 'An error occurred while resetting password');
     }
   };
@@ -182,7 +179,7 @@ const AuthProvider = ({ children }) => {
   
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth, login, signup,resetPassword, forgotPassword, logout }}>
+    <AuthContext.Provider value={{ auth, setAuth, login, signup,resetPassword, logout }}>
       {children}
     </AuthContext.Provider>
   );

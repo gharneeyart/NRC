@@ -248,7 +248,7 @@ export default function Nav() {
                 )}
               </div>
             ) : (
-              <div className="flex flex-col lg:flex-row text-center gap-[1.75rem] border lg:gap-5 md:hidden lg:block">
+              <div className="flex flex-col lg:flex-row text-center gap-[1.75rem]  md:hidden lg:block lg:space-x-[2.4rem]">
                 <Link href="/auth/signup" className="border border-[#18A532] text-[#18A532] py-2 px-6 rounded-md">Register</Link>
                 <Link href="/auth/login"><button className="text-white bg-[#18A532] py-2 px-6 rounded-md">Sign in</button></Link>
               </div>
